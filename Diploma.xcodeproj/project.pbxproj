@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		495EE553BEBC096BCC573F83 /* Pods_Diploma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EB6A78A30984E62CE03012 /* Pods_Diploma.framework */; };
+		8A713F8B23F440B400F95710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713F8A23F440B400F95710 /* AppDelegate.swift */; };
+		8A713F8D23F440B400F95710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713F8C23F440B400F95710 /* SceneDelegate.swift */; };
+		8A713F8F23F440B400F95710 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713F8E23F440B400F95710 /* HomeViewController.swift */; };
+		8A713F9223F440B400F95710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A713F9023F440B400F95710 /* Main.storyboard */; };
+		8A713F9523F440B400F95710 /* Diploma.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A713F9323F440B400F95710 /* Diploma.xcdatamodeld */; };
+		8A713F9723F440B600F95710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A713F9623F440B600F95710 /* Assets.xcassets */; };
+		8A713F9A23F440B600F95710 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A713F9823F440B600F95710 /* LaunchScreen.storyboard */; };
+		8A713FA523F4421A00F95710 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FA423F4421A00F95710 /* Constants.swift */; };
+		8A713FA723F44F8700F95710 /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FA623F44F8700F95710 /* TopicViewController.swift */; };
+		8A713FA923F4506B00F95710 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FA823F4506B00F95710 /* Topic.swift */; };
+		8A713FAC23F45ACA00F95710 /* v1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8A713FAA23F45ACA00F95710 /* v1.mp4 */; };
+		8A713FAD23F45ACA00F95710 /* v2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8A713FAB23F45ACA00F95710 /* v2.mp4 */; };
+		8A713FB223F5448300F95710 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FB123F5448300F95710 /* SignupViewController.swift */; };
+		8A713FB423F5448F00F95710 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FB323F5448F00F95710 /* LoginViewController.swift */; };
+		8A713FB723F587AF00F95710 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FB523F587AF00F95710 /* TopicCell.swift */; };
+		8A713FB823F587AF00F95710 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A713FB623F587AF00F95710 /* TopicCell.xib */; };
+		8A713FBA23F59AAF00F95710 /* TestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FB923F59AAF00F95710 /* TestsViewController.swift */; };
+		8A713FBC23F5A5A000F95710 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FBB23F5A5A000F95710 /* QuestionViewController.swift */; };
+		8A713FBE23F5A88300F95710 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FBD23F5A88300F95710 /* Question.swift */; };
+		8A713FC023F5A8A600F95710 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FBF23F5A8A600F95710 /* QuizBrain.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F18019E6B402651AA3409AA /* Pods-Diploma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diploma.debug.xcconfig"; path = "Target Support Files/Pods-Diploma/Pods-Diploma.debug.xcconfig"; sourceTree = "<group>"; };
+		42EB6A78A30984E62CE03012 /* Pods_Diploma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diploma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A713F8723F440B400F95710 /* Diploma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diploma.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A713F8A23F440B400F95710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8A713F8C23F440B400F95710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8A713F8E23F440B400F95710 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8A713F9123F440B400F95710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8A713F9423F440B400F95710 /* Diploma.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Diploma.xcdatamodel; sourceTree = "<group>"; };
+		8A713F9623F440B600F95710 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A713F9923F440B600F95710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8A713F9B23F440B600F95710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A713FA423F4421A00F95710 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8A713FA623F44F8700F95710 /* TopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
+		8A713FA823F4506B00F95710 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		8A713FAA23F45ACA00F95710 /* v1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = v1.mp4; sourceTree = "<group>"; };
+		8A713FAB23F45ACA00F95710 /* v2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = v2.mp4; sourceTree = "<group>"; };
+		8A713FB123F5448300F95710 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		8A713FB323F5448F00F95710 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8A713FB523F587AF00F95710 /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
+		8A713FB623F587AF00F95710 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
+		8A713FB923F59AAF00F95710 /* TestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsViewController.swift; sourceTree = "<group>"; };
+		8A713FBB23F5A5A000F95710 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		8A713FBD23F5A88300F95710 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		8A713FBF23F5A8A600F95710 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		A6805DBA62644FF5B6182042 /* Pods-Diploma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diploma.release.xcconfig"; path = "Target Support Files/Pods-Diploma/Pods-Diploma.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A713F8423F440B400F95710 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495EE553BEBC096BCC573F83 /* Pods_Diploma.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A57E67123F6D07D0069C210 /* Starting Pages */ = {
+			isa = PBXGroup;
+			children = (
+				8A713FB123F5448300F95710 /* SignupViewController.swift */,
+				8A713FB323F5448F00F95710 /* LoginViewController.swift */,
+			);
+			path = "Starting Pages";
+			sourceTree = "<group>";
+		};
+		8A713F7E23F440B400F95710 = {
+			isa = PBXGroup;
+			children = (
+				8A713F8923F440B400F95710 /* Diploma */,
+				8A713F8823F440B400F95710 /* Products */,
+				9231E9C7F266A23F03B8EC1E /* Pods */,
+				95AD64AA1437C76D8DF58BBA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8A713F8823F440B400F95710 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A713F8723F440B400F95710 /* Diploma.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A713F8923F440B400F95710 /* Diploma */ = {
+			isa = PBXGroup;
+			children = (
+				8A713F8A23F440B400F95710 /* AppDelegate.swift */,
+				8A713F8C23F440B400F95710 /* SceneDelegate.swift */,
+				8A713FAE23F45AE000F95710 /* Videos */,
+				8A713FA323F441FF00F95710 /* Model */,
+				8A713FA223F441EE00F95710 /* Controller */,
+				8A713FA123F441E700F95710 /* View */,
+				8A713F9623F440B600F95710 /* Assets.xcassets */,
+				8A713F9823F440B600F95710 /* LaunchScreen.storyboard */,
+				8A713F9B23F440B600F95710 /* Info.plist */,
+				8A713F9323F440B400F95710 /* Diploma.xcdatamodeld */,
+			);
+			path = Diploma;
+			sourceTree = "<group>";
+		};
+		8A713FA123F441E700F95710 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A713F9023F440B400F95710 /* Main.storyboard */,
+				8A713FB523F587AF00F95710 /* TopicCell.swift */,
+				8A713FB623F587AF00F95710 /* TopicCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8A713FA223F441EE00F95710 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8A713F8E23F440B400F95710 /* HomeViewController.swift */,
+				8A713FA623F44F8700F95710 /* TopicViewController.swift */,
+				8A713FB923F59AAF00F95710 /* TestsViewController.swift */,
+				8A713FBB23F5A5A000F95710 /* QuestionViewController.swift */,
+				8A57E67123F6D07D0069C210 /* Starting Pages */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8A713FA323F441FF00F95710 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8A713FA423F4421A00F95710 /* Constants.swift */,
+				8A713FA823F4506B00F95710 /* Topic.swift */,
+				8A713FBD23F5A88300F95710 /* Question.swift */,
+				8A713FBF23F5A8A600F95710 /* QuizBrain.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8A713FAE23F45AE000F95710 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				8A713FAA23F45ACA00F95710 /* v1.mp4 */,
+				8A713FAB23F45ACA00F95710 /* v2.mp4 */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
+		9231E9C7F266A23F03B8EC1E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F18019E6B402651AA3409AA /* Pods-Diploma.debug.xcconfig */,
+				A6805DBA62644FF5B6182042 /* Pods-Diploma.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		95AD64AA1437C76D8DF58BBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42EB6A78A30984E62CE03012 /* Pods_Diploma.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A713F8623F440B400F95710 /* Diploma */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A713F9E23F440B600F95710 /* Build configuration list for PBXNativeTarget "Diploma" */;
+			buildPhases = (
+				CBB5106EB6866BE94656C63C /* [CP] Check Pods Manifest.lock */,
+				8A713F8323F440B400F95710 /* Sources */,
+				8A713F8423F440B400F95710 /* Frameworks */,
+				8A713F8523F440B400F95710 /* Resources */,
+				B175648FF8B50CE9C4A88DD7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Diploma;
+			productName = Diploma;
+			productReference = 8A713F8723F440B400F95710 /* Diploma.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A713F7F23F440B400F95710 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Shapagat Bolat";
+				TargetAttributes = {
+					8A713F8623F440B400F95710 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 8A713F8223F440B400F95710 /* Build configuration list for PBXProject "Diploma" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8A713F7E23F440B400F95710;
+			productRefGroup = 8A713F8823F440B400F95710 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A713F8623F440B400F95710 /* Diploma */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A713F8523F440B400F95710 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A713FAD23F45ACA00F95710 /* v2.mp4 in Resources */,
+				8A713FAC23F45ACA00F95710 /* v1.mp4 in Resources */,
+				8A713F9A23F440B600F95710 /* LaunchScreen.storyboard in Resources */,
+				8A713F9723F440B600F95710 /* Assets.xcassets in Resources */,
+				8A713F9223F440B400F95710 /* Main.storyboard in Resources */,
+				8A713FB823F587AF00F95710 /* TopicCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B175648FF8B50CE9C4A88DD7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Diploma/Pods-Diploma-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Diploma/Pods-Diploma-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Diploma/Pods-Diploma-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBB5106EB6866BE94656C63C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Diploma-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A713F8323F440B400F95710 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A713FB423F5448F00F95710 /* LoginViewController.swift in Sources */,
+				8A713FA523F4421A00F95710 /* Constants.swift in Sources */,
+				8A713FBC23F5A5A000F95710 /* QuestionViewController.swift in Sources */,
+				8A713FBA23F59AAF00F95710 /* TestsViewController.swift in Sources */,
+				8A713F8F23F440B400F95710 /* HomeViewController.swift in Sources */,
+				8A713FB723F587AF00F95710 /* TopicCell.swift in Sources */,
+				8A713FB223F5448300F95710 /* SignupViewController.swift in Sources */,
+				8A713FA723F44F8700F95710 /* TopicViewController.swift in Sources */,
+				8A713FBE23F5A88300F95710 /* Question.swift in Sources */,
+				8A713FC023F5A8A600F95710 /* QuizBrain.swift in Sources */,
+				8A713F8B23F440B400F95710 /* AppDelegate.swift in Sources */,
+				8A713F9523F440B400F95710 /* Diploma.xcdatamodeld in Sources */,
+				8A713F8D23F440B400F95710 /* SceneDelegate.swift in Sources */,
+				8A713FA923F4506B00F95710 /* Topic.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8A713F9023F440B400F95710 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A713F9123F440B400F95710 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8A713F9823F440B600F95710 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A713F9923F440B600F95710 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A713F9C23F440B600F95710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8A713F9D23F440B600F95710 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A713F9F23F440B600F95710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F18019E6B402651AA3409AA /* Pods-Diploma.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CDPN2J8M7M;
+				INFOPLIST_FILE = Diploma/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shapagatbolat.Diploma;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A713FA023F440B600F95710 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6805DBA62644FF5B6182042 /* Pods-Diploma.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CDPN2J8M7M;
+				INFOPLIST_FILE = Diploma/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shapagatbolat.Diploma;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A713F8223F440B400F95710 /* Build configuration list for PBXProject "Diploma" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A713F9C23F440B600F95710 /* Debug */,
+				8A713F9D23F440B600F95710 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A713F9E23F440B600F95710 /* Build configuration list for PBXNativeTarget "Diploma" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A713F9F23F440B600F95710 /* Debug */,
+				8A713FA023F440B600F95710 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8A713F9323F440B400F95710 /* Diploma.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8A713F9423F440B400F95710 /* Diploma.xcdatamodel */,
+			);
+			currentVersion = 8A713F9423F440B400F95710 /* Diploma.xcdatamodel */;
+			path = Diploma.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8A713F7F23F440B400F95710 /* Project object */;
+}
