@@ -1,0 +1,6 @@
+framework module QuizKit {
+  umbrella header "QuizKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

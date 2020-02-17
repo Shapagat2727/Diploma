@@ -10,4 +10,5 @@ import UIKit
 struct Topic {
     let title:String
     let screenshotString:String
+    let content:String
 }

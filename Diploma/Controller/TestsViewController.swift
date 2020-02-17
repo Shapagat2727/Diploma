@@ -53,10 +53,5 @@ extension TestsViewController: UITableViewDelegate{
         performSegue(withIdentifier: K.questionSegue, sender: self)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == K.questionSegue{
-//            let destination = segue.destination as! QuestionViewController
-//
-//        }
-//    }
+
 }

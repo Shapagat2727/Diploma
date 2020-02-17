@@ -7,5 +7,6 @@ target 'Diploma' do
 
   # Pods for Diploma
     pod 'ChameleonFramework/Swift'
+    pod 'QuizKit'
 
 end

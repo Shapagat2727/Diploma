@@ -1,2 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-Diploma/Pods-Diploma-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework
+${BUILT_PRODUCTS_DIR}/QuizKit/QuizKit.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

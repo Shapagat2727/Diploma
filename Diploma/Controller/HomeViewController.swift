@@ -12,20 +12,23 @@ import ChameleonFramework
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    let courseTopicsArray = [Topic(title: "Topic1", screenshotString: "v1"),
-                             Topic(title: "Topic2", screenshotString: "v2"),
-                             Topic(title: "Topic3", screenshotString: "v1"),
-                             Topic(title: "Topic4", screenshotString: "v2"),
-                             Topic(title: "Topic5", screenshotString: "v1"),
-                             Topic(title: "Topic6", screenshotString: "v2"),
-                             Topic(title: "Topic7", screenshotString: "v1"),
-                             Topic(title: "Topic8", screenshotString: "v2"),
-                             Topic(title: "Topic9", screenshotString: "v1"),
-                             Topic(title: "Topic10", screenshotString: "v2"),
-                             Topic(title: "Topic11", screenshotString: "v1"),
-                             Topic(title: "Topic12", screenshotString: "v2"),
-                             Topic(title: "Topic13", screenshotString: "v2"),
-                             Topic(title: "Topic14", screenshotString: "v2")]
+
+
+    let courseTopicsArray = [
+        Topic(title: "Topic1", screenshotString: "v1",content:K.loremIpsum),
+                             Topic(title: "Topic2", screenshotString: "v2", content:""),
+                             Topic(title: "Topic3", screenshotString: "v1", content:""),
+                             Topic(title: "Topic4", screenshotString: "v2", content:""),
+                             Topic(title: "Topic5", screenshotString: "v1", content:""),
+                             Topic(title: "Topic6", screenshotString: "v2", content:""),
+                             Topic(title: "Topic7", screenshotString: "v1", content:""),
+                             Topic(title: "Topic8", screenshotString: "v2", content:""),
+                             Topic(title: "Topic9", screenshotString: "v1", content:""),
+                             Topic(title: "Topic10", screenshotString: "v2", content:""),
+                             Topic(title: "Topic11", screenshotString: "v1", content:""),
+                             Topic(title: "Topic12", screenshotString: "v2", content:""),
+                             Topic(title: "Topic13", screenshotString: "v2", content:""),
+                             Topic(title: "Topic14", screenshotString: "v2", content:"")]
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +71,6 @@ extension HomeViewController: UITableViewDelegate{
         if segue.identifier==K.topicSegue{
             let destination = segue.destination as! TopicViewController
             if let indexPath = tableView.indexPathForSelectedRow{
-//                destination.screenshotName =  courseTopicsArray[indexPath.row].screenshotString
                 destination.selectedTopic = courseTopicsArray[indexPath.row]
                  
             }
