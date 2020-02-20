@@ -316,18 +316,17 @@
                     <navigationItem key="navigationItem" title="SelectedCourseName" id="lCG-bV-TuA"/>
                     <connections>
                         <outlet property="tableView" destination="Ja7-MN-bv4" id="xhp-Ok-1Z4"/>
-                        <segue destination="0oK-UO-pMw" kind="show" id="hbA-fr-gBY"/>
+                        <segue destination="0oK-UO-pMw" kind="show" identifier="goToContent" id="hbA-fr-gBY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7Q-sQ-hto" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2642" y="1006"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Content View Controller-->
         <scene sceneID="Ky9-gC-SmY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wu1-G3-zg9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="0oK-UO-pMw" sceneMemberID="viewController">
+                <viewController id="0oK-UO-pMw" customClass="AddContentViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LHR-HJ-5Ag">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,7 +341,11 @@
                         <viewLayoutGuide key="safeArea" id="EJ9-9s-8IS"/>
                     </view>
                     <navigationItem key="navigationItem" id="DaB-ZL-1Sh"/>
+                    <connections>
+                        <outlet property="tableView" destination="Nsq-hx-pT0" id="lYg-kx-wpz"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wu1-G3-zg9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3600.0000000000005" y="1005.8035714285713"/>
         </scene>

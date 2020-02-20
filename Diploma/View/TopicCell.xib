@@ -47,7 +47,7 @@
                 <outlet property="topicBubble" destination="cuS-Tk-kmQ" id="vVX-D5-Ix8"/>
                 <outlet property="topicLabel" destination="uUm-2U-4pX" id="e62-dn-FhG"/>
             </connections>
-            <point key="canvasLocation" x="172" y="135"/>
+            <point key="canvasLocation" x="171.73913043478262" y="134.59821428571428"/>
         </tableViewCell>
     </objects>
 </document>

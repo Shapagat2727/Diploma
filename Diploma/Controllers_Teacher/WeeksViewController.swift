@@ -24,11 +24,17 @@ class WeeksViewController: UIViewController {
     }
 
 }
+//MARK:-Table View Delegate Methods
 extension WeeksViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120;
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: K.newContentSegue, sender: self)
+    }
+    
 }
+//MARK:-Table View Data Source Methods
 extension WeeksViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         weeks.count

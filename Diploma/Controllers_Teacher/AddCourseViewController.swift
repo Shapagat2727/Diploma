@@ -41,6 +41,10 @@ class AddCourseViewController: UIViewController {
     }
     
 }
+
+
+//MARK:-Table View Delegate Methods
+
 extension AddCourseViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 230;
@@ -50,6 +54,8 @@ extension AddCourseViewController: UITableViewDelegate{
     }
     
 }
+
+//MARK:-Table View Data Source Mathods
 extension AddCourseViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return courses.count

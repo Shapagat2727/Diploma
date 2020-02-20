@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newQuestionCell" rowHeight="239" id="KGk-i7-Jjw" customClass="ExpandableTableViewCell" customModule="Diploma" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="239"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="239"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9SO-Zl-EjM">
+                        <rect key="frame" x="5" y="5" width="310" height="64"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voh-af-LkU">
+                                <rect key="frame" x="114.66666666666669" y="22" width="81" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="voh-af-LkU" firstAttribute="centerY" secondItem="9SO-Zl-EjM" secondAttribute="centerY" id="6Ky-2P-mlh"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="Kgb-AW-dhi"/>
+                            <constraint firstAttribute="height" constant="64" id="Qbc-Aq-GIW"/>
+                            <constraint firstItem="voh-af-LkU" firstAttribute="centerX" secondItem="9SO-Zl-EjM" secondAttribute="centerX" id="tZ4-fw-rCz"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="679-Br-tYR">
+                        <rect key="frame" x="5" y="78" width="310" height="157"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="88t-AX-268">
+                                <rect key="frame" x="0.0" y="0.0" width="310" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uuc-zp-Fqc">
+                                <rect key="frame" x="0.0" y="27" width="310" height="22"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Variant A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q5f-Gp-7Ky">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eW5-9y-IL6">
+                                        <rect key="frame" x="288" y="0.0" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="Cmj-oe-ZmE"/>
+                                            <constraint firstAttribute="width" constant="22" id="f2I-NK-rcc"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button" image="checkmark.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="checkButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CUI-Jo-t5o"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7VG-EB-BJA">
+                                <rect key="frame" x="0.0" y="54" width="310" height="22"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Variant B" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yRG-L6-QPz">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAs-Nn-M4t">
+                                        <rect key="frame" x="288" y="0.0" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="CCD-PK-HYi"/>
+                                            <constraint firstAttribute="height" constant="22" id="KiK-rm-KiI"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button" image="checkmark.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="checkButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="A2s-Sd-3Ks"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5mO-ld-OAX">
+                                <rect key="frame" x="0.0" y="81" width="310" height="22"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Variant C" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PwD-05-dBF">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGs-up-2VA">
+                                        <rect key="frame" x="288" y="0.0" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="3Ut-jI-Il3"/>
+                                            <constraint firstAttribute="height" constant="22" id="4i4-jf-hq1"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button" image="checkmark.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="checkButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sgf-Xa-5wm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dmY-t3-tbV">
+                                <rect key="frame" x="0.0" y="108" width="310" height="22"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Variant D" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="efS-ul-Fez">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKi-Cv-pXp">
+                                        <rect key="frame" x="288" y="0.0" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="9S3-Zg-Kh3"/>
+                                            <constraint firstAttribute="height" constant="22" id="mwF-FT-UzJ"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button" image="checkmark.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="checkButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fAm-G3-uJo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRb-RP-vVX">
+                                <rect key="frame" x="0.0" y="135" width="310" height="22"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ees-bv-Wib"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Uuc-zp-Fqc" secondAttribute="trailing" id="14j-RD-rTL"/>
+                            <constraint firstAttribute="trailing" secondItem="7VG-EB-BJA" secondAttribute="trailing" id="6AW-a4-7oH"/>
+                            <constraint firstItem="Uuc-zp-Fqc" firstAttribute="leading" secondItem="679-Br-tYR" secondAttribute="leading" id="6g5-Ua-cAk"/>
+                            <constraint firstItem="rRb-RP-vVX" firstAttribute="leading" secondItem="679-Br-tYR" secondAttribute="leading" id="ABA-gH-KjA"/>
+                            <constraint firstAttribute="trailing" secondItem="88t-AX-268" secondAttribute="trailing" id="J8c-CL-Oh3"/>
+                            <constraint firstItem="dmY-t3-tbV" firstAttribute="leading" secondItem="679-Br-tYR" secondAttribute="leading" id="Saw-Vk-z0k"/>
+                            <constraint firstAttribute="trailing" secondItem="dmY-t3-tbV" secondAttribute="trailing" id="fuM-G1-I79"/>
+                            <constraint firstItem="7VG-EB-BJA" firstAttribute="leading" secondItem="679-Br-tYR" secondAttribute="leading" id="gu6-DM-9mE"/>
+                            <constraint firstItem="5mO-ld-OAX" firstAttribute="leading" secondItem="679-Br-tYR" secondAttribute="leading" id="k4M-eQ-mRY"/>
+                            <constraint firstAttribute="trailing" secondItem="5mO-ld-OAX" secondAttribute="trailing" id="l2I-mz-qdP"/>
+                            <constraint firstAttribute="trailing" secondItem="rRb-RP-vVX" secondAttribute="trailing" id="m7N-m3-0ur"/>
+                            <constraint firstItem="88t-AX-268" firstAttribute="leading" secondItem="679-Br-tYR" secondAttribute="leading" id="qYh-bD-SaV"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="679-Br-tYR" firstAttribute="top" secondItem="9SO-Zl-EjM" secondAttribute="bottom" constant="9" id="0RF-ep-6F7"/>
+                    <constraint firstItem="9SO-Zl-EjM" firstAttribute="centerX" secondItem="679-Br-tYR" secondAttribute="centerX" id="CEH-TG-Ybn"/>
+                    <constraint firstItem="9SO-Zl-EjM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="PTc-ve-fTd"/>
+                    <constraint firstAttribute="trailing" secondItem="679-Br-tYR" secondAttribute="trailing" constant="5" id="UOX-Mw-Y3G"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="679-Br-tYR" secondAttribute="bottom" constant="-4" id="WZA-5k-WJK"/>
+                    <constraint firstItem="9SO-Zl-EjM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="XSY-6l-Jwh"/>
+                    <constraint firstItem="679-Br-tYR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="qqV-Gu-ceg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="questionLabel" destination="voh-af-LkU" id="OrO-n0-9IT"/>
+                <outlet property="questionTitle" destination="88t-AX-268" id="csS-Ha-7nC"/>
+                <outlet property="questionView" destination="9SO-Zl-EjM" id="J49-7I-2xc"/>
+                <outlet property="variantA" destination="q5f-Gp-7Ky" id="9NY-Wq-yx9"/>
+                <outlet property="variantB" destination="yRG-L6-QPz" id="L88-NZ-ZBB"/>
+                <outlet property="variantC" destination="PwD-05-dBF" id="avU-aR-mAn"/>
+                <outlet property="variantD" destination="efS-ul-Fez" id="w8z-mG-RP9"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="209.93303571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
+</document>

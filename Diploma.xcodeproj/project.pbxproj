@@ -26,6 +26,9 @@
 		8A713FBC23F5A5A000F95710 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FBB23F5A5A000F95710 /* QuestionViewController.swift */; };
 		8AB4D55323FD733400A9FAC4 /* AddCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB4D55223FD733400A9FAC4 /* AddCourseViewController.swift */; };
 		8AB4D55523FD804C00A9FAC4 /* WeeksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB4D55423FD804C00A9FAC4 /* WeeksViewController.swift */; };
+		8ADFFB9923FE2ABD00ADA7CF /* ExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFFB9723FE2ABD00ADA7CF /* ExpandableTableViewCell.swift */; };
+		8ADFFB9A23FE2ABD00ADA7CF /* ExpandableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ADFFB9823FE2ABD00ADA7CF /* ExpandableTableViewCell.xib */; };
+		8ADFFB9C23FE312300ADA7CF /* AddContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFFB9B23FE312300ADA7CF /* AddContentViewController.swift */; };
 		8AEFE33823FAB67000334D2C /* quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AEFE33723FAB67000334D2C /* quiz.json */; };
 		8AEFE33A23FACFF700334D2C /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEFE33923FACFF700334D2C /* ScoreViewController.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +56,9 @@
 		8A713FBB23F5A5A000F95710 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		8AB4D55223FD733400A9FAC4 /* AddCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
 		8AB4D55423FD804C00A9FAC4 /* WeeksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksViewController.swift; sourceTree = "<group>"; };
+		8ADFFB9723FE2ABD00ADA7CF /* ExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCell.swift; sourceTree = "<group>"; };
+		8ADFFB9823FE2ABD00ADA7CF /* ExpandableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableTableViewCell.xib; sourceTree = "<group>"; };
+		8ADFFB9B23FE312300ADA7CF /* AddContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContentViewController.swift; sourceTree = "<group>"; };
 		8AEFE33723FAB67000334D2C /* quiz.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = quiz.json; path = ../../quiz.json; sourceTree = "<group>"; };
 		8AEFE33923FACFF700334D2C /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		A6805DBA62644FF5B6182042 /* Pods-Diploma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diploma.release.xcconfig"; path = "Target Support Files/Pods-Diploma/Pods-Diploma.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				8A713F9023F440B400F95710 /* Main.storyboard */,
+				8ADFFB9723FE2ABD00ADA7CF /* ExpandableTableViewCell.swift */,
+				8ADFFB9823FE2ABD00ADA7CF /* ExpandableTableViewCell.xib */,
 				8A713FB523F587AF00F95710 /* TopicCell.swift */,
 				8A713FB623F587AF00F95710 /* TopicCell.xib */,
 			);
@@ -152,6 +160,7 @@
 			children = (
 				8AB4D55223FD733400A9FAC4 /* AddCourseViewController.swift */,
 				8AB4D55423FD804C00A9FAC4 /* WeeksViewController.swift */,
+				8ADFFB9B23FE312300ADA7CF /* AddContentViewController.swift */,
 			);
 			path = Controllers_Teacher;
 			sourceTree = "<group>";
@@ -236,6 +245,7 @@
 				8AEFE33823FAB67000334D2C /* quiz.json in Resources */,
 				8A713FAD23F45ACA00F95710 /* v2.mp4 in Resources */,
 				8A713FAC23F45ACA00F95710 /* v1.mp4 in Resources */,
+				8ADFFB9A23FE2ABD00ADA7CF /* ExpandableTableViewCell.xib in Resources */,
 				8A713F9A23F440B600F95710 /* LaunchScreen.storyboard in Resources */,
 				8A713F9723F440B600F95710 /* Assets.xcassets in Resources */,
 				8A713F9223F440B400F95710 /* Main.storyboard in Resources */,
@@ -301,8 +311,10 @@
 				8AEFE33A23FACFF700334D2C /* ScoreViewController.swift in Sources */,
 				8AB4D55523FD804C00A9FAC4 /* WeeksViewController.swift in Sources */,
 				8A713FA723F44F8700F95710 /* TopicViewController.swift in Sources */,
+				8ADFFB9923FE2ABD00ADA7CF /* ExpandableTableViewCell.swift in Sources */,
 				8A713F8B23F440B400F95710 /* AppDelegate.swift in Sources */,
 				8A713F9523F440B400F95710 /* Diploma.xcdatamodeld in Sources */,
+				8ADFFB9C23FE312300ADA7CF /* AddContentViewController.swift in Sources */,
 				8A713F8D23F440B400F95710 /* SceneDelegate.swift in Sources */,
 				8A713FA923F4506B00F95710 /* Topic.swift in Sources */,
 			);

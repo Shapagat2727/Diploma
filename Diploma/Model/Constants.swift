@@ -10,6 +10,12 @@ struct K{
     static let topicCell = "topicCell"
     static let topicSegue = "goToTopic"
     static let topicNibName = "TopicCell"
+    
+    static let newQuestionCell = "newQuestionCell"
+    static let newQuestionNibName = "ExpandableTableViewCell"
+    
+    static let newContentSegue = "goToContent"
+    
     static let questionSegue = "goToQuestion"
     static let scoreSegue = "scoreSegue"
     static let weekQuesionSegue = "goToQuestionForSingleWeek"
