@@ -8,16 +8,20 @@
 
 import UIKit
 import ChameleonFramework
+
 class AddCourseViewController: UIViewController {
-    
     @IBOutlet weak var tableView: UITableView!
+    var courses:[Course] = [Course(name: "Algorithms", id: 0, weeks: K.weeks),
+                            Course(name: "Mathematics", id: 1, weeks: K.weeks),
+                            Course(name: "Digital design", id: 2, weeks: K.weeks)]
     
-    var courses:[String] = ["Algorithms", "Software Eng", "Mathematics"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
+        
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -26,7 +30,7 @@ class AddCourseViewController: UIViewController {
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             if let text = textField?.text{
                 if !text.isEmpty{
-                    self.courses.append(text)
+                    self.courses.append(Course(name: text, id: self.courses.count, weeks: []))
                     self.tableView.reloadData()
                 }
             }
@@ -34,7 +38,6 @@ class AddCourseViewController: UIViewController {
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "type here..."
             textField = alertTextField
-            
         }
         alert.addAction(action)
         present(alert, animated: true)
@@ -47,10 +50,18 @@ class AddCourseViewController: UIViewController {
 
 extension AddCourseViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 230;
+        return K.largeCell;
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: K.weeksSegue, sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier==K.weeksSegue{
+            let destination = segue.destination as! WeeksViewController
+            if let indexPath = tableView.indexPathForSelectedRow{
+                destination.selectedCourse = courses[indexPath.row]
+            }
+        }
     }
     
 }
@@ -64,13 +75,12 @@ extension AddCourseViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.topicCell, for: indexPath) as! TopicCell
-        cell.topicLabel.text = courses[indexPath.row]
-        if let color = FlatGray().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(courses.count)){
+        cell.topicLabel.text = courses[indexPath.row].name
+        if let color = FlatMint().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(courses.count)){
             cell.topicBubble.backgroundColor = color
             cell.topicLabel.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
         }
         return cell
     }
-    
     
 }

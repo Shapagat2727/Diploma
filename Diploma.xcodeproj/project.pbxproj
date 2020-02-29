@@ -8,6 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		495EE553BEBC096BCC573F83 /* Pods_Diploma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EB6A78A30984E62CE03012 /* Pods_Diploma.framework */; };
+		8A08FF292402C1AA002C8B4D /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08FF282402C1AA002C8B4D /* StatisticsViewController.swift */; };
+		8A08FF2B2404C547002C8B4D /* AddVideoTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08FF2A2404C547002C8B4D /* AddVideoTextViewController.swift */; };
+		8A52551F2408B5BC004EB8E5 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A52551E2408B5BC004EB8E5 /* TestViewController.swift */; };
+		8A5255212408DE14004EB8E5 /* ItemAnalysisTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5255202408DE14004EB8E5 /* ItemAnalysisTestViewController.swift */; };
+		8A5255242408DE75004EB8E5 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5255222408DE75004EB8E5 /* ItemTableViewCell.swift */; };
+		8A5255252408DE75004EB8E5 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5255232408DE75004EB8E5 /* ItemTableViewCell.xib */; };
+		8A525527240A19D7004EB8E5 /* TeacherStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A525526240A19D7004EB8E5 /* TeacherStatisticsViewController.swift */; };
+		8A525529240A2DE6004EB8E5 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A525528240A2DE6004EB8E5 /* Course.swift */; };
+		8A52552B240A35B7004EB8E5 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A52552A240A35B7004EB8E5 /* Week.swift */; };
+		8A52553A240A5ED3004EB8E5 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A52552F240A5ED2004EB8E5 /* OpenSans-SemiBold.ttf */; };
+		8A52553B240A5ED3004EB8E5 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A525530240A5ED2004EB8E5 /* OpenSans-Light.ttf */; };
+		8A52553C240A5ED3004EB8E5 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A525531240A5ED2004EB8E5 /* OpenSans-Italic.ttf */; };
+		8A52553D240A5ED3004EB8E5 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A525532240A5ED2004EB8E5 /* OpenSans-ExtraBold.ttf */; };
+		8A52553E240A5ED3004EB8E5 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A525533240A5ED2004EB8E5 /* OpenSans-LightItalic.ttf */; };
+		8A52553F240A5ED3004EB8E5 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A525534240A5ED2004EB8E5 /* OpenSans-Bold.ttf */; };
+		8A525540240A5ED3004EB8E5 /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A525535240A5ED2004EB8E5 /* OpenSans-SemiBoldItalic.ttf */; };
+		8A525541240A5ED3004EB8E5 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A525536240A5ED2004EB8E5 /* OpenSans-ExtraBoldItalic.ttf */; };
+		8A525542240A5ED3004EB8E5 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8A525537240A5ED2004EB8E5 /* LICENSE.txt */; };
+		8A525543240A5ED3004EB8E5 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A525538240A5ED2004EB8E5 /* OpenSans-Regular.ttf */; };
+		8A525544240A5ED3004EB8E5 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A525539240A5ED2004EB8E5 /* OpenSans-BoldItalic.ttf */; };
 		8A713F8B23F440B400F95710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713F8A23F440B400F95710 /* AppDelegate.swift */; };
 		8A713F8D23F440B400F95710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713F8C23F440B400F95710 /* SceneDelegate.swift */; };
 		8A713F8F23F440B400F95710 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713F8E23F440B400F95710 /* HomeViewController.swift */; };
@@ -36,6 +56,26 @@
 /* Begin PBXFileReference section */
 		0F18019E6B402651AA3409AA /* Pods-Diploma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diploma.debug.xcconfig"; path = "Target Support Files/Pods-Diploma/Pods-Diploma.debug.xcconfig"; sourceTree = "<group>"; };
 		42EB6A78A30984E62CE03012 /* Pods_Diploma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diploma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A08FF282402C1AA002C8B4D /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		8A08FF2A2404C547002C8B4D /* AddVideoTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVideoTextViewController.swift; sourceTree = "<group>"; };
+		8A52551E2408B5BC004EB8E5 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		8A5255202408DE14004EB8E5 /* ItemAnalysisTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAnalysisTestViewController.swift; sourceTree = "<group>"; };
+		8A5255222408DE75004EB8E5 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		8A5255232408DE75004EB8E5 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		8A525526240A19D7004EB8E5 /* TeacherStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherStatisticsViewController.swift; sourceTree = "<group>"; };
+		8A525528240A2DE6004EB8E5 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		8A52552A240A35B7004EB8E5 /* Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
+		8A52552F240A5ED2004EB8E5 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		8A525530240A5ED2004EB8E5 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		8A525531240A5ED2004EB8E5 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		8A525532240A5ED2004EB8E5 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		8A525533240A5ED2004EB8E5 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		8A525534240A5ED2004EB8E5 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		8A525535240A5ED2004EB8E5 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		8A525536240A5ED2004EB8E5 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		8A525537240A5ED2004EB8E5 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		8A525538240A5ED2004EB8E5 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		8A525539240A5ED2004EB8E5 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		8A713F8723F440B400F95710 /* Diploma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diploma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A713F8A23F440B400F95710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A713F8C23F440B400F95710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +116,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A52552E240A5ED2004EB8E5 /* Open_Sans */ = {
+			isa = PBXGroup;
+			children = (
+				8A52552F240A5ED2004EB8E5 /* OpenSans-SemiBold.ttf */,
+				8A525530240A5ED2004EB8E5 /* OpenSans-Light.ttf */,
+				8A525531240A5ED2004EB8E5 /* OpenSans-Italic.ttf */,
+				8A525532240A5ED2004EB8E5 /* OpenSans-ExtraBold.ttf */,
+				8A525533240A5ED2004EB8E5 /* OpenSans-LightItalic.ttf */,
+				8A525534240A5ED2004EB8E5 /* OpenSans-Bold.ttf */,
+				8A525535240A5ED2004EB8E5 /* OpenSans-SemiBoldItalic.ttf */,
+				8A525536240A5ED2004EB8E5 /* OpenSans-ExtraBoldItalic.ttf */,
+				8A525537240A5ED2004EB8E5 /* LICENSE.txt */,
+				8A525538240A5ED2004EB8E5 /* OpenSans-Regular.ttf */,
+				8A525539240A5ED2004EB8E5 /* OpenSans-BoldItalic.ttf */,
+			);
+			name = Open_Sans;
+			path = ../../../../Downloads/Open_Sans;
+			sourceTree = "<group>";
+		};
 		8A713F7E23F440B400F95710 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +159,7 @@
 			children = (
 				8A713F8A23F440B400F95710 /* AppDelegate.swift */,
 				8A713F8C23F440B400F95710 /* SceneDelegate.swift */,
+				8A52552E240A5ED2004EB8E5 /* Open_Sans */,
 				8A713FAE23F45AE000F95710 /* Videos */,
 				8AB4D55123FD730100A9FAC4 /* Controllers_Teacher */,
 				8A713FA323F441FF00F95710 /* Model */,
@@ -121,6 +181,8 @@
 				8ADFFB9823FE2ABD00ADA7CF /* ExpandableTableViewCell.xib */,
 				8A713FB523F587AF00F95710 /* TopicCell.swift */,
 				8A713FB623F587AF00F95710 /* TopicCell.xib */,
+				8A5255222408DE75004EB8E5 /* ItemTableViewCell.swift */,
+				8A5255232408DE75004EB8E5 /* ItemTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -142,6 +204,8 @@
 			children = (
 				8A713FA423F4421A00F95710 /* Constants.swift */,
 				8A713FA823F4506B00F95710 /* Topic.swift */,
+				8A525528240A2DE6004EB8E5 /* Course.swift */,
+				8A52552A240A35B7004EB8E5 /* Week.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,7 +224,12 @@
 			children = (
 				8AB4D55223FD733400A9FAC4 /* AddCourseViewController.swift */,
 				8AB4D55423FD804C00A9FAC4 /* WeeksViewController.swift */,
+				8A08FF2A2404C547002C8B4D /* AddVideoTextViewController.swift */,
+				8A52551E2408B5BC004EB8E5 /* TestViewController.swift */,
 				8ADFFB9B23FE312300ADA7CF /* AddContentViewController.swift */,
+				8A08FF282402C1AA002C8B4D /* StatisticsViewController.swift */,
+				8A5255202408DE14004EB8E5 /* ItemAnalysisTestViewController.swift */,
+				8A525526240A19D7004EB8E5 /* TeacherStatisticsViewController.swift */,
 			);
 			path = Controllers_Teacher;
 			sourceTree = "<group>";
@@ -242,14 +311,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A525540240A5ED3004EB8E5 /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				8A525541240A5ED3004EB8E5 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				8AEFE33823FAB67000334D2C /* quiz.json in Resources */,
 				8A713FAD23F45ACA00F95710 /* v2.mp4 in Resources */,
+				8A52553E240A5ED3004EB8E5 /* OpenSans-LightItalic.ttf in Resources */,
+				8A52553A240A5ED3004EB8E5 /* OpenSans-SemiBold.ttf in Resources */,
 				8A713FAC23F45ACA00F95710 /* v1.mp4 in Resources */,
 				8ADFFB9A23FE2ABD00ADA7CF /* ExpandableTableViewCell.xib in Resources */,
+				8A5255252408DE75004EB8E5 /* ItemTableViewCell.xib in Resources */,
 				8A713F9A23F440B600F95710 /* LaunchScreen.storyboard in Resources */,
+				8A525543240A5ED3004EB8E5 /* OpenSans-Regular.ttf in Resources */,
+				8A52553F240A5ED3004EB8E5 /* OpenSans-Bold.ttf in Resources */,
 				8A713F9723F440B600F95710 /* Assets.xcassets in Resources */,
+				8A525542240A5ED3004EB8E5 /* LICENSE.txt in Resources */,
+				8A525544240A5ED3004EB8E5 /* OpenSans-BoldItalic.ttf in Resources */,
 				8A713F9223F440B400F95710 /* Main.storyboard in Resources */,
+				8A52553C240A5ED3004EB8E5 /* OpenSans-Italic.ttf in Resources */,
+				8A52553B240A5ED3004EB8E5 /* OpenSans-Light.ttf in Resources */,
 				8A713FB823F587AF00F95710 /* TopicCell.xib in Resources */,
+				8A52553D240A5ED3004EB8E5 /* OpenSans-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,18 +385,26 @@
 			files = (
 				8A713FA523F4421A00F95710 /* Constants.swift in Sources */,
 				8AB4D55323FD733400A9FAC4 /* AddCourseViewController.swift in Sources */,
+				8A52552B240A35B7004EB8E5 /* Week.swift in Sources */,
 				8A713FBC23F5A5A000F95710 /* QuestionViewController.swift in Sources */,
+				8A08FF292402C1AA002C8B4D /* StatisticsViewController.swift in Sources */,
+				8A525527240A19D7004EB8E5 /* TeacherStatisticsViewController.swift in Sources */,
 				8A713FBA23F59AAF00F95710 /* TestsViewController.swift in Sources */,
 				8A713F8F23F440B400F95710 /* HomeViewController.swift in Sources */,
 				8A713FB723F587AF00F95710 /* TopicCell.swift in Sources */,
 				8AEFE33A23FACFF700334D2C /* ScoreViewController.swift in Sources */,
+				8A5255212408DE14004EB8E5 /* ItemAnalysisTestViewController.swift in Sources */,
 				8AB4D55523FD804C00A9FAC4 /* WeeksViewController.swift in Sources */,
+				8A08FF2B2404C547002C8B4D /* AddVideoTextViewController.swift in Sources */,
+				8A525529240A2DE6004EB8E5 /* Course.swift in Sources */,
 				8A713FA723F44F8700F95710 /* TopicViewController.swift in Sources */,
+				8A5255242408DE75004EB8E5 /* ItemTableViewCell.swift in Sources */,
 				8ADFFB9923FE2ABD00ADA7CF /* ExpandableTableViewCell.swift in Sources */,
 				8A713F8B23F440B400F95710 /* AppDelegate.swift in Sources */,
 				8A713F9523F440B400F95710 /* Diploma.xcdatamodeld in Sources */,
 				8ADFFB9C23FE312300ADA7CF /* AddContentViewController.swift in Sources */,
 				8A713F8D23F440B400F95710 /* SceneDelegate.swift in Sources */,
+				8A52551F2408B5BC004EB8E5 /* TestViewController.swift in Sources */,
 				8A713FA923F4506B00F95710 /* Topic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

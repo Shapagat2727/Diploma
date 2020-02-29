@@ -11,13 +11,10 @@ import ChameleonFramework
 
 class WeeksViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
-    var weeks = ["Week1", "Week2", "Week3", "Week4", "Week5", "Week6", "Week7", "Week8", "Week9", "Week10", "Week11", "Week12", "Week13","Week14", "Week15"]
-    
-    
-    
+    var selectedCourse:Course?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = selectedCourse?.name
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
@@ -27,26 +24,37 @@ class WeeksViewController: UIViewController {
 //MARK:-Table View Delegate Methods
 extension WeeksViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120;
+        return K.mediumCell;
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: K.newContentSegue, sender: self)
+        performSegue(withIdentifier: K.newVideoTextSegue, sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier==K.newVideoTextSegue{
+            let destination = segue.destination as! AddVideoTextViewController
+            if let indexPath = tableView.indexPathForSelectedRow{
+                destination.selectedWeek = selectedCourse?.weeks[indexPath.row]
+            }
+        }
     }
     
 }
 //MARK:-Table View Data Source Methods
 extension WeeksViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        weeks.count
+        return selectedCourse?.weeks.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.topicCell, for: indexPath) as! TopicCell
-        cell.topicLabel.text = weeks[indexPath.row]
-        if let color = FlatGray().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(weeks.count)){
-            cell.topicBubble.backgroundColor = color
-            cell.topicLabel.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
+        cell.topicLabel.text = "Week \((selectedCourse?.weeks[indexPath.row].id)! + 1)"
+        if let value = self.selectedCourse?.weeks.count{
+            if let color = FlatGray().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(value)){
+                cell.topicBubble.backgroundColor = color
+                cell.topicLabel.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
+            }
         }
+        
         return cell
     }
     

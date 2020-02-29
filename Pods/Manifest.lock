@@ -2,25 +2,31 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
   - QuizKit (1.0.2):
     - SwiftyJSON
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift
+  - Charts
   - QuizKit
 
 SPEC REPOS:
   trunk:
     - ChameleonFramework
+    - Charts
     - QuizKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   QuizKit: ca8af0c30654096062ebf9474ac058bfecb95ed8
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 8f08d72dae7b61b5bc0851d6412eb121f16199ff
+PODFILE CHECKSUM: 0b2f67776b9a11549de2c15b4d9cdb551855b641
 
 COCOAPODS: 1.8.4
