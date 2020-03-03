@@ -8,7 +8,6 @@
 
 import Foundation
 import SwiftyJSON
-
 /// Represents a question within the quiz
 public struct QKQuestion: Hashable {
     

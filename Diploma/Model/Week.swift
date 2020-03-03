@@ -7,11 +7,14 @@
 //
 
 import Foundation
+import RealmSwift
 import QuizKit
-import AVFoundation
-struct Week{
-    let id:Int
-    let video:String //---- need to change this
-    let textContent:String
-    let tests:[QKQuestion]
+//import AVFoundation
+
+class Week:Object{
+    @objc dynamic var id:Int = 0
+    @objc dynamic var video:String = "" //---- need to change this
+    @objc dynamic var textContent:String = ""
+    var parentCourse = LinkingObjects(fromType: Course.self, property: "weeks")
+    let questions = List<Question>()
 }

@@ -49,10 +49,10 @@ extension TeacherStatisticsViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.topicCell, for: indexPath) as! TopicCell
-        cell.topicLabel.text = charts[indexPath.row]
+        cell.topicLabel?.text = charts[indexPath.row]
         if let color = FlatGreen().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(charts.count)){
-            cell.topicBubble.backgroundColor = color
-            cell.topicLabel.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
+            cell.topicBubble?.backgroundColor = color
+            cell.topicLabel?.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
         }
         return cell
     }

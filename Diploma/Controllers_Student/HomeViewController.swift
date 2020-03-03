@@ -48,10 +48,10 @@ extension HomeViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.topicCell, for: indexPath) as! TopicCell
-        cell.topicLabel.text = courseTopicsArray[indexPath.row].title
+        cell.topicLabel?.text = courseTopicsArray[indexPath.row].title
         if let color = FlatSkyBlue().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(courseTopicsArray.count)){
-            cell.topicBubble.backgroundColor = color
-            cell.topicLabel.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
+            cell.topicBubble?.backgroundColor = color
+            cell.topicLabel?.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
         }
         return cell
     }

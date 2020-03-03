@@ -8,16 +8,16 @@
 
 import UIKit
 import ChameleonFramework
-
+import RealmSwift
 class AddCourseViewController: UIViewController {
+    let realm = try! Realm()
     @IBOutlet weak var tableView: UITableView!
-    var courses:[Course] = [Course(name: "Algorithms", id: 0, weeks: K.weeks),
-                            Course(name: "Mathematics", id: 1, weeks: K.weeks),
-                            Course(name: "Digital design", id: 2, weeks: K.weeks)]
+    var courses:Results<Course>?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadCourses()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
@@ -30,8 +30,22 @@ class AddCourseViewController: UIViewController {
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             if let text = textField?.text{
                 if !text.isEmpty{
-                    self.courses.append(Course(name: text, id: self.courses.count, weeks: []))
-                    self.tableView.reloadData()
+                    let newCourse = Course()
+                    let week1 = Week()
+                    week1.id = 0
+                    let week2 = Week()
+                    week1.id = 1
+                    let week3 = Week()
+                    week1.id = 2
+                    let week4 = Week()
+                    week1.id = 3
+                    let week5 = Week()
+                    week1.id = 4
+                    
+                    newCourse.weeks.append(objectsIn: [week1, week2, week3, week4, week5])
+                    
+                    newCourse.name = text
+                    self.save(course: newCourse)
                 }
             }
         }
@@ -41,6 +55,20 @@ class AddCourseViewController: UIViewController {
         }
         alert.addAction(action)
         present(alert, animated: true)
+    }
+    func save(course: Course){
+        do{
+            try realm.write{
+                realm.add(course)
+            }
+        }catch{
+            print("Error saving course, \(error)")
+        }
+        self.tableView.reloadData()
+    }
+    func loadCourses(){
+        courses = realm.objects(Course.self)
+        self.tableView.reloadData()
     }
     
 }
@@ -59,7 +87,7 @@ extension AddCourseViewController: UITableViewDelegate{
         if segue.identifier==K.weeksSegue{
             let destination = segue.destination as! WeeksViewController
             if let indexPath = tableView.indexPathForSelectedRow{
-                destination.selectedCourse = courses[indexPath.row]
+                destination.selectedCourse = courses?[indexPath.row]
             }
         }
     }
@@ -69,16 +97,16 @@ extension AddCourseViewController: UITableViewDelegate{
 //MARK:-Table View Data Source Mathods
 extension AddCourseViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return courses.count
+        return courses?.count ?? 1
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.topicCell, for: indexPath) as! TopicCell
-        cell.topicLabel.text = courses[indexPath.row].name
-        if let color = FlatMint().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(courses.count)){
-            cell.topicBubble.backgroundColor = color
-            cell.topicLabel.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
+        cell.topicLabel?.text = courses?[indexPath.row].name ?? "No courses added yet"
+        if let color = FlatMint().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(courses?.count ?? 1)){
+            cell.topicBubble?.backgroundColor = color
+            cell.topicLabel?.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
         }
         return cell
     }

@@ -10,11 +10,11 @@ import UIKit
 
 class TopicCell: UITableViewCell {
 
-    @IBOutlet weak var topicBubble: UIView!
-    @IBOutlet weak var topicLabel: UILabel!
+    @IBOutlet weak var topicBubble: UIView?
+    @IBOutlet weak var topicLabel: UILabel?
     override func awakeFromNib() {
         super.awakeFromNib()
-        topicBubble.layer.cornerRadius = topicBubble.frame.size.height / 5
+        topicBubble?.layer.cornerRadius = (topicBubble?.frame.size.height ?? 50) / 5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

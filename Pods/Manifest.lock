@@ -7,26 +7,36 @@ PODS:
   - Charts/Core (3.4.0)
   - QuizKit (1.0.2):
     - SwiftyJSON
+  - Realm (4.3.2):
+    - Realm/Headers (= 4.3.2)
+  - Realm/Headers (4.3.2)
+  - RealmSwift (4.3.2):
+    - Realm (= 4.3.2)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift
   - Charts
   - QuizKit
+  - RealmSwift
 
 SPEC REPOS:
   trunk:
     - ChameleonFramework
     - Charts
     - QuizKit
+    - Realm
+    - RealmSwift
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   QuizKit: ca8af0c30654096062ebf9474ac058bfecb95ed8
+  Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
+  RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 0b2f67776b9a11549de2c15b4d9cdb551855b641
+PODFILE CHECKSUM: 6a3d19b17abcaaf17b78024df58e0c1f8ed6c6c2
 
 COCOAPODS: 1.8.4

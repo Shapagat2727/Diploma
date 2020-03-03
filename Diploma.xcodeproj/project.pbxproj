@@ -51,6 +51,7 @@
 		8ADFFB9C23FE312300ADA7CF /* AddContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFFB9B23FE312300ADA7CF /* AddContentViewController.swift */; };
 		8AEFE33823FAB67000334D2C /* quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AEFE33723FAB67000334D2C /* quiz.json */; };
 		8AEFE33A23FACFF700334D2C /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEFE33923FACFF700334D2C /* ScoreViewController.swift */; };
+		8AF87DA5240B9BDD004D23E4 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF87DA4240B9BDD004D23E4 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		8ADFFB9B23FE312300ADA7CF /* AddContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContentViewController.swift; sourceTree = "<group>"; };
 		8AEFE33723FAB67000334D2C /* quiz.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = quiz.json; path = ../../quiz.json; sourceTree = "<group>"; };
 		8AEFE33923FACFF700334D2C /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		8AF87DA4240B9BDD004D23E4 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		A6805DBA62644FF5B6182042 /* Pods-Diploma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diploma.release.xcconfig"; path = "Target Support Files/Pods-Diploma/Pods-Diploma.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,10 +204,11 @@
 		8A713FA323F441FF00F95710 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8A713FA423F4421A00F95710 /* Constants.swift */,
-				8A713FA823F4506B00F95710 /* Topic.swift */,
 				8A525528240A2DE6004EB8E5 /* Course.swift */,
 				8A52552A240A35B7004EB8E5 /* Week.swift */,
+				8AF87DA4240B9BDD004D23E4 /* Question.swift */,
+				8A713FA423F4421A00F95710 /* Constants.swift */,
+				8A713FA823F4506B00F95710 /* Topic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,11 +228,11 @@
 				8AB4D55223FD733400A9FAC4 /* AddCourseViewController.swift */,
 				8AB4D55423FD804C00A9FAC4 /* WeeksViewController.swift */,
 				8A08FF2A2404C547002C8B4D /* AddVideoTextViewController.swift */,
-				8A52551E2408B5BC004EB8E5 /* TestViewController.swift */,
 				8ADFFB9B23FE312300ADA7CF /* AddContentViewController.swift */,
+				8A525526240A19D7004EB8E5 /* TeacherStatisticsViewController.swift */,
+				8A52551E2408B5BC004EB8E5 /* TestViewController.swift */,
 				8A08FF282402C1AA002C8B4D /* StatisticsViewController.swift */,
 				8A5255202408DE14004EB8E5 /* ItemAnalysisTestViewController.swift */,
-				8A525526240A19D7004EB8E5 /* TeacherStatisticsViewController.swift */,
 			);
 			path = Controllers_Teacher;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				8A713FBA23F59AAF00F95710 /* TestsViewController.swift in Sources */,
 				8A713F8F23F440B400F95710 /* HomeViewController.swift in Sources */,
 				8A713FB723F587AF00F95710 /* TopicCell.swift in Sources */,
+				8AF87DA5240B9BDD004D23E4 /* Question.swift in Sources */,
 				8AEFE33A23FACFF700334D2C /* ScoreViewController.swift in Sources */,
 				8A5255212408DE14004EB8E5 /* ItemAnalysisTestViewController.swift in Sources */,
 				8AB4D55523FD804C00A9FAC4 /* WeeksViewController.swift in Sources */,

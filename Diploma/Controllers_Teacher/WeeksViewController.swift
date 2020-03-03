@@ -8,18 +8,34 @@
 
 import UIKit
 import ChameleonFramework
+import RealmSwift
 
 class WeeksViewController: UIViewController {
+    let realm = try! Realm()
     @IBOutlet weak var tableView: UITableView!
-    var selectedCourse:Course?
+    var weeks:Results<Week>?
+    var selectedCourse:Course?{
+        didSet{
+            
+            loadWeeks()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        //loadWeeks()
         self.title = selectedCourse?.name
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
+        
     }
-
+    func loadWeeks(){
+        weeks = selectedCourse?.weeks.sorted(byKeyPath: "id")
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData()
+//        }
+        
+    }
 }
 //MARK:-Table View Delegate Methods
 extension WeeksViewController: UITableViewDelegate{
@@ -33,7 +49,7 @@ extension WeeksViewController: UITableViewDelegate{
         if segue.identifier==K.newVideoTextSegue{
             let destination = segue.destination as! AddVideoTextViewController
             if let indexPath = tableView.indexPathForSelectedRow{
-                destination.selectedWeek = selectedCourse?.weeks[indexPath.row]
+                destination.selectedWeek = weeks?[indexPath.row]
             }
         }
     }
@@ -42,18 +58,23 @@ extension WeeksViewController: UITableViewDelegate{
 //MARK:-Table View Data Source Methods
 extension WeeksViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectedCourse?.weeks.count ?? 0
+        return weeks?.count ?? 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.topicCell, for: indexPath) as! TopicCell
-        cell.topicLabel.text = "Week \((selectedCourse?.weeks[indexPath.row].id)! + 1)"
-        if let value = self.selectedCourse?.weeks.count{
-            if let color = FlatGray().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(value)){
-                cell.topicBubble.backgroundColor = color
-                cell.topicLabel.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
-            }
+        if let week = weeks?[indexPath.row]{
+            cell.topicLabel?.text = "Week \(week.id + 1)"
+        }else{
+            cell.topicLabel?.text = "No weeks found yet"
         }
+        
+        if let color = FlatGray().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(weeks?.count ?? 1)){
+            cell.topicBubble?.backgroundColor = color
+            cell.topicLabel?.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
+        }
+        
+        
         
         return cell
     }

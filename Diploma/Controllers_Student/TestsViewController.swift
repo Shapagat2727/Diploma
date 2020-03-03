@@ -33,10 +33,10 @@ extension TestsViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.topicCell, for: indexPath) as! TopicCell
-        cell.topicLabel.text = testLabelArray[indexPath.row]
+        cell.topicLabel?.text = testLabelArray[indexPath.row]
         if let color = FlatWatermelon().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(testLabelArray.count)){
-            cell.topicBubble.backgroundColor = color
-            cell.topicLabel.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
+            cell.topicBubble?.backgroundColor = color
+            cell.topicLabel?.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
         }
         return cell
     }

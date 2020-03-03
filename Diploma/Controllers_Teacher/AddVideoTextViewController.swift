@@ -9,7 +9,9 @@
 import UIKit
 import AVFoundation
 import ChameleonFramework
+import RealmSwift
 class AddVideoTextViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+    let realm = try! Realm()
     let imagePicker = UIImagePickerController()
     var videoURL: NSURL?
     var selectedWeek:Week?
@@ -18,6 +20,15 @@ class AddVideoTextViewController: UIViewController,UIImagePickerControllerDelega
     @IBOutlet weak var videoTextField: UITextField!
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        do{
+            try realm.write{
+                selectedWeek?.video = videoTextField.text ?? "video url didn't set"
+                selectedWeek?.textContent = textView.text
+            }
+        }catch{
+            print("error  saving video url \(error)")
+        }
+        
         self.navigationController?.popViewController(animated: true)
         
     }
@@ -29,6 +40,8 @@ class AddVideoTextViewController: UIViewController,UIImagePickerControllerDelega
         addQuestionButton.layer.borderColor = FlatMint().cgColor
         addQuestionButton.layer.borderWidth = 3.0
         addQuestionButton.layer.cornerRadius = addQuestionButton.frame.size.height/5
+        videoTextField.text = selectedWeek?.video
+        textView.text = selectedWeek?.textContent
         
     }
     @IBAction func selectVideoPressed(_ sender: UIButton) {
@@ -56,7 +69,12 @@ class AddVideoTextViewController: UIViewController,UIImagePickerControllerDelega
         performSegue(withIdentifier: K.newContentSegue, sender: self)
         
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier==K.newContentSegue{
+            let destination = segue.destination as! AddContentViewController
+            destination.selectedWeek = self.selectedWeek
+        }
+    }
     
     
 }

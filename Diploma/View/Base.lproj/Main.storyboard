@@ -10,6 +10,9 @@
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans-Regular</string>
         </array>
+        <array key="OpenSans-SemiBold.ttf">
+            <string>OpenSans-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Preparation-->
@@ -57,10 +60,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lni-9N-7mK">
-                                        <rect key="frame" x="0.0" y="30.333333333333343" width="394" height="292"/>
+                                        <rect key="frame" x="0.0" y="30.333333333333343" width="394" height="294.33333333333326"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAf-fM-92G">
-                                        <rect key="frame" x="0.0" y="332.33333333333331" width="394" height="2.6666666666666856"/>
+                                        <rect key="frame" x="0.0" y="334.66666666666669" width="394" height="0.33333333333331439"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -340,7 +343,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="SelectedCourseName" id="lCG-bV-TuA"/>
                     <connections>
-                        <outlet property="tableView" destination="Ja7-MN-bv4" id="xhp-Ok-1Z4"/>
+                        <outlet property="tableView" destination="Ja7-MN-bv4" id="sp2-1a-Yd9"/>
                         <segue destination="uzG-nI-bYG" kind="show" identifier="goToVideoText" id="RfO-lh-WQb"/>
                     </connections>
                 </viewController>
@@ -364,6 +367,7 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter youtube url " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jIc-ae-UGK">
                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="60"/>
+                                                <color key="tintColor" red="0.24591809510000001" green="0.77864634990000003" blue="0.66666007039999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -373,7 +377,7 @@
                                                     <constraint firstAttribute="width" constant="60" id="DA0-bx-DZJ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="0.24591809511184692" green="0.77864634990692139" blue="0.66666007041931152" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button" image="video.badge.plus.fill" catalog="system"/>
                                                 <connections>
                                                     <action selector="selectVideoPressed:" destination="uzG-nI-bYG" eventType="touchUpInside" id="LU3-4f-zrT"/>
@@ -394,13 +398,12 @@
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22c-n7-NQT">
                                         <rect key="frame" x="0.0" y="625" width="394" height="80"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="cBU-It-huU"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="16"/>
                                         <state key="normal" title="Add Questions">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.24591809511184692" green="0.77864634990692139" blue="0.66666007041931152" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
                                             <action selector="addQuestionsPressed:" destination="uzG-nI-bYG" eventType="touchUpInside" id="IzG-UM-GtY"/>

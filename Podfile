@@ -9,5 +9,6 @@ target 'Diploma' do
     pod 'ChameleonFramework/Swift'
     pod 'QuizKit'
     pod 'Charts'
+    pod 'RealmSwift'
 
 end

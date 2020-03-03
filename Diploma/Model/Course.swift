@@ -7,10 +7,11 @@
 //
 
 import Foundation
-struct Course {
-    let name:String
-    let id:Int
-    let weeks:[Week]
+import RealmSwift
+class Course:Object {
+    @objc dynamic var name:String = ""
+    @objc dynamic var id:Int = 0
+    let weeks = List<Week>()
 }
 
 
