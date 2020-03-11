@@ -31,19 +31,6 @@ class AddCourseViewController: UIViewController {
             if let text = textField?.text{
                 if !text.isEmpty{
                     let newCourse = Course()
-                    let week1 = Week()
-                    week1.id = 0
-                    let week2 = Week()
-                    week1.id = 1
-                    let week3 = Week()
-                    week1.id = 2
-                    let week4 = Week()
-                    week1.id = 3
-                    let week5 = Week()
-                    week1.id = 4
-                    
-                    newCourse.weeks.append(objectsIn: [week1, week2, week3, week4, week5])
-                    
                     newCourse.name = text
                     self.save(course: newCourse)
                 }
@@ -59,6 +46,11 @@ class AddCourseViewController: UIViewController {
     func save(course: Course){
         do{
             try realm.write{
+                for n in 0...14{
+                    let week = Week()
+                    week.id = n
+                    course.weeks.append(week)
+                }
                 realm.add(course)
             }
         }catch{
@@ -104,10 +96,10 @@ extension AddCourseViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.topicCell, for: indexPath) as! TopicCell
         cell.topicLabel?.text = courses?[indexPath.row].name ?? "No courses added yet"
-        if let color = FlatMint().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(courses?.count ?? 1)){
-            cell.topicBubble?.backgroundColor = color
-            cell.topicLabel?.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
-        }
+        let color = RandomFlatColor()
+        cell.topicBubble?.backgroundColor = color
+        cell.topicLabel?.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
+        
         return cell
     }
     

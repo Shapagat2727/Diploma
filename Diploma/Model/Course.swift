@@ -8,10 +8,12 @@
 
 import Foundation
 import RealmSwift
+import ChameleonFramework
 class Course:Object {
     @objc dynamic var name:String = ""
     @objc dynamic var id:Int = 0
     let weeks = List<Week>()
+    
 }
 
 
