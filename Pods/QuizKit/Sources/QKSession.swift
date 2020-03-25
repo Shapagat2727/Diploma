@@ -69,7 +69,7 @@ public class QKSession {
     /// - Parameter question: The current question
     /// - Returns: The next question or nil if it's the last question in the list.
     public func nextQuestion(after question: QKQuestion? = nil) -> QKQuestion? {
-        guard let question = question, let index = questionChunk.index(of: question) else {
+        guard let question = question, let index = questionChunk.firstIndex(of: question) else {
             return questionChunk[0]
         }
         
@@ -97,7 +97,7 @@ public class QKSession {
     /// - Parameter question: The question to detect the progress for
     /// - Returns: The progress as a Float
     public func progress(for question: QKQuestion) -> Float {
-        guard let index = questionChunk.index(of: question) else {
+        guard let index = questionChunk.firstIndex(of: question) else {
             return 0
         }
         

@@ -37,10 +37,16 @@ class TopicViewController: UIViewController {
         
     }
     @IBAction func testButtonPressed(_ sender: UIButton) {
-        if selectedWeek?.questions.count == 10{
-            performSegue(withIdentifier: K.weekQuesionSegue, sender: self)
-        }else{
-            print("Not enough questions")
+        performSegue(withIdentifier: K.weekQuesionSegue, sender: self)
+//        if selectedWeek?.questions.count == 10{
+//            performSegue(withIdentifier: K.weekQuesionSegue, sender: self)
+//        }else{
+//            print("Not enough questions")
+//        }
+        do {
+            try QKSession.default.start()
+        } catch {
+            fatalError("Quiz started without quiz set on the session")
         }
     }
     func loadUI(){

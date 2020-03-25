@@ -29,14 +29,13 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        do {
-            try QKSession.default.start()
-        } catch {
-            fatalError("Quiz started without quiz set on the session")
-        }
+//        do {
+//            try session.start()
+//        } catch {
+//            fatalError("Quiz started without quiz set on the session")
+//        }
         updateUI()
-        self.navigationItem.setHidesBackButton(true, animated: true)
+        //self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     @IBAction func checkButtonPressed(_ sender: UIButton) {
@@ -53,7 +52,9 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
+        
         session.submit(response: response!, for: question!)
+        print(session.limit)
         //updateUI()
         if(session.nextQuestion(after: question) == nil){
             performSegue(withIdentifier: K.scoreSegue, sender: self)

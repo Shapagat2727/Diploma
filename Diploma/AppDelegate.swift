@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearance.tintColor = UIColor.white
         tabBarAppearance.tintColor = UIColor.white
         
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         do{
-            let realm = try Realm()
+            let _ = try Realm()
         }catch{
             print("Error initializing new realm, \(error)")
         }
