@@ -29,11 +29,11 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        do {
-//            try session.start()
-//        } catch {
-//            fatalError("Quiz started without quiz set on the session")
-//        }
+        do {
+            try session.start()
+        } catch {
+            fatalError("Quiz started without quiz set on the session")
+        }
         updateUI()
         //self.navigationItem.setHidesBackButton(true, animated: true)
     }
