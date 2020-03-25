@@ -29,7 +29,14 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do {
+            try QKSession.default.start()
+        } catch {
+            fatalError("Quiz started without quiz set on the session")
+        }
         updateUI()
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     @IBAction func checkButtonPressed(_ sender: UIButton) {
@@ -47,6 +54,7 @@ class QuestionViewController: UIViewController {
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         session.submit(response: response!, for: question!)
+        //updateUI()
         if(session.nextQuestion(after: question) == nil){
             performSegue(withIdentifier: K.scoreSegue, sender: self)
         }else{
@@ -60,11 +68,11 @@ class QuestionViewController: UIViewController {
             self.thirdCheck.isSelected = false
         }
         scoreLabel.text = "Score: \(session.score)"
-        
+
         if let nextQuestion = session.nextQuestion(after: question){
-            
+
             question = nextQuestion
-            
+
             questionLabel.text = question?.question
             progressBar.progress = session.progress(for:question!)
             if(question?.type == QuizKit.QKQuestionType.imageChoice){

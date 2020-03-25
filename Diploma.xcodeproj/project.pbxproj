@@ -197,8 +197,8 @@
 				8A14679E240E67E8006193F3 /* StudentCoursesViewController.swift */,
 				8A713F8E23F440B400F95710 /* HomeViewController.swift */,
 				8A713FA623F44F8700F95710 /* TopicViewController.swift */,
-				8A713FB923F59AAF00F95710 /* TestsViewController.swift */,
 				8A713FBB23F5A5A000F95710 /* QuestionViewController.swift */,
+				8A713FB923F59AAF00F95710 /* TestsViewController.swift */,
 				8AEFE33923FACFF700334D2C /* ScoreViewController.swift */,
 			);
 			path = Controllers_Student;

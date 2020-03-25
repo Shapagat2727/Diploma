@@ -69,7 +69,7 @@ extension HomeViewController: UITableViewDelegate{
             if segue.identifier==K.topicSegue{
                 let destination = segue.destination as! TopicViewController
                 if let indexPath = tableView.indexPathForSelectedRow{
-                    destination.selectedTopic = weeks?[indexPath.row]
+                    destination.selectedWeek = weeks?[indexPath.row]
     
                 }
     
