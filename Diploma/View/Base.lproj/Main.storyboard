@@ -53,17 +53,19 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HS7-NF-YFw">
                                 <rect key="frame" x="10" y="54" width="394" height="832"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bj-tA-w6K">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agv-M9-77x">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="34.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="X"/>
+                                        <connections>
+                                            <action selector="closeButtonPressed:" destination="WO0-X5-GU0" eventType="touchUpInside" id="kze-zN-vGW"/>
+                                        </connections>
+                                    </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lni-9N-7mK">
-                                        <rect key="frame" x="0.0" y="31" width="394" height="411.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="44.333333333333343" width="394" height="402.33333333333326"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAf-fM-92G">
-                                        <rect key="frame" x="0.0" y="452.33333333333331" width="394" height="9.6666666666666856"/>
+                                        <rect key="frame" x="0.0" y="456.66666666666669" width="394" height="5.3333333333333144"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -207,12 +209,11 @@
                         <outlet property="progressBar" destination="ecM-Mn-B5y" id="WtK-7p-KIv"/>
                         <outlet property="questionImageView" destination="lni-9N-7mK" id="fJE-Rp-cjm"/>
                         <outlet property="questionLabel" destination="ZAf-fM-92G" id="0Yr-Kh-9KY"/>
-                        <outlet property="scoreLabel" destination="6bj-tA-w6K" id="ZHw-0C-X4R"/>
                         <outlet property="secondCheck" destination="B9I-EH-deH" id="a3q-zs-Tsv"/>
                         <outlet property="secondOption" destination="UEi-kB-1aA" id="wwc-8i-y2J"/>
                         <outlet property="thirdCheck" destination="7Og-NY-6qu" id="8ce-kC-Ivb"/>
                         <outlet property="thirdOption" destination="3K5-e0-YQY" id="PKt-Tb-IEY"/>
-                        <segue destination="Sye-fL-gUl" kind="show" identifier="scoreSegue" id="CdB-q6-ErI"/>
+                        <segue destination="Sye-fL-gUl" kind="presentation" identifier="scoreSegue" modalPresentationStyle="fullScreen" id="CdB-q6-ErI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5JC-oF-GnI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -224,7 +225,7 @@
             <objects>
                 <viewController id="Sye-fL-gUl" customClass="ScoreViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fXb-Qk-s33">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X51-gQ-VKT">
@@ -241,6 +242,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H71-Kz-Kjh">
+                                <rect key="frame" x="356" y="46" width="30" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="Sye-fL-gUl" eventType="touchUpInside" id="iCf-k9-krY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Da7-qB-514"/>

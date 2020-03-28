@@ -24,6 +24,10 @@ class TestsViewController: UIViewController {
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
         
     }
+    
+    
+    
+    
 }
 //MARK:-TableView DataSource Methods
 extension TestsViewController: UITableViewDataSource{
@@ -52,6 +56,4 @@ extension TestsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: K.questionSegue, sender: self)
     }
-    
-
 }

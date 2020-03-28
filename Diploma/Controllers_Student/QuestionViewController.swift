@@ -16,7 +16,6 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var secondOption: UIButton!
     @IBOutlet weak var thirdOption: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var firstCheck: UIButton!
     @IBOutlet weak var secondCheck: UIButton!
     @IBOutlet weak var thirdCheck: UIButton!
@@ -38,6 +37,18 @@ class QuestionViewController: UIViewController {
         //self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
+    @IBAction func closeButtonPressed(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Are you sure?", message: "You can choose to complete the quiz immediately. You results will be nullified.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:{ action in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
+        
+    }
     @IBAction func checkButtonPressed(_ sender: UIButton) {
         updatePress(with: sender)
     }
@@ -68,7 +79,7 @@ class QuestionViewController: UIViewController {
             self.secondCheck.isSelected = false
             self.thirdCheck.isSelected = false
         }
-        scoreLabel.text = "Score: \(session.score)"
+        
 
         if let nextQuestion = session.nextQuestion(after: question){
 

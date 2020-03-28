@@ -18,4 +18,9 @@ class ScoreViewController: UIViewController {
         
     }
 
+    @IBAction func closeButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        
+    }
 }
