@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A618A5D97C5CD50C5FD1905D7C8090A7"
+               BlueprintIdentifier = "9AD912A69493E05FC93A678F00980B96"
                BuildableName = "QuizKit.framework"
                BlueprintName = "QuizKit"
                ReferencedContainer = "container:Pods.xcodeproj">

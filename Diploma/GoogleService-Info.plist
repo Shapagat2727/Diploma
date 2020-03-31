@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>575782489385-dl53lc2o88bqgkjii9ffci5408qc2ruv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.575782489385-dl53lc2o88bqgkjii9ffci5408qc2ruv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBOy1OZj8T61u69_OJtjg-hHPeuHlm2R5k</string>
+	<key>GCM_SENDER_ID</key>
+	<string>575782489385</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.shapagatbolat.Diploma</string>
+	<key>PROJECT_ID</key>
+	<string>diploma-9dc67</string>
+	<key>STORAGE_BUCKET</key>
+	<string>diploma-9dc67.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:575782489385:ios:f9c5d4f8f19d4fc4d8fb38</string>
+	<key>DATABASE_URL</key>
+	<string>https://diploma-9dc67.firebaseio.com</string>
+</dict>
+</plist>

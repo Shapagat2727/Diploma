@@ -10,5 +10,9 @@ target 'Diploma' do
     pod 'QuizKit'
     pod 'Charts'
     pod 'RealmSwift'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Core'
+    pod 'Firebase/Firestore'
+    
 
 end

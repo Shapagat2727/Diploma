@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		495EE553BEBC096BCC573F83 /* Pods_Diploma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EB6A78A30984E62CE03012 /* Pods_Diploma.framework */; };
 		8A08FF292402C1AA002C8B4D /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08FF282402C1AA002C8B4D /* StatisticsViewController.swift */; };
 		8A08FF2B2404C547002C8B4D /* AddVideoTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08FF2A2404C547002C8B4D /* AddVideoTextViewController.swift */; };
 		8A14679F240E67E8006193F3 /* StudentCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A14679E240E67E8006193F3 /* StudentCoursesViewController.swift */; };
@@ -43,6 +42,9 @@
 		8A713FB823F587AF00F95710 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A713FB623F587AF00F95710 /* TopicCell.xib */; };
 		8A713FBA23F59AAF00F95710 /* TestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FB923F59AAF00F95710 /* TestsViewController.swift */; };
 		8A713FBC23F5A5A000F95710 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FBB23F5A5A000F95710 /* QuestionViewController.swift */; };
+		8A798F7C242F613C0057BE07 /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A798F7B242F613C0057BE07 /* StartingViewController.swift */; };
+		8A7C8A3C243370DC00C276C8 /* Pods_Diploma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EB6A78A30984E62CE03012 /* Pods_Diploma.framework */; };
+		8A7C8A6B243375EC00C276C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AB9DC0524331C5400A4A54A /* GoogleService-Info.plist */; };
 		8AB4D55323FD733400A9FAC4 /* AddCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB4D55223FD733400A9FAC4 /* AddCourseViewController.swift */; };
 		8AB4D55523FD804C00A9FAC4 /* WeeksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB4D55423FD804C00A9FAC4 /* WeeksViewController.swift */; };
 		8ADFFB9923FE2ABD00ADA7CF /* ExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFFB9723FE2ABD00ADA7CF /* ExpandableTableViewCell.swift */; };
@@ -92,8 +94,18 @@
 		8A713FB623F587AF00F95710 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
 		8A713FB923F59AAF00F95710 /* TestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsViewController.swift; sourceTree = "<group>"; };
 		8A713FBB23F5A5A000F95710 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		8A798F7B242F613C0057BE07 /* StartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
+		8A7C8A3124336F3400C276C8 /* ChameleonFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ChameleonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A7C8A3524336F7B00C276C8 /* QuizKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A7C8A3F2433712A00C276C8 /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
+		8A7C8A402433714400C276C8 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A7C8A442433714900C276C8 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A7C8A472433715800C276C8 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A7C8A4A2433715F00C276C8 /* ChameleonFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ChameleonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A7C8A4D2433716300C276C8 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB4D55223FD733400A9FAC4 /* AddCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
 		8AB4D55423FD804C00A9FAC4 /* WeeksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksViewController.swift; sourceTree = "<group>"; };
+		8AB9DC0524331C5400A4A54A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8ADFFB9723FE2ABD00ADA7CF /* ExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCell.swift; sourceTree = "<group>"; };
 		8ADFFB9823FE2ABD00ADA7CF /* ExpandableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableTableViewCell.xib; sourceTree = "<group>"; };
 		8ADFFB9B23FE312300ADA7CF /* AddContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContentViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				495EE553BEBC096BCC573F83 /* Pods_Diploma.framework in Frameworks */,
+				8A7C8A3C243370DC00C276C8 /* Pods_Diploma.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +168,7 @@
 			children = (
 				8A713F8A23F440B400F95710 /* AppDelegate.swift */,
 				8A713F8C23F440B400F95710 /* SceneDelegate.swift */,
+				8A798F7B242F613C0057BE07 /* StartingViewController.swift */,
 				8A52552E240A5ED2004EB8E5 /* Open_Sans */,
 				8AB4D55123FD730100A9FAC4 /* Controllers_Teacher */,
 				8A713FA323F441FF00F95710 /* Model */,
@@ -164,6 +177,7 @@
 				8A713F9623F440B600F95710 /* Assets.xcassets */,
 				8A713F9823F440B600F95710 /* LaunchScreen.storyboard */,
 				8A713F9B23F440B600F95710 /* Info.plist */,
+				8AB9DC0524331C5400A4A54A /* GoogleService-Info.plist */,
 				8A713F9323F440B400F95710 /* Diploma.xcdatamodeld */,
 			);
 			path = Diploma;
@@ -235,6 +249,14 @@
 		95AD64AA1437C76D8DF58BBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A7C8A4D2433716300C276C8 /* Charts.framework */,
+				8A7C8A4A2433715F00C276C8 /* ChameleonFramework.framework */,
+				8A7C8A472433715800C276C8 /* SwiftyJSON.framework */,
+				8A7C8A442433714900C276C8 /* Realm.framework */,
+				8A7C8A402433714400C276C8 /* RealmSwift.framework */,
+				8A7C8A3F2433712A00C276C8 /* Podfile.lock */,
+				8A7C8A3524336F7B00C276C8 /* QuizKit.framework */,
+				8A7C8A3124336F3400C276C8 /* ChameleonFramework.framework */,
 				42EB6A78A30984E62CE03012 /* Pods_Diploma.framework */,
 			);
 			name = Frameworks;
@@ -300,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A7C8A6B243375EC00C276C8 /* GoogleService-Info.plist in Resources */,
 				8A525540240A5ED3004EB8E5 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				8A525541240A5ED3004EB8E5 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				8A52553E240A5ED3004EB8E5 /* OpenSans-LightItalic.ttf in Resources */,
@@ -331,9 +354,44 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Diploma/Pods-Diploma-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Diploma/Pods-Diploma-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/QuizKit/QuizKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/abseil/absl.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Diploma/Pods-Diploma-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuizKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/absl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -377,6 +435,7 @@
 				8A525527240A19D7004EB8E5 /* TeacherStatisticsViewController.swift in Sources */,
 				8A713FBA23F59AAF00F95710 /* TestsViewController.swift in Sources */,
 				8A713F8F23F440B400F95710 /* HomeViewController.swift in Sources */,
+				8A798F7C242F613C0057BE07 /* StartingViewController.swift in Sources */,
 				8A713FB723F587AF00F95710 /* TopicCell.swift in Sources */,
 				8AF87DA5240B9BDD004D23E4 /* Question.swift in Sources */,
 				8AEFE33A23FACFF700334D2C /* ScoreViewController.swift in Sources */,

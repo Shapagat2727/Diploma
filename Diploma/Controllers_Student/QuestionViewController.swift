@@ -19,7 +19,6 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var firstCheck: UIButton!
     @IBOutlet weak var secondCheck: UIButton!
     @IBOutlet weak var thirdCheck: UIButton!
-    
     @IBOutlet weak var questionImageView: UIImageView!
     
     var session = QKSession.default
@@ -34,20 +33,10 @@ class QuestionViewController: UIViewController {
             fatalError("Quiz started without quiz set on the session")
         }
         updateUI()
-        //self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
-        
-        let alert = UIAlertController(title: "Are you sure?", message: "You can choose to complete the quiz immediately. You results will be nullified.", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:{ action in
-            self.dismiss(animated: true, completion: nil)
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-        self.present(alert, animated: true)
-        
+        closeAlert()
     }
     @IBAction func checkButtonPressed(_ sender: UIButton) {
         updatePress(with: sender)
@@ -63,28 +52,42 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-        
-        session.submit(response: response!, for: question!)
-        print(session.limit)
-        //updateUI()
-        if(session.nextQuestion(after: question) == nil){
-            performSegue(withIdentifier: K.scoreSegue, sender: self)
+        if (response == ""){
+            nextAlert()
         }else{
-            updateUI()
+            session.submit(response: response!, for: question!)
+            if(session.nextQuestion(after: question) == nil){
+                performSegue(withIdentifier: K.scoreSegue, sender: self)
+            }else{
+                updateUI()
+            }
         }
     }
-    @objc func updateUI(){
+    //MARK:- Custom Functions
+    func nextAlert(){
+        let alert = UIAlertController(title: "Can't go further", message: "Please choose a variant to continue", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+    }
+    func closeAlert(){
+        let alert = UIAlertController(title: "Are you sure?", message: "You can choose to complete the quiz immediately. You results will be nullified.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:{ action in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
+    }
+    func updateUI(){
         DispatchQueue.main.async {
             self.firstCheck.isSelected = false
             self.secondCheck.isSelected = false
             self.thirdCheck.isSelected = false
         }
-        
-
         if let nextQuestion = session.nextQuestion(after: question){
-
             question = nextQuestion
-
+            response = ""
             questionLabel.text = question?.question
             progressBar.progress = session.progress(for:question!)
             if(question?.type == QuizKit.QKQuestionType.imageChoice){
