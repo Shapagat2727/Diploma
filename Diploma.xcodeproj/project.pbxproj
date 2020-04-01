@@ -30,7 +30,7 @@
 		8A713FA923F4506B00F95710 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FA823F4506B00F95710 /* Topic.swift */; };
 		8A713FB723F587AF00F95710 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FB523F587AF00F95710 /* TopicCell.swift */; };
 		8A713FB823F587AF00F95710 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A713FB623F587AF00F95710 /* TopicCell.xib */; };
-		8A713FBA23F59AAF00F95710 /* TestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FB923F59AAF00F95710 /* TestsViewController.swift */; };
+		8A713FBA23F59AAF00F95710 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FB923F59AAF00F95710 /* CatalogViewController.swift */; };
 		8A713FBC23F5A5A000F95710 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A713FBB23F5A5A000F95710 /* QuestionViewController.swift */; };
 		8A798F7C242F613C0057BE07 /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A798F7B242F613C0057BE07 /* StartingViewController.swift */; };
 		8A7C8A3C243370DC00C276C8 /* Pods_Diploma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EB6A78A30984E62CE03012 /* Pods_Diploma.framework */; };
@@ -82,7 +82,7 @@
 		8A713FA823F4506B00F95710 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		8A713FB523F587AF00F95710 /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 		8A713FB623F587AF00F95710 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
-		8A713FB923F59AAF00F95710 /* TestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsViewController.swift; sourceTree = "<group>"; };
+		8A713FB923F59AAF00F95710 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		8A713FBB23F5A5A000F95710 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		8A798F7B242F613C0057BE07 /* StartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
 		8A7C8A3124336F3400C276C8 /* ChameleonFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ChameleonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,10 +164,10 @@
 				8A713FA223F441EE00F95710 /* Controllers_Student */,
 				8A713FA123F441E700F95710 /* View */,
 				8A713F9623F440B600F95710 /* Assets.xcassets */,
-				8A713F9823F440B600F95710 /* LaunchScreen.storyboard */,
 				8A713F9B23F440B600F95710 /* Info.plist */,
-				8AB9DC0524331C5400A4A54A /* GoogleService-Info.plist */,
 				8A713F9323F440B400F95710 /* Diploma.xcdatamodeld */,
+				8AB9DC0524331C5400A4A54A /* GoogleService-Info.plist */,
+				8A713F9823F440B600F95710 /* LaunchScreen.storyboard */,
 			);
 			path = Diploma;
 			sourceTree = "<group>";
@@ -193,7 +193,7 @@
 				8A713F8E23F440B400F95710 /* HomeViewController.swift */,
 				8A713FA623F44F8700F95710 /* TopicViewController.swift */,
 				8A713FBB23F5A5A000F95710 /* QuestionViewController.swift */,
-				8A713FB923F59AAF00F95710 /* TestsViewController.swift */,
+				8A713FB923F59AAF00F95710 /* CatalogViewController.swift */,
 				8AEFE33923FACFF700334D2C /* ScoreViewController.swift */,
 			);
 			path = Controllers_Student;
@@ -400,7 +400,7 @@
 				8A713FBC23F5A5A000F95710 /* QuestionViewController.swift in Sources */,
 				8A08FF292402C1AA002C8B4D /* StatisticsViewController.swift in Sources */,
 				8A525527240A19D7004EB8E5 /* TeacherStatisticsViewController.swift in Sources */,
-				8A713FBA23F59AAF00F95710 /* TestsViewController.swift in Sources */,
+				8A713FBA23F59AAF00F95710 /* CatalogViewController.swift in Sources */,
 				8A713F8F23F440B400F95710 /* HomeViewController.swift in Sources */,
 				8A798F7C242F613C0057BE07 /* StartingViewController.swift in Sources */,
 				8A713FB723F587AF00F95710 /* TopicCell.swift in Sources */,
