@@ -96,7 +96,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbE-Xe-5Ni">
-                                                <rect key="frame" x="66" y="0.0" width="328" height="80"/>
+                                                <rect key="frame" x="66" y="0.0" width="328.00000000000006" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="DKj-Z5-a4o"/>
                                                 </constraints>
@@ -129,7 +129,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEi-kB-1aA">
-                                                <rect key="frame" x="66" y="0.0" width="328" height="80"/>
+                                                <rect key="frame" x="66" y="0.0" width="328.00000000000006" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="TSp-we-YbK"/>
                                                 </constraints>
@@ -162,7 +162,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3K5-e0-YQY">
-                                                <rect key="frame" x="66" y="0.0" width="328" height="80"/>
+                                                <rect key="frame" x="66" y="0.0" width="328.00000000000006" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="rUN-rK-eUh"/>
                                                 </constraints>
@@ -195,7 +195,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xre-gX-za3">
-                                                <rect key="frame" x="66" y="0.0" width="328" height="80"/>
+                                                <rect key="frame" x="66" y="0.0" width="328.00000000000006" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="BWr-zr-fh9"/>
                                                 </constraints>
@@ -366,6 +366,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.left.square" catalog="system" id="u2M-vf-Eyx">
                             <color key="tintColor" red="1" green="0.9999822974" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="logoutPressed:" destination="IBQ-5P-XZB" id="KPL-sF-tXX"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -837,6 +840,9 @@
                     <navigationItem key="navigationItem" title="Courses" id="qoV-GJ-CPD">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.left.square" catalog="system" id="u5U-VY-Nv0">
                             <color key="tintColor" red="1" green="0.9999822974" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="logoutPressed:" destination="IbN-Wm-rEY" id="Tcg-QP-0lx"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

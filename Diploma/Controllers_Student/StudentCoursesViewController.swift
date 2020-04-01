@@ -9,6 +9,7 @@
 import UIKit
 import ChameleonFramework
 import RealmSwift
+import Firebase
 class StudentCoursesViewController: UIViewController {
     
     let realm = try! Realm()
@@ -26,6 +27,18 @@ class StudentCoursesViewController: UIViewController {
         courses = realm.objects(Course.self)
         self.tableView.reloadData()
     }
+    
+    
+    @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
+          let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+            dismiss(animated: true, completion: nil)
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+    }
+    
     
     
 }

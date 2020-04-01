@@ -9,6 +9,7 @@
 import UIKit
 import ChameleonFramework
 import RealmSwift
+import Firebase
 class AddCourseViewController: UIViewController {
     let realm = try! Realm()
     @IBOutlet weak var tableView: UITableView!
@@ -23,6 +24,7 @@ class AddCourseViewController: UIViewController {
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
         
     }
+    
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField:UITextField?
@@ -42,6 +44,15 @@ class AddCourseViewController: UIViewController {
         }
         alert.addAction(action)
         present(alert, animated: true)
+    }
+    @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
+          let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+            dismiss(animated: true, completion: nil)
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
     }
     func save(course: Course){
         do{
