@@ -30,13 +30,8 @@ struct K{
     static let barSegue = "toBarChartSegue"
     static let largeCell:CGFloat = 240
     static let mediumCell:CGFloat = 120
-//    static let weeks:[Week] = [Week(id: 0, video:"", textContent: "", tests: []),
-//                               Week(id: 1, video:"", textContent: "", tests: []),
-//                               Week(id: 2, video:"", textContent: "", tests: []),
-//                               Week(id: 3, video:"", textContent: "", tests: []),
-//                               Week(id: 4, video:"", textContent: "", tests: []),
-//                               Week(id: 5, video:"", textContent: "", tests: []),
-//                               Week(id: 6, video:"", textContent: "", tests: []),
-//                               Week(id: 7, video:"", textContent: "", tests: [])]
-//
+    static let loginStudentSegue = "studentSegue"
+    static let loginTeacherSegue = "teacherSegue"
+    
+
 }

@@ -9,15 +9,13 @@
 import UIKit
 import Firebase
 class StartingViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     
     @IBAction func loginPressed(_ sender: UIButton) {
@@ -28,11 +26,18 @@ class StartingViewController: UIViewController {
                     alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }else{
-                    print("Will Log In")
-                    //Navigate to chat viewcontroller
-                    //self.performSegue(withIdentifier: K.loginSegue, sender: self)
+                    
+                    if let range = email.range(of: "@") {
+                        let endString = email[range.upperBound...]
+                        if (endString == "stu.sdu.edu.kz"){
+                            self.performSegue(withIdentifier: K.loginStudentSegue, sender: self)
+                        }else if (endString == "sdu.edu.kz"){
+                            self.performSegue(withIdentifier: K.loginTeacherSegue, sender: self)
+                        }else{
+                            print("Undefined user")
+                        }
+                    }
                 }
-                
             }
         }
         
@@ -40,14 +45,6 @@ class StartingViewController: UIViewController {
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }

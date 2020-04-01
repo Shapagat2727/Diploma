@@ -591,22 +591,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZ0-uR-shd">
-                                <rect key="frame" x="33" y="742" width="170" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Student"/>
-                                <connections>
-                                    <segue destination="yED-Cb-2kk" kind="presentation" modalPresentationStyle="fullScreen" id="coK-gX-S08"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RM-k6-DAm">
-                                <rect key="frame" x="211" y="742" width="170" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Teacher"/>
-                                <connections>
-                                    <segue destination="eNr-1t-nah" kind="presentation" modalPresentationStyle="fullScreen" id="uDI-ae-vAU"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Proceed with your" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpK-FN-9tA">
                                 <rect key="frame" x="33" y="296" width="204" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -637,8 +621,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yax-La-6lA">
-                                <rect key="frame" x="33" y="418" width="57" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yax-La-6lA">
+                                <rect key="frame" x="33" y="418" width="41" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -670,11 +654,13 @@
                     <connections>
                         <outlet property="emailTextfield" destination="T90-PO-8tX" id="z6M-A2-LHU"/>
                         <outlet property="passwordTextfield" destination="agl-Xr-1Tn" id="0Sm-5N-nbV"/>
+                        <segue destination="yED-Cb-2kk" kind="presentation" identifier="studentSegue" modalPresentationStyle="fullScreen" id="RMh-J9-uxI"/>
+                        <segue destination="eNr-1t-nah" kind="presentation" identifier="teacherSegue" modalPresentationStyle="fullScreen" id="sH7-Uf-Tep"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOn-w3-CV2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1830.4347826086957" y="-156.02678571428569"/>
+            <point key="canvasLocation" x="-3264" y="-242"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zZB-Xa-YUl">
