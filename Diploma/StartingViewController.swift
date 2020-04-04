@@ -8,15 +8,30 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 class StartingViewController: UIViewController {
-    
+    let realm = try! Realm()
+    var students:Results<Student>?
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
-    
+    var found:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadStudents()
     }
-    
+    func loadStudents(){
+        students = realm.objects(Student.self)
+    }
+    func save(student: Student){
+        do{try realm.write{
+            realm.add(student)
+            }
+            
+        }catch{
+            print("Error saving course, \(error)")
+        }
+        
+    }
     
     @IBAction func loginPressed(_ sender: UIButton) {
         if let email = emailTextfield.text, let password = passwordTextfield.text{
@@ -29,8 +44,26 @@ class StartingViewController: UIViewController {
                     
                     if let range = email.range(of: "@") {
                         let endString = email[range.upperBound...]
+                        let id = Int(String(email.prefix(9)))
+                        
                         if (endString == "stu.sdu.edu.kz"){
+                            
                             self.performSegue(withIdentifier: K.loginStudentSegue, sender: self)
+                            for student in self.students!{
+                                if(student.id==id){
+                                    self.found = true
+                                }
+                            }
+                            if(!self.found){
+                                let newStudent = Student()
+                                newStudent.firstName = "NAME"
+                                newStudent.lastName = "SURNAME"
+                                newStudent.id = id!
+                                self.save(student: newStudent)
+                            }
+                            
+                            
+                            
                         }else if (endString == "sdu.edu.kz"){
                             self.performSegue(withIdentifier: K.loginTeacherSegue, sender: self)
                         }else{

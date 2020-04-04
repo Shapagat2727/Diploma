@@ -26,6 +26,7 @@ class AddContentViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: K.newQuestionNibName, bundle: nil), forCellReuseIdentifier: K.newQuestionCell)
     }
+    
     func loadQuiz()->[Dictionary<String, Any>] {
         
         var jsonArray:[Dictionary<String, Any>] = []
@@ -99,6 +100,7 @@ extension AddContentViewController: UITableViewDataSource{
         cell.selectedWeek = self.selectedWeek
         return cell
     }
+    
     
     
 }
