@@ -9,15 +9,18 @@
 import UIKit
 import RealmSwift
 import ChameleonFramework
-
+import Firebase
 class CatalogViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let realm = try! Realm()
     var courses:Results<Course>?
+    let currentUser = Auth.auth().currentUser!
+    var currentStudent:Results<Student>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentStudent = realm.objects(Student.self).filter("id == %@", Int(String((currentUser.email?.prefix(9))!))!)
         loadCourses()
         tableView.delegate = self
         tableView.dataSource = self
@@ -60,13 +63,25 @@ extension CatalogViewController: UITableViewDelegate{
         return K.largeCell;
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        registerAlert(with: courses?[indexPath.row].name ?? "Course Name")
+        registerAlert(with: (courses?[indexPath.row])!)
     }
-    func registerAlert(with selectedCourse: String){
-        let alert = UIAlertController(title: selectedCourse, message: "Want to register to this course?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Register", style: .default, handler:nil))
+    func registerAlert(with selectedCourse: Course){
+        let alert = UIAlertController(title: selectedCourse.name, message: "Want to register to this course?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Register", style: .default, handler:{ action in
+            self.save(course: selectedCourse)
+            
+        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true)
+    }
+    func save(course: Course){
+        do{
+            try realm.write{
+                currentStudent![0].courses.append(course)
+            }
+        }catch{
+            print("Error saving course, \(error)")
+        }
     }
 }
 

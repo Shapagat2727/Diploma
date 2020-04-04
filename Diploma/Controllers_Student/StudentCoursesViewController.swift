@@ -13,9 +13,10 @@ import Firebase
 class StudentCoursesViewController: UIViewController {
     
     let realm = try! Realm()
-    var courses:Results<Course>?
+    var courses:List<Course>?
     @IBOutlet weak var tableView: UITableView!
-    
+    let currentUser = Auth.auth().currentUser!
+    var currentStudent:Results<Student>?
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCourses()
@@ -24,7 +25,8 @@ class StudentCoursesViewController: UIViewController {
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
     }
     func loadCourses(){
-        courses = realm.objects(Course.self)
+        currentStudent = realm.objects(Student.self).filter("id == %@", Int(String((currentUser.email?.prefix(9))!))!)
+        courses = currentStudent![0].courses
         self.tableView.reloadData()
     }
     
