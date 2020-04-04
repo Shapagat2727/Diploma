@@ -38,6 +38,7 @@
 		8A7C8A6B243375EC00C276C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AB9DC0524331C5400A4A54A /* GoogleService-Info.plist */; };
 		8AB4D55323FD733400A9FAC4 /* AddCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB4D55223FD733400A9FAC4 /* AddCourseViewController.swift */; };
 		8AB4D55523FD804C00A9FAC4 /* WeeksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB4D55423FD804C00A9FAC4 /* WeeksViewController.swift */; };
+		8AB7A4F82438423300C462C9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB7A4F72438423300C462C9 /* Extensions.swift */; };
 		8ADFFB9923FE2ABD00ADA7CF /* ExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFFB9723FE2ABD00ADA7CF /* ExpandableTableViewCell.swift */; };
 		8ADFFB9A23FE2ABD00ADA7CF /* ExpandableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ADFFB9823FE2ABD00ADA7CF /* ExpandableTableViewCell.xib */; };
 		8ADFFB9C23FE312300ADA7CF /* AddContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFFB9B23FE312300ADA7CF /* AddContentViewController.swift */; };
@@ -97,6 +98,7 @@
 		8A7C8A4D2433716300C276C8 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB4D55223FD733400A9FAC4 /* AddCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
 		8AB4D55423FD804C00A9FAC4 /* WeeksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksViewController.swift; sourceTree = "<group>"; };
+		8AB7A4F72438423300C462C9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8AB9DC0524331C5400A4A54A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8ADFFB9723FE2ABD00ADA7CF /* ExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCell.swift; sourceTree = "<group>"; };
 		8ADFFB9823FE2ABD00ADA7CF /* ExpandableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableTableViewCell.xib; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				8A38256824349A0600EB642E /* Student.swift */,
 				8A713FA423F4421A00F95710 /* Constants.swift */,
 				8A713FA823F4506B00F95710 /* Topic.swift */,
+				8AB7A4F72438423300C462C9 /* Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				8A14679F240E67E8006193F3 /* StudentCoursesViewController.swift in Sources */,
 				8A52551F2408B5BC004EB8E5 /* TestViewController.swift in Sources */,
 				8A713FA923F4506B00F95710 /* Topic.swift in Sources */,
+				8AB7A4F82438423300C462C9 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

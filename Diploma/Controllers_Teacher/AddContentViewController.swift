@@ -8,43 +8,74 @@
 
 import UIKit
 import RealmSwift
+import SwiftyJSON
+
 class AddContentViewController: UIViewController {
-    var questions = ["Question1", "Question2", "Question3", "Question4", "Question5", "Question6", "Question7", "Question8", "Question9", "Question10", "Question11", "Question12", "Question13","Question14", "Question15"]
+    
     var selectedWeek:Week?
     @IBOutlet weak var tableView: UITableView!
     var selectedIndex = -1
-    var isCollapsed = false
+    //    var isCollapsed = false
+    var questions:[Dictionary<String, Any>] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
+        questions = loadQuiz()
+        //tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: K.newQuestionNibName, bundle: nil), forCellReuseIdentifier: K.newQuestionCell)
     }
+    func loadQuiz()->[Dictionary<String, Any>] {
+        
+        var jsonArray:[Dictionary<String, Any>] = []
+        
+        if (selectedWeek?.questions.count == 10){
+            for n in 0...9{
+                let question = selectedWeek?.questions[n].toDictionary()
+                let array = Array(selectedWeek?.questions[n].toDictionary()["responses"] as! List<String>)
+                var jsonObject: [String: Any] = [:]
+                jsonObject["question"] = "\(question!["question"]!)"
+                jsonObject["category"] =  "\(question!["category"]!)"
+                jsonObject["type"] =  "\(question!["type"]!)"
+                jsonObject["correct_response"] = question!["correct_response"]!
+                jsonObject["responses"] = array
+                jsonArray.append(jsonObject)
+            }
+        }
+        return jsonArray
+    }
     
+    func json(from object:Any) -> String? {
+        guard let data = try? JSONSerialization.data(withJSONObject: object, options: []) else {
+            return nil
+        }
+        return String(data: data, encoding: String.Encoding.utf8)
+    }
 }
 
 //MARK:-Table View Delegate Methods
-extension AddContentViewController: UITableViewDelegate{
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if selectedIndex == indexPath.row && isCollapsed{
-//            return K.largeCell
-//        }else{
-//            return K.mediumCell
+//extension AddContentViewController: UITableViewDelegate{
+//
+//        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//            if selectedIndex == indexPath.row && isCollapsed{
+//                return K.largeCell
+//            }else{
+//                return K.mediumCell
+//            }
 //        }
-//    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if selectedIndex == indexPath.row{
-            isCollapsed = !isCollapsed
-        }else{
-            isCollapsed = true
-        }
-        selectedIndex = indexPath.row
-        tableView.reloadRows(at: [indexPath], with: .automatic)
-    }
-    
-}
+//        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//            tableView.deselectRow(at: indexPath, animated: true)
+//            if selectedIndex == indexPath.row{
+//                isCollapsed = !isCollapsed
+//            }else{
+//                isCollapsed = true
+//            }
+//            selectedIndex = indexPath.row
+//            tableView.reloadRows(at: [indexPath], with: .automatic)
+//        }
+//
+//}
 
 //MARK:-Table View Data Source Methods
 extension AddContentViewController: UITableViewDataSource{
@@ -54,8 +85,16 @@ extension AddContentViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.newQuestionCell, for: indexPath) as! ExpandableTableViewCell
-        cell.questionLabel.text = questions[indexPath.row]
-//        cell.questionView.frame.size.height = 20
+        cell.questionLabel.text = "Question \(indexPath.row + 1)"
+        cell.questionTitle.text = questions[indexPath.row]["question"] as? String
+        if let array = questions[indexPath.row]["responses"] as? [String]{
+            cell.variantA.text = array[0]
+            cell.variantB.text = array[1]
+            cell.variantC.text = array[2]
+            cell.variantD.text = array[3]
+        }
+        
+        //        cell.questionView.frame.size.height = 20
         cell.index = indexPath.row
         cell.selectedWeek = self.selectedWeek
         return cell
@@ -63,3 +102,6 @@ extension AddContentViewController: UITableViewDataSource{
     
     
 }
+
+
+
