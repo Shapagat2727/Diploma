@@ -13,8 +13,9 @@ import Firebase
 class AddCourseViewController: UIViewController {
     let realm = try! Realm()
     @IBOutlet weak var tableView: UITableView!
-    var courses:Results<Course>?
-    
+    var courses:List<Course>?
+    let currentUser = Auth.auth().currentUser!
+    var currentInstrucor:Results<Instructor>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class AddCourseViewController: UIViewController {
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
         
     }
+   
     
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -62,7 +64,7 @@ class AddCourseViewController: UIViewController {
                     week.id = n
                     course.weeks.append(week)
                 }
-                realm.add(course)
+                currentInstrucor![0].courses.append(course)
             }
         }catch{
             print("Error saving course, \(error)")
@@ -70,8 +72,14 @@ class AddCourseViewController: UIViewController {
         self.tableView.reloadData()
     }
     func loadCourses(){
-        courses = realm.objects(Course.self)
-        self.tableView.reloadData()
+        if let range = currentUser.email?.range(of: "@") {
+            let beginString = currentUser.email?[..<range.lowerBound]
+            currentInstrucor = realm.objects(Instructor.self).filter("id == %@", String(beginString!))
+           
+            courses = currentInstrucor![0].courses
+            self.tableView.reloadData()
+        }
+        
     }
     
 }

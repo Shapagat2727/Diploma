@@ -75,12 +75,19 @@ extension CatalogViewController: UITableViewDelegate{
         self.present(alert, animated: true)
     }
     func save(course: Course){
-        do{
-            try realm.write{
-                currentStudent![0].courses.append(course)
+        if(currentStudent![0].courses.filter("name == '\(course.name)'").count==0){
+            do{
+                try realm.write{
+                    currentStudent![0].courses.append(course)
+                }
+            }catch{
+                print("Error saving course, \(error)")
             }
-        }catch{
-            print("Error saving course, \(error)")
+        }else{
+            let alert = UIAlertController(title: course.name, message: "You've already registered to this course", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
         }
     }
 }

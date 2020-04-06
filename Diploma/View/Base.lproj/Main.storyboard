@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qGA-8C-vVS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qGA-8C-vVS">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,16 +64,16 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lni-9N-7mK">
-                                        <rect key="frame" x="0.0" y="44" width="394" height="316.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="44" width="394" height="317.66666666666669"/>
                                     </imageView>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ecM-Mn-B5y">
-                                        <rect key="frame" x="0.0" y="370.33333333333331" width="394" height="10"/>
+                                        <rect key="frame" x="0.0" y="371.66666666666669" width="394" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="cJX-H8-mgw"/>
                                         </constraints>
                                     </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAf-fM-92G">
-                                        <rect key="frame" x="0.0" y="390.33333333333331" width="394" height="1.6666666666666856"/>
+                                        <rect key="frame" x="0.0" y="391.66666666666669" width="394" height="0.33333333333331439"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -529,7 +529,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EJ9-9s-8IS"/>
                     </view>
-                    <navigationItem key="navigationItem" id="DaB-ZL-1Sh"/>
+                    <navigationItem key="navigationItem" id="DaB-ZL-1Sh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1fV-Ky-rQf">
+                            <connections>
+                                <action selector="addQuestionPressed:" destination="0oK-UO-pMw" id="h9z-9I-dCf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Nsq-hx-pT0" id="lYg-kx-wpz"/>
                     </connections>
@@ -611,7 +617,7 @@
                                 <rect key="frame" x="33" y="205" width="128" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="160107080@stu.sdu.edu.kz" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T90-PO-8tX">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="teacher.instructor@sdu.edu.kz" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T90-PO-8tX">
                                 <rect key="frame" x="33" y="447" width="348" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1025,15 +1031,15 @@
     </scenes>
     <resources>
         <image name="Rectangle" width="322" height="68"/>
-        <image name="arrow.left.square" catalog="system" width="64" height="56"/>
-        <image name="chart.pie.fill" catalog="system" width="64" height="62"/>
-        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="arrow.left.square" catalog="system" width="128" height="114"/>
+        <image name="chart.pie.fill" catalog="system" width="128" height="124"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="moodle-logo-white" width="964" height="378"/>
-        <image name="person.fill" catalog="system" width="64" height="60"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="radio" width="512" height="512"/>
         <image name="rec" width="512" height="512"/>
-        <image name="rectangle.stack.fill.badge.plus" catalog="system" width="64" height="54"/>
+        <image name="rectangle.stack.fill.badge.plus" catalog="system" width="128" height="110"/>
         <image name="v2" width="1070" height="770"/>
-        <image name="video.badge.plus.fill" catalog="system" width="64" height="40"/>
+        <image name="video.badge.plus.fill" catalog="system" width="128" height="80"/>
     </resources>
 </document>

@@ -40,6 +40,10 @@ class StudentCoursesViewController: UIViewController {
           print ("Error signing out: %@", signOutError)
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     
     
     

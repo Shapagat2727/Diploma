@@ -12,19 +12,37 @@ import RealmSwift
 class StartingViewController: UIViewController {
     let realm = try! Realm()
     var students:Results<Student>?
+    var instructors:Results<Instructor>?
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     var found:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadStudents()
+        loadUsers()
     }
-    func loadStudents(){
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        found = false
+        emailTextfield.text = ""
+        passwordTextfield.text = ""
+    }
+    func loadUsers(){
         students = realm.objects(Student.self)
+        instructors = realm.objects(Instructor.self)
     }
-    func save(student: Student){
+    func saveStudent(student: Student){
         do{try realm.write{
             realm.add(student)
+            }
+            
+        }catch{
+            print("Error saving course, \(error)")
+        }
+        
+    }
+    func saveInstructor(instructor: Instructor){
+        do{try realm.write{
+            realm.add(instructor)
             }
             
         }catch{
@@ -44,27 +62,16 @@ class StartingViewController: UIViewController {
                     
                     if let range = email.range(of: "@") {
                         let endString = email[range.upperBound...]
-                        let id = Int(String(email.prefix(9)))
+                        let beginString = email[..<range.lowerBound]
+                        let id = Int(beginString)
                         
                         if (endString == "stu.sdu.edu.kz"){
-                            
+                            self.checkStudent(with: id!)
                             self.performSegue(withIdentifier: K.loginStudentSegue, sender: self)
-                            for student in self.students!{
-                                if(student.id==id){
-                                    self.found = true
-                                }
-                            }
-                            if(!self.found){
-                                let newStudent = Student()
-                                newStudent.firstName = "NAME"
-                                newStudent.lastName = "SURNAME"
-                                newStudent.id = id!
-                                self.save(student: newStudent)
-                            }
                             
-                            
-                            
+    
                         }else if (endString == "sdu.edu.kz"){
+                            self.checkInstructor(with: String(beginString))
                             self.performSegue(withIdentifier: K.loginTeacherSegue, sender: self)
                         }else{
                             print("Undefined user")
@@ -73,10 +80,36 @@ class StartingViewController: UIViewController {
                 }
             }
         }
-        
-        
-        
     }
+    func checkStudent(with id : Int){
+        for student in self.students!{
+            if(student.id==id){
+                self.found = true
+            }
+        }
+        if(!self.found){
+            let newStudent = Student()
+            newStudent.firstName = "NAME"
+            newStudent.lastName = "SURNAME"
+            newStudent.id = id
+            self.saveStudent(student: newStudent)
+        }
+    }
+    func checkInstructor(with id : String){
+        for instructor in self.instructors!{
+            if(instructor.id==id){
+                self.found = true
+            }
+        }
+        if(!self.found){
+            let newInstructor = Instructor()
+            newInstructor.firstName = "NAME"
+            newInstructor.lastName = "SURNAME"
+            newInstructor.id = id
+            self.saveInstructor(instructor: newInstructor)
+        }
+    }
+    
     
     
     

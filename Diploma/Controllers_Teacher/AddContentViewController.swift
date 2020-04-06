@@ -11,7 +11,7 @@ import RealmSwift
 import SwiftyJSON
 
 class AddContentViewController: UIViewController {
-    
+    let realm = try! Realm()
     var selectedWeek:Week?
     @IBOutlet weak var tableView: UITableView!
     var selectedIndex = -1
@@ -27,6 +27,23 @@ class AddContentViewController: UIViewController {
         tableView.register(UINib(nibName: K.newQuestionNibName, bundle: nil), forCellReuseIdentifier: K.newQuestionCell)
     }
     
+    @IBAction func addQuestionPressed(_ sender: UIBarButtonItem) {
+        let newQuestion = Question()
+        newQuestion.category = "Category_Name"
+        newQuestion.question = ""
+        newQuestion.responses.append(objectsIn: ["","","",""])
+        newQuestion.correct_response = 0
+        newQuestion.type = "multiple_choice"
+        
+        do{
+            try realm.write{
+                selectedWeek?.questions.append(newQuestion)
+            }
+        }catch{
+            print("error  saving question \(error)")
+        }
+        self.tableView.reloadData()
+    }
     func loadQuiz()->[Dictionary<String, Any>] {
         
         var jsonArray:[Dictionary<String, Any>] = []
@@ -94,7 +111,7 @@ extension AddContentViewController: UITableViewDataSource{
             cell.variantC.text = array[2]
             cell.variantD.text = array[3]
         }
-        
+      
         //        cell.questionView.frame.size.height = 20
         cell.index = indexPath.row
         cell.selectedWeek = self.selectedWeek
