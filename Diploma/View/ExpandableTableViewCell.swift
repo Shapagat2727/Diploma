@@ -33,27 +33,21 @@ class ExpandableTableViewCell: UITableViewCell {
         
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
+  
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        //change the question don't add a new one
+
         questionView.backgroundColor = FlatGreen()
-        
-        let newQuestion = Question()
-        newQuestion.category = "Category_Name"
-        newQuestion.question = questionTitle.text!
-        newQuestion.responses.append(objectsIn: [variantA.text!,
-                                                 variantB.text!,
-                                                 variantC.text!,
-                                                 variantD.text!])
-        newQuestion.correct_response = correctResponseIndex
-        newQuestion.type = "multiple_choice"
         do{
             try realm.write{
-                selectedWeek?.questions[index!] = newQuestion
+                selectedWeek?.questions[index!].category = "Category_Name"
+                selectedWeek?.questions[index!].question = questionTitle.text!
+                selectedWeek?.questions[index!].responses[0] = variantA.text!
+                selectedWeek?.questions[index!].responses[1] = variantB.text!
+                selectedWeek?.questions[index!].responses[2] = variantC.text!
+                selectedWeek?.questions[index!].responses[3] = variantD.text!
+                selectedWeek?.questions[index!].correct_response = correctResponseIndex
+                selectedWeek?.questions[index!].type = "multiple_choice"
+                
             }
         }catch{
             print("error  saving question \(error)")

@@ -14,15 +14,13 @@ class AddContentViewController: UIViewController {
     let realm = try! Realm()
     var selectedWeek:Week?
     @IBOutlet weak var tableView: UITableView!
-    var selectedIndex = -1
-    //    var isCollapsed = false
     var questions:[Dictionary<String, Any>] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         questions = loadQuiz()
-        //tableView.delegate = self
+
         tableView.dataSource = self
         tableView.register(UINib(nibName: K.newQuestionNibName, bundle: nil), forCellReuseIdentifier: K.newQuestionCell)
     }
@@ -75,28 +73,6 @@ class AddContentViewController: UIViewController {
     }
 }
 
-//MARK:-Table View Delegate Methods
-//extension AddContentViewController: UITableViewDelegate{
-//
-//        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//            if selectedIndex == indexPath.row && isCollapsed{
-//                return K.largeCell
-//            }else{
-//                return K.mediumCell
-//            }
-//        }
-//        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//            tableView.deselectRow(at: indexPath, animated: true)
-//            if selectedIndex == indexPath.row{
-//                isCollapsed = !isCollapsed
-//            }else{
-//                isCollapsed = true
-//            }
-//            selectedIndex = indexPath.row
-//            tableView.reloadRows(at: [indexPath], with: .automatic)
-//        }
-//
-//}
 
 //MARK:-Table View Data Source Methods
 extension AddContentViewController: UITableViewDataSource{
@@ -115,7 +91,6 @@ extension AddContentViewController: UITableViewDataSource{
             cell.variantD.text = array[3]
         }
       
-        //        cell.questionView.frame.size.height = 20
         cell.index = indexPath.row
         cell.selectedWeek = self.selectedWeek
         return cell

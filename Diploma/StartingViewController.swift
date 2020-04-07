@@ -19,6 +19,7 @@ class StartingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUsers()
+        self.hideKeyboardWhenTappedAround() 
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

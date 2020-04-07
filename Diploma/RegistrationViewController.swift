@@ -21,6 +21,7 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func signUpPressed(_ sender: UIButton) {
@@ -68,7 +69,7 @@ class RegistrationViewController: UIViewController {
         }catch{
             showError(with: "Error saving student data")
         }
-       showError(with: "Successfully added a new student")
+        showError(with: "Successfully added a new student")
         
     }
     func saveInstructor(instructor: Instructor){
