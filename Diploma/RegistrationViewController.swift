@@ -34,12 +34,26 @@ class RegistrationViewController: UIViewController {
                 }else{
                     if let range = self.email.text!.range(of: "@") {
                         let beginString = self.email.text![..<range.lowerBound]
-                        let id = Int(beginString)
-                        let newStudent = Student()
-                        newStudent.firstName = self.firstName.text!
-                        newStudent.lastName = self.lastName.text!
-                        newStudent.id = id!
-                        self.saveStudent(student: newStudent)
+                        let endString = self.email.text![range.upperBound...]
+                        if (endString == "stu.sdu.edu.kz"){
+                            let id = Int(beginString)
+                            let newStudent = Student()
+                            newStudent.firstName = self.firstName.text!
+                            newStudent.lastName = self.lastName.text!
+                            newStudent.id = id!
+                            self.saveStudent(student: newStudent)
+                        }
+                        else if (endString == "sdu.edu.kz"){
+                            let newInstructor = Instructor()
+                            newInstructor.firstName = self.firstName.text!
+                            newInstructor.lastName = self.lastName.text!
+                            newInstructor.id = String(beginString)
+                            self.saveInstructor(instructor: newInstructor)
+                        }
+                        else{
+                            self.showError(with: "Please enter university email")
+                        }
+                        
                     }
                     
                 }
@@ -52,10 +66,20 @@ class RegistrationViewController: UIViewController {
             }
             
         }catch{
-            showError(with: "Error saving user data")
+            showError(with: "Error saving student data")
         }
-       showError(with: "Successfully added user")
+       showError(with: "Successfully added a new student")
         
+    }
+    func saveInstructor(instructor: Instructor){
+        do{try realm.write{
+            realm.add(instructor)
+            }
+            
+        }catch{
+            showError(with: "Error saving instructor data")
+        }
+        showError(with: "Successfully added a new instructor")
     }
     
     func isPasswordValid(_ password : String) -> Bool{
