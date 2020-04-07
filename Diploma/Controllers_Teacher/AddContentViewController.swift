@@ -27,6 +27,8 @@ class AddContentViewController: UIViewController {
         tableView.register(UINib(nibName: K.newQuestionNibName, bundle: nil), forCellReuseIdentifier: K.newQuestionCell)
     }
     
+    
+    
     @IBAction func addQuestionPressed(_ sender: UIBarButtonItem) {
         let newQuestion = Question()
         newQuestion.category = "Category_Name"
@@ -42,14 +44,15 @@ class AddContentViewController: UIViewController {
         }catch{
             print("error  saving question \(error)")
         }
+        questions = loadQuiz()
         self.tableView.reloadData()
     }
     func loadQuiz()->[Dictionary<String, Any>] {
         
         var jsonArray:[Dictionary<String, Any>] = []
         
-        if (selectedWeek?.questions.count == 10){
-            for n in 0...9{
+        if ((selectedWeek?.questions.count)!>0){
+            for n in 0...(selectedWeek?.questions.count)!-1{
                 let question = selectedWeek?.questions[n].toDictionary()
                 let array = Array(selectedWeek?.questions[n].toDictionary()["responses"] as! List<String>)
                 var jsonObject: [String: Any] = [:]

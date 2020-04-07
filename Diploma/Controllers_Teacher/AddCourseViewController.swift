@@ -57,6 +57,21 @@ class AddCourseViewController: UIViewController {
         }
     }
     func save(course: Course){
+//        if(currentStudent![0].courses.filter("name == '\(course.name)'").count==0){
+//            do{
+//                try realm.write{
+//                    currentStudent![0].courses.append(course)
+//                }
+//            }catch{
+//                print("Error saving course, \(error)")
+//            }
+//        }else{
+//            let alert = UIAlertController(title: course.name, message: "You've already registered to this course", preferredStyle: .alert)
+//
+//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//            self.present(alert, animated: true)
+//        }
+        if(realm.objects(Course.self).filter("name == '\(course.name)'").count==0){
         do{
             try realm.write{
                 for n in 0...14{
@@ -68,6 +83,13 @@ class AddCourseViewController: UIViewController {
             }
         }catch{
             print("Error saving course, \(error)")
+            }
+            
+        }else{
+            let alert = UIAlertController(title: course.name, message: "This course name is taken, try another one", preferredStyle: .alert)
+            
+                        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                        self.present(alert, animated: true)
         }
         self.tableView.reloadData()
     }
