@@ -18,17 +18,3 @@ class Question: Object {
     var parentWeek = LinkingObjects(fromType: Week.self, property: "questions")
 }
 
-
-
-
-//{
-//    "question": "What is the range of short data type in Java??",
-//    "category": "Java",
-//    "type": "multiple_choice",
-//    "correct_response": 1,
-//    "responses": [
-//        "-128 to 127",
-//        "-32768 to 32767",
-//        "-2147483648 to 2147483647"
-//    ]
-//}

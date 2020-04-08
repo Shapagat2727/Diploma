@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 import QuizKit
-//import AVFoundation
+
 
 class Week:Object{
     @objc dynamic var id:Int = 0
@@ -17,4 +17,5 @@ class Week:Object{
     @objc dynamic var textContent:String = ""
     var parentCourse = LinkingObjects(fromType: Course.self, property: "weeks")
     let questions = List<Question>()
+    let scores = List<Score>()
 }

@@ -43,12 +43,14 @@ class TopicViewController: UIViewController {
         }else{
             print("Not enough questions")
         }
-//        performSegue(withIdentifier: K.weekQuesionSegue, sender: self)
-//        do {
-//            try QKSession.default.start()
-//        } catch {
-//            fatalError("Quiz started without quiz set on the session")
-//        }
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier==K.weekQuesionSegue{
+            let destination = segue.destination as! QuestionViewController
+            destination.selectedWeek = selectedWeek
+            
+        }
     }
     func loadUI(){
         self.title = "Week\(selectedWeek!.id+1)"

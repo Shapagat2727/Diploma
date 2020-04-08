@@ -64,18 +64,18 @@ extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return K.mediumCell;
     }
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-            if segue.identifier==K.topicSegue{
-                let destination = segue.destination as! TopicViewController
-                if let indexPath = tableView.indexPathForSelectedRow{
-                    destination.selectedWeek = weeks?[indexPath.row]
-    
-                }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier==K.topicSegue{
+            let destination = segue.destination as! TopicViewController
+            if let indexPath = tableView.indexPathForSelectedRow{
+                destination.selectedWeek = weeks?[indexPath.row]
+                
             }
-    
+            
         }
+        
+    }
 }
 
 

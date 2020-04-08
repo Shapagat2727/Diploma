@@ -8,9 +8,11 @@
 
 import UIKit
 import QuizKit
-
+import RealmSwift
+import Firebase
 class QuestionViewController: UIViewController {
-    
+    let realm = try! Realm()
+    let currentUser = Auth.auth().currentUser!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var firstOption: UIButton!
     @IBOutlet weak var secondOption: UIButton!
@@ -20,7 +22,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var secondCheck: UIButton!
     @IBOutlet weak var thirdCheck: UIButton!
     @IBOutlet weak var questionImageView: UIImageView!
-    
+    var selectedWeek:Week?
     var session = QKSession.default
     var question:QKQuestion?
     var response:String?
@@ -57,11 +59,31 @@ class QuestionViewController: UIViewController {
         }else{
             session.submit(response: response!, for: question!)
             if(session.nextQuestion(after: question) == nil){
+                saveScore()
                 performSegue(withIdentifier: K.scoreSegue, sender: self)
             }else{
                 updateUI()
             }
         }
+    }
+    func saveScore(){
+        if let range = currentUser.email?.range(of: "@") {
+            let beginString = currentUser.email?[..<range.lowerBound]
+            let id = Int(String(beginString!))
+            let score = Score()
+            score.studentId = id!
+            score.scoreValue = self.session.score
+
+            do{try realm.write{
+                selectedWeek?.scores.append(score)
+                }
+
+            }catch{
+                print("Error saving course, \(error)")
+            }
+        }
+     
+        
     }
     //MARK:- Custom Functions
     func nextAlert(){
@@ -73,6 +95,7 @@ class QuestionViewController: UIViewController {
         let alert = UIAlertController(title: "Are you sure?", message: "You can choose to complete the quiz immediately. You results will be nullified.", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:{ action in
+            self.saveScore()
             self.dismiss(animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
