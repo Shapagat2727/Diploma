@@ -69,7 +69,7 @@ extension WeeksViewController: UITableViewDataSource{
             cell.topicLabel?.text = "No weeks found yet"
         }
         
-        if let color = FlatGray().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(weeks?.count ?? 1)){
+        if let color = UIColor(hexString: selectedCourse?.colorCode).darken(byPercentage: CGFloat(indexPath.row)/CGFloat(weeks?.count ?? 1)){
             cell.topicBubble?.backgroundColor = color
             cell.topicLabel?.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
         }

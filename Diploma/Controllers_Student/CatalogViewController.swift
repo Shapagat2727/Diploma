@@ -46,7 +46,7 @@ extension CatalogViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: K.topicCell, for: indexPath) as! TopicCell
         cell.topicLabel?.text = courses?[indexPath.row].name ?? "No courses added yet"
         
-        if let color = FlatWatermelon().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(courses?.count ?? 1)){
+        if let color = UIColor(hexString: "#214F6F"){
             cell.topicBubble?.backgroundColor = color
             cell.topicLabel?.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
         }

@@ -25,7 +25,7 @@ class AddCourseViewController: UIViewController {
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
         
     }
-   
+    
     
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -36,6 +36,7 @@ class AddCourseViewController: UIViewController {
                 if !text.isEmpty{
                     let newCourse = Course()
                     newCourse.name = text
+                    newCourse.colorCode = RandomFlatColor().hexValue()
                     self.save(course: newCourse)
                 }
             }
@@ -48,48 +49,34 @@ class AddCourseViewController: UIViewController {
         present(alert, animated: true)
     }
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
-          let firebaseAuth = Auth.auth()
+        let firebaseAuth = Auth.auth()
         do {
-          try firebaseAuth.signOut()
+            try firebaseAuth.signOut()
             dismiss(animated: true, completion: nil)
         } catch let signOutError as NSError {
-          print ("Error signing out: %@", signOutError)
+            print ("Error signing out: %@", signOutError)
         }
     }
     func save(course: Course){
-//        if(currentStudent![0].courses.filter("name == '\(course.name)'").count==0){
-//            do{
-//                try realm.write{
-//                    currentStudent![0].courses.append(course)
-//                }
-//            }catch{
-//                print("Error saving course, \(error)")
-//            }
-//        }else{
-//            let alert = UIAlertController(title: course.name, message: "You've already registered to this course", preferredStyle: .alert)
-//
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//            self.present(alert, animated: true)
-//        }
         if(realm.objects(Course.self).filter("name == '\(course.name)'").count==0){
-        do{
-            try realm.write{
-                for n in 0...14{
-                    let week = Week()
-                    week.id = n
-                    course.weeks.append(week)
+            do{
+                try realm.write{
+                    for n in 0...14{
+                        let week = Week()
+                        week.id = n
+                        course.weeks.append(week)
+                    }
+                    currentInstrucor![0].courses.append(course)
                 }
-                currentInstrucor![0].courses.append(course)
-            }
-        }catch{
-            print("Error saving course, \(error)")
+            }catch{
+                print("Error saving course, \(error)")
             }
             
         }else{
             let alert = UIAlertController(title: course.name, message: "This course name is taken, try another one", preferredStyle: .alert)
             
-                        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                        self.present(alert, animated: true)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
         }
         self.tableView.reloadData()
     }
@@ -97,7 +84,7 @@ class AddCourseViewController: UIViewController {
         if let range = currentUser.email?.range(of: "@") {
             let beginString = currentUser.email?[..<range.lowerBound]
             currentInstrucor = realm.objects(Instructor.self).filter("id == %@", String(beginString!))
-           
+            
             courses = currentInstrucor![0].courses
             self.tableView.reloadData()
         }
@@ -137,9 +124,12 @@ extension AddCourseViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.topicCell, for: indexPath) as! TopicCell
         cell.topicLabel?.text = courses?[indexPath.row].name ?? "No courses added yet"
-        let color = RandomFlatColor()
-        cell.topicBubble?.backgroundColor = color
-        cell.topicLabel?.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
+        
+        if let color = UIColor(hexString:courses?[indexPath.row].colorCode){
+            cell.topicBubble?.backgroundColor = color
+            cell.topicLabel?.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
+        }
+        
         
         return cell
     }
