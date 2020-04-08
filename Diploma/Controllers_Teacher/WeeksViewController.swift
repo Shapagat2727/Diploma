@@ -43,11 +43,11 @@ extension WeeksViewController: UITableViewDelegate{
         return K.mediumCell;
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: K.newVideoTextSegue, sender: self)
+        performSegue(withIdentifier: K.optionsSegue, sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier==K.newVideoTextSegue{
-            let destination = segue.destination as! AddVideoTextViewController
+        if segue.identifier==K.optionsSegue{
+            let destination = segue.destination as! ThreeOptionsViewController
             if let indexPath = tableView.indexPathForSelectedRow{
                 destination.selectedWeek = weeks?[indexPath.row]
             }

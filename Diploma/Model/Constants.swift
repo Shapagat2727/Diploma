@@ -17,13 +17,13 @@ struct K{
     
     static let newContentSegue = "goToContent"
     static let newVideoTextSegue = "goToVideoText"
-    
+    static let statisticsSegue = "statisticsSegue"
     static let questionSegue = "goToQuestion"
     static let scoreSegue = "scoreSegue"
     static let studentWeeks = "goToStudentCourseWeeks"
     static let weekQuesionSegue = "goToQuestionForSingleWeek"
     static let weeksSegue = "goToWeeks"
-    
+    static let optionsSegue = "goToOptions"
     static let pieSegue = "toPieSegue"
     static let analysisSegue = "toItemAnalysisSegue"
     static let barSegue = "toBarChartSegue"

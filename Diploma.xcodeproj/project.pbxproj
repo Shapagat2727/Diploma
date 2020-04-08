@@ -46,6 +46,12 @@
 		8ADFFB9C23FE312300ADA7CF /* AddContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFFB9B23FE312300ADA7CF /* AddContentViewController.swift */; };
 		8AEFE33A23FACFF700334D2C /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEFE33923FACFF700334D2C /* ScoreViewController.swift */; };
 		8AF87DA5240B9BDD004D23E4 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF87DA4240B9BDD004D23E4 /* Question.swift */; };
+		8AFC2C3E243D954600D1808B /* ThreeOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC2C3D243D954600D1808B /* ThreeOptionsViewController.swift */; };
+		8AFC2C40243DA8E300D1808B /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC2C3F243DA8E300D1808B /* SegmentedViewController.swift */; };
+		8AFC2C43243DB8C000D1808B /* SimpleViewOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC2C41243DB8C000D1808B /* SimpleViewOneViewController.swift */; };
+		8AFC2C44243DB8C000D1808B /* SimpleViewOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AFC2C42243DB8C000D1808B /* SimpleViewOneViewController.xib */; };
+		8AFC2C47243DB8D000D1808B /* SimpleViewTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC2C45243DB8D000D1808B /* SimpleViewTwoViewController.swift */; };
+		8AFC2C48243DB8D000D1808B /* SimpleViewTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AFC2C46243DB8D000D1808B /* SimpleViewTwoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +115,12 @@
 		8ADFFB9B23FE312300ADA7CF /* AddContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContentViewController.swift; sourceTree = "<group>"; };
 		8AEFE33923FACFF700334D2C /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		8AF87DA4240B9BDD004D23E4 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		8AFC2C3D243D954600D1808B /* ThreeOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeOptionsViewController.swift; sourceTree = "<group>"; };
+		8AFC2C3F243DA8E300D1808B /* SegmentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
+		8AFC2C41243DB8C000D1808B /* SimpleViewOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewOneViewController.swift; sourceTree = "<group>"; };
+		8AFC2C42243DB8C000D1808B /* SimpleViewOneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleViewOneViewController.xib; sourceTree = "<group>"; };
+		8AFC2C45243DB8D000D1808B /* SimpleViewTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewTwoViewController.swift; sourceTree = "<group>"; };
+		8AFC2C46243DB8D000D1808B /* SimpleViewTwoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleViewTwoViewController.xib; sourceTree = "<group>"; };
 		A6805DBA62644FF5B6182042 /* Pods-Diploma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diploma.release.xcconfig"; path = "Target Support Files/Pods-Diploma/Pods-Diploma.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +179,11 @@
 				8A713F8C23F440B400F95710 /* SceneDelegate.swift */,
 				8A798F7B242F613C0057BE07 /* StartingViewController.swift */,
 				8A063FE5243C30AE009E245A /* RegistrationViewController.swift */,
+				8AFC2C3F243DA8E300D1808B /* SegmentedViewController.swift */,
+				8AFC2C41243DB8C000D1808B /* SimpleViewOneViewController.swift */,
+				8AFC2C42243DB8C000D1808B /* SimpleViewOneViewController.xib */,
+				8AFC2C45243DB8D000D1808B /* SimpleViewTwoViewController.swift */,
+				8AFC2C46243DB8D000D1808B /* SimpleViewTwoViewController.xib */,
 				8A38255024346A1100EB642E /* Open_Sans */,
 				8AB4D55123FD730100A9FAC4 /* Controllers_Teacher */,
 				8A713FA323F441FF00F95710 /* Model */,
@@ -234,6 +251,7 @@
 				8A52551E2408B5BC004EB8E5 /* TestViewController.swift */,
 				8A08FF282402C1AA002C8B4D /* StatisticsViewController.swift */,
 				8A5255202408DE14004EB8E5 /* ItemAnalysisTestViewController.swift */,
+				8AFC2C3D243D954600D1808B /* ThreeOptionsViewController.swift */,
 			);
 			path = Controllers_Teacher;
 			sourceTree = "<group>";
@@ -327,7 +345,9 @@
 				8ADFFB9A23FE2ABD00ADA7CF /* ExpandableTableViewCell.xib in Resources */,
 				8A5255252408DE75004EB8E5 /* ItemTableViewCell.xib in Resources */,
 				8A713F9A23F440B600F95710 /* LaunchScreen.storyboard in Resources */,
+				8AFC2C44243DB8C000D1808B /* SimpleViewOneViewController.xib in Resources */,
 				8A713F9723F440B600F95710 /* Assets.xcassets in Resources */,
+				8AFC2C48243DB8D000D1808B /* SimpleViewTwoViewController.xib in Resources */,
 				8A38256424346A1100EB642E /* LICENSE.txt in Resources */,
 				8A713F9223F440B400F95710 /* Main.storyboard in Resources */,
 				8A713FB823F587AF00F95710 /* TopicCell.xib in Resources */,
@@ -420,12 +440,16 @@
 				8A67E3E32438937F009C405E /* Instructor.swift in Sources */,
 				8AF87DA5240B9BDD004D23E4 /* Question.swift in Sources */,
 				8AEFE33A23FACFF700334D2C /* ScoreViewController.swift in Sources */,
+				8AFC2C43243DB8C000D1808B /* SimpleViewOneViewController.swift in Sources */,
 				8A5255212408DE14004EB8E5 /* ItemAnalysisTestViewController.swift in Sources */,
 				8A38256924349A0600EB642E /* Student.swift in Sources */,
 				8AB4D55523FD804C00A9FAC4 /* WeeksViewController.swift in Sources */,
+				8AFC2C47243DB8D000D1808B /* SimpleViewTwoViewController.swift in Sources */,
 				8A08FF2B2404C547002C8B4D /* AddVideoTextViewController.swift in Sources */,
 				8A525529240A2DE6004EB8E5 /* Course.swift in Sources */,
+				8AFC2C40243DA8E300D1808B /* SegmentedViewController.swift in Sources */,
 				8A713FA723F44F8700F95710 /* TopicViewController.swift in Sources */,
+				8AFC2C3E243D954600D1808B /* ThreeOptionsViewController.swift in Sources */,
 				8A5255242408DE75004EB8E5 /* ItemTableViewCell.swift in Sources */,
 				8ADFFB9923FE2ABD00ADA7CF /* ExpandableTableViewCell.swift in Sources */,
 				8A713F8B23F440B400F95710 /* AppDelegate.swift in Sources */,

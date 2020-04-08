@@ -20,13 +20,31 @@ class AddContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         questions = loadQuiz()
-
+        self.hideKeyboardWhenTappedAround()
         tableView.dataSource = self
         tableView.register(UINib(nibName: K.newQuestionNibName, bundle: nil), forCellReuseIdentifier: K.newQuestionCell)
+        NotificationCenter.default.addObserver( self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver( self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    
-    
+    @objc func keyboardWillHide( note:NSNotification )
+    {
+        // read the CGRect from the notification (if any)
+        
+            let insets = UIEdgeInsets( top: 0, left: 0, bottom: 0, right: 0 )
+            tableView.contentInset = insets
+            tableView.scrollIndicatorInsets = insets
+        
+    }
+    @objc func keyboardWillShow( note:NSNotification )
+    {
+        // read the CGRect from the notification (if any)
+        if let newFrame = (note.userInfo?[ UIResponder.keyboardFrameEndUserInfoKey ] as? NSValue)?.cgRectValue {
+            let insets = UIEdgeInsets( top: 0, left: 0, bottom: newFrame.height, right: 0 )
+            tableView.contentInset = insets
+            tableView.scrollIndicatorInsets = insets
+        }
+    }
     @IBAction func addQuestionPressed(_ sender: UIBarButtonItem) {
         let newQuestion = Question()
         newQuestion.category = "Category_Name"
@@ -90,7 +108,7 @@ extension AddContentViewController: UITableViewDataSource{
             cell.variantC.text = array[2]
             cell.variantD.text = array[3]
         }
-      
+        
         cell.index = indexPath.row
         cell.selectedWeek = self.selectedWeek
         return cell

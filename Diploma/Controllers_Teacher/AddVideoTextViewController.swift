@@ -16,7 +16,7 @@ class AddVideoTextViewController: UIViewController,UIImagePickerControllerDelega
     var videoURL: NSURL?
     var selectedWeek:Week?
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var addQuestionButton: UIButton!
+    
     @IBOutlet weak var videoTextField: UITextField!
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
@@ -37,9 +37,7 @@ class AddVideoTextViewController: UIViewController,UIImagePickerControllerDelega
         super.viewDidLoad()
         self.title = "Week \(selectedWeek!.id+1)"
         imagePicker.delegate = self
-        addQuestionButton.layer.borderColor = FlatMint().cgColor
-        addQuestionButton.layer.borderWidth = 3.0
-        addQuestionButton.layer.cornerRadius = addQuestionButton.frame.size.height/5
+        
         videoTextField.text = selectedWeek?.video
         textView.text = selectedWeek?.textContent
         
@@ -65,16 +63,7 @@ class AddVideoTextViewController: UIViewController,UIImagePickerControllerDelega
     }
     
     
-    @IBAction func addQuestionsPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: K.newContentSegue, sender: self)
-        
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier==K.newContentSegue{
-            let destination = segue.destination as! AddContentViewController
-            destination.selectedWeek = self.selectedWeek
-        }
-    }
+
     
     
 }
