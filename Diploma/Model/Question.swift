@@ -14,6 +14,7 @@ class Question: Object {
     @objc dynamic var category:String = ""
     @objc dynamic var type:String = ""
     @objc dynamic var correct_response:Int = 0
+    var scoreByAnswer = List<Int>()
     let responses = List<String>()
     var parentWeek = LinkingObjects(fromType: Week.self, property: "questions")
 }

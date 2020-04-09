@@ -52,7 +52,7 @@ class AddContentViewController: UIViewController {
         newQuestion.responses.append(objectsIn: ["","","",""])
         newQuestion.correct_response = 0
         newQuestion.type = "multiple_choice"
-        
+        newQuestion.scoreByAnswer.append(objectsIn: [0,0,0,0])
         do{
             try realm.write{
                 selectedWeek?.questions.append(newQuestion)

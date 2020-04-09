@@ -33,10 +33,12 @@ class QuestionViewController: UIViewController {
     var session = QKSession.default
     var question:QKQuestion?
     var response:String?
-    
+    var indexOfQuession: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
+        indexOfQuession = 0
         do {
+            
             try session.start()
             saveInitialScore()
         } catch {
@@ -67,7 +69,7 @@ class QuestionViewController: UIViewController {
         }else{
             session.submit(response: response!, for: question!)
             
-            changeScore(with: response == question?.correctResponse)
+            changeScore(with: response == question?.correctResponse, and:(question?.responses.firstIndex(of: response!))!, at: (selectedWeek?.questions[indexOfQuession!])!)
             if(session.nextQuestion(after: question) == nil){
                 
                 performSegue(withIdentifier: K.scoreSegue, sender: self)
@@ -75,6 +77,7 @@ class QuestionViewController: UIViewController {
                 updateUI()
             }
         }
+        indexOfQuession! += 1
     }
     func saveInitialScore(){
         if let range = currentUser.email?.range(of: "@") {
@@ -83,7 +86,7 @@ class QuestionViewController: UIViewController {
             let score = Score()
             score.studentId = id!
             score.scoreValue = 0
-            
+           
             
             do{try realm.write{
                 selectedWeek?.scores.append(score)
@@ -97,7 +100,7 @@ class QuestionViewController: UIViewController {
         
     }
     
-    func changeScore(with isCorrect: Bool){
+    func changeScore(with isCorrect: Bool, and variant: Int, at ques: Question){
         if let range = currentUser.email?.range(of: "@") {
             let beginString = currentUser.email?[..<range.lowerBound]
             if let id = Int(String(beginString!)){
@@ -109,6 +112,7 @@ class QuestionViewController: UIViewController {
                     }else{
                         selectedWeek?.scores.filter("studentId == \(id)")[0].scoreByQuestion.append(0)
                     }
+                    ques.scoreByAnswer[variant] += 1
                     
                     }
                     

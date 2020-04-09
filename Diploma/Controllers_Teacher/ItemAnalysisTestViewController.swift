@@ -11,7 +11,6 @@ import Charts
 import ChameleonFramework
 class ItemAnalysisTestViewController: UIViewController {
     var variants = ["A", "B", "C", "D"]
-    let percentagePerVariant = [9.0, 9.0, 64.0, 18.0]
     @IBOutlet weak var tableView: UITableView!
     var selectedWeek:Week?
     
@@ -35,20 +34,23 @@ extension ItemAnalysisTestViewController:UITableViewDelegate{
 //MARK:-TableView DataSource Methods
 extension ItemAnalysisTestViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return (selectedWeek?.questions.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.itemAnalysisCell, for: indexPath) as! ItemTableViewCell
         cell.itemBubble.noDataText = "You need to provide data for the chart."
         var dataEntries: [BarChartDataEntry] = []
+       
         for i in 0..<variants.count {
-            let dataEntry = BarChartDataEntry(x:Double(i), y: percentagePerVariant[i], data: "hey")
+            let dataEntry = BarChartDataEntry(x:Double(i), y: Double((selectedWeek?.questions[indexPath.row].scoreByAnswer[i])!), data: "hey")
             
             dataEntries.append(dataEntry)
         }
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Question #1")
-        chartDataSet.colors = [FlatWatermelon(), FlatWatermelon(),FlatGreen(), FlatWatermelon()]
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Question #\(indexPath.row + 1)")
+       
+        chartDataSet.colors = [FlatWatermelon(), FlatWatermelon(),FlatWatermelon(), FlatWatermelon()]
+        chartDataSet.colors[(selectedWeek?.questions[indexPath.row].correct_response)!] = FlatGreen()
         let chartData = BarChartData(dataSet: chartDataSet)
         cell.itemBubble.xAxis.valueFormatter = IndexAxisValueFormatter(values: variants)
         cell.itemBubble.xAxis.granularityEnabled = true
@@ -60,6 +62,7 @@ extension ItemAnalysisTestViewController:UITableViewDataSource{
 
         return cell
     }
+    
     
 }
 

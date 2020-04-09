@@ -43,12 +43,15 @@ class StatisticsViewController: UIViewController {
     func calculatePercentage(with counter: [Int], value: Bool)->[Double]{
         var results:[Double] = []
         for count in counter{
-            let percent = (count * 100) / (selectedWeek?.scores.count)!
-            if(value){
-                results.append(Double(percent))
-            }else{
-                results.append(Double(0 - percent))
+            if(selectedWeek?.scores.count != 0){
+                let percent = (count * 100) / (selectedWeek?.scores.count)!
+                if(value){
+                    results.append(Double(percent))
+                }else{
+                    results.append(Double(0 - percent))
+                }
             }
+            
         }
         return results
     }
@@ -58,8 +61,11 @@ class StatisticsViewController: UIViewController {
         var dataEntries: [BarChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
-            let dataEntry = BarChartDataEntry(x: Double(i), yValues: [positive[i], negative[i]])
-            dataEntries.append(dataEntry)
+            if( positive.count != 0 && negative.count != 0){
+                let dataEntry = BarChartDataEntry(x: Double(i), yValues: [positive[i], negative[i]])
+                dataEntries.append(dataEntry)
+            }
+            
         }
         
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Units Sold")
