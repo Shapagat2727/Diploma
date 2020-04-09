@@ -12,7 +12,7 @@ class TeacherStatisticsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var charts = ["PieChart", "ItemAnalysis", "BarChart"]
-    
+    var selectedWeek:Week?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -38,6 +38,26 @@ extension TeacherStatisticsViewController: UITableViewDelegate{
             performSegue(withIdentifier: K.barSegue, sender: self)
         default:
             print("Something got wrong")
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier==K.pieSegue{
+            let destination = segue.destination as! TestViewController
+            
+            destination.selectedWeek = selectedWeek
+            
+        }
+        if segue.identifier==K.analysisSegue{
+            let destination = segue.destination as! ItemAnalysisTestViewController
+            
+            destination.selectedWeek = selectedWeek
+            
+        }
+        if segue.identifier==K.barSegue{
+            let destination = segue.destination as! StatisticsViewController
+            
+            destination.selectedWeek = selectedWeek
+            
         }
     }
     

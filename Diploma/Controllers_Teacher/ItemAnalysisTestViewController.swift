@@ -13,7 +13,7 @@ class ItemAnalysisTestViewController: UIViewController {
     var variants = ["A", "B", "C", "D"]
     let percentagePerVariant = [9.0, 9.0, 64.0, 18.0]
     @IBOutlet weak var tableView: UITableView!
-    
+    var selectedWeek:Week?
     
     override func viewDidLoad() {
         super.viewDidLoad()

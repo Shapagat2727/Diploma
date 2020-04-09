@@ -11,6 +11,7 @@ import Charts
 import ChameleonFramework
 class StatisticsViewController: UIViewController {
     var months: [String]!
+    var selectedWeek:Week?
     @IBOutlet weak var barChartView:BarChartView!
     override func viewDidLoad() {
         super.viewDidLoad()

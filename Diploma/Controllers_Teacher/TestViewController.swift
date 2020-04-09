@@ -8,19 +8,20 @@
 
 import UIKit
 import Charts
+import Realm
 import ChameleonFramework
 class TestViewController: UIViewController {
     var performanceRates: [String]!
     var performanceRatesShort: [String]!
     @IBOutlet weak var pieChart: PieChartView!
     @IBOutlet weak var viewBubble: UIView!
-    
+    var selectedWeek:Week?
     override func viewDidLoad() {
         super.viewDidLoad()
         performanceRates = ["Far Below Basic", "Below Basic", "Basic", "Above Basic", "Advanced"]
         performanceRatesShort = ["FBB", "BB", "B", "AB", "A"]
-        let numberOfStudentsPerRate = [14.0, 5.0, 13.0, 7.0, 3.0]
-                
+        let numberOfStudentsPerRate = calculateRates()
+        
         setChart(labels: performanceRatesShort, values: numberOfStudentsPerRate)
         
         viewBubble.layer.borderColor = FlatRed().cgColor
@@ -29,20 +30,42 @@ class TestViewController: UIViewController {
     }
     
     func setChart(labels: [String], values: [Double]) {
-           pieChart.noDataText = "You need to provide data for the chart."
-           var dataEntries: [PieChartDataEntry] = []
-                   
-           for i in 0..<labels.count {
+        pieChart.noDataText = "You need to provide data for the chart."
+        var dataEntries: [PieChartDataEntry] = []
+        
+        for i in 0..<labels.count {
             let dataEntry = PieChartDataEntry(value: values[i], label: labels[i])
-               dataEntries.append(dataEntry)
-           }
-                   
-           let chartDataSet = PieChartDataSet(entries: dataEntries, label: "Score Chart - Exam #1")
+            dataEntries.append(dataEntry)
+        }
+        
+        let chartDataSet = PieChartDataSet(entries: dataEntries, label: "Score Chart - Exam #1")
         let colors = [FlatRed(), FlatOrange(), FlatYellow(), FlatGreen(), FlatGreenDark()]
         chartDataSet.colors = colors
-           let chartData = PieChartData(dataSet: chartDataSet)
-           pieChart.data = chartData
-       }
-    
+        let chartData = PieChartData(dataSet: chartDataSet)
+        pieChart.data = chartData
+    }
+    func calculateRates()->[Double]{
+        var rates:[Double] = [0,0,0,0,0]
+        for n in 0..<(selectedWeek?.scores.count)!{
+            if let num = selectedWeek?.scores[n].scoreValue{
+                switch num{
+                case 0..<2:
+                    rates[0] += 1
+                case 2..<4:
+                    rates[1] += 1
+                case 4..<6:
+                    rates[2] += 1
+                case 6..<8:
+                    rates[3] += 1
+                case 8...10:
+                    rates[4] += 1
+                default:
+                    break
+                }
+            }
+            
+        }
+        return rates
+    }
 }
 

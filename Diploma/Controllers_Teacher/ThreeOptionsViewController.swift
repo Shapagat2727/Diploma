@@ -53,7 +53,11 @@ extension ThreeOptionsViewController: UITableViewDelegate{
             destination.selectedWeek = self.selectedWeek
         }
         
-        
+        if segue.identifier==K.statisticsSegue{
+            let destination = segue.destination as! TeacherStatisticsViewController
+            destination.selectedWeek = self.selectedWeek
+        }
+
     }
     
 }
