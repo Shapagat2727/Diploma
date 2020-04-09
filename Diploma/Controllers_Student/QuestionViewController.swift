@@ -14,14 +14,21 @@ class QuestionViewController: UIViewController {
     let realm = try! Realm()
     let currentUser = Auth.auth().currentUser!
     @IBOutlet weak var questionLabel: UILabel!
+    
     @IBOutlet weak var firstOption: UIButton!
     @IBOutlet weak var secondOption: UIButton!
     @IBOutlet weak var thirdOption: UIButton!
+    @IBOutlet weak var fourthOption: UIButton!
+    
     @IBOutlet weak var progressBar: UIProgressView!
+    
     @IBOutlet weak var firstCheck: UIButton!
     @IBOutlet weak var secondCheck: UIButton!
     @IBOutlet weak var thirdCheck: UIButton!
+    @IBOutlet weak var fourthCheck: UIButton!
+    
     @IBOutlet weak var questionImageView: UIImageView!
+    
     var selectedWeek:Week?
     var session = QKSession.default
     var question:QKQuestion?
@@ -31,6 +38,7 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
         do {
             try session.start()
+            saveInitialScore()
         } catch {
             fatalError("Quiz started without quiz set on the session")
         }
@@ -58,33 +66,62 @@ class QuestionViewController: UIViewController {
             nextAlert()
         }else{
             session.submit(response: response!, for: question!)
+            
+            changeScore(with: response == question?.correctResponse)
             if(session.nextQuestion(after: question) == nil){
-                saveScore()
+                
                 performSegue(withIdentifier: K.scoreSegue, sender: self)
             }else{
                 updateUI()
             }
         }
     }
-    func saveScore(){
+    func saveInitialScore(){
         if let range = currentUser.email?.range(of: "@") {
             let beginString = currentUser.email?[..<range.lowerBound]
             let id = Int(String(beginString!))
             let score = Score()
             score.studentId = id!
-            score.scoreValue = self.session.score
-
+            score.scoreValue = 0
+            
+            
             do{try realm.write{
                 selectedWeek?.scores.append(score)
                 }
-
+                
             }catch{
                 print("Error saving course, \(error)")
             }
         }
-     
+        
         
     }
+    
+    func changeScore(with isCorrect: Bool){
+        if let range = currentUser.email?.range(of: "@") {
+            let beginString = currentUser.email?[..<range.lowerBound]
+            if let id = Int(String(beginString!)){
+                do{try realm.write{
+                    if(isCorrect){
+                        
+                        selectedWeek?.scores.filter("studentId == \(id)")[0].scoreValue += 1
+                        selectedWeek?.scores.filter("studentId == \(id)")[0].scoreByQuestion.append(1)
+                    }else{
+                        selectedWeek?.scores.filter("studentId == \(id)")[0].scoreByQuestion.append(0)
+                    }
+                    
+                    }
+                    
+                }catch{
+                    print("Error saving course, \(error)")
+                }
+            }
+            
+            
+        }
+    }
+    
+    
     //MARK:- Custom Functions
     func nextAlert(){
         let alert = UIAlertController(title: "Can't go further", message: "Please choose a variant to continue", preferredStyle: .alert)
@@ -95,11 +132,11 @@ class QuestionViewController: UIViewController {
         let alert = UIAlertController(title: "Are you sure?", message: "You can choose to complete the quiz immediately. You results will be nullified.", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:{ action in
-            self.saveScore()
+            
             self.dismiss(animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
+        
         self.present(alert, animated: true)
     }
     func updateUI(){
@@ -107,6 +144,7 @@ class QuestionViewController: UIViewController {
             self.firstCheck.isSelected = false
             self.secondCheck.isSelected = false
             self.thirdCheck.isSelected = false
+            self.fourthCheck.isSelected = false
         }
         if let nextQuestion = session.nextQuestion(after: question){
             question = nextQuestion
@@ -117,20 +155,28 @@ class QuestionViewController: UIViewController {
                 let image1 = UIImage(named: (question?.responses[0])!) as UIImage?
                 let image2 = UIImage(named: (question?.responses[1])!) as UIImage?
                 let image3 = UIImage(named: (question?.responses[2])!) as UIImage?
+                let image4 = UIImage(named: (question?.responses[3])!) as UIImage?
+                
                 firstOption.setImage(image1, for: .normal)
                 secondOption.setImage(image2, for: .normal)
                 thirdOption.setImage(image3, for: .normal)
+                fourthOption.setImage(image4, for: .normal)
+                
                 firstOption.setTitle("", for: .normal)
                 secondOption.setTitle("", for: .normal)
                 thirdOption.setTitle("", for: .normal)
+                fourthOption.setTitle("", for: .normal)
             }
             else if (question?.type == QuizKit.QKQuestionType.multipleChoice){
                 firstOption.setImage(nil, for: .normal)
                 secondOption.setImage(nil, for: .normal)
                 thirdOption.setImage(nil, for: .normal)
+                fourthOption.setImage(nil, for: .normal)
+                
                 firstOption.setTitle(question!.responses[0], for: .normal)
                 secondOption.setTitle(question!.responses[1], for: .normal)
                 thirdOption.setTitle(question!.responses[2], for: .normal)
+                fourthOption.setTitle(question!.responses[3], for: .normal)
             }
         }
     }
@@ -142,16 +188,28 @@ class QuestionViewController: UIViewController {
                 self.firstCheck.isSelected = true
                 self.secondCheck.isSelected = false
                 self.thirdCheck.isSelected = false
+                self.fourthCheck.isSelected = false
+                
             }else if(sender == self.secondCheck || sender == self.secondOption){
                 self.response = self.secondOption.currentTitle
-                self.secondCheck.isSelected = true
                 self.firstCheck.isSelected = false
+                self.secondCheck.isSelected = true
                 self.thirdCheck.isSelected = false
-            }else{
+                self.fourthCheck.isSelected = false
+                
+            }else if(sender == self.thirdCheck || sender == self.thirdOption){
                 self.response = self.thirdOption.currentTitle
-                self.thirdCheck.isSelected = true
                 self.firstCheck.isSelected = false
                 self.secondCheck.isSelected = false
+                self.thirdCheck.isSelected = true
+                self.fourthCheck.isSelected = false
+            }else{
+                self.response = self.fourthOption.currentTitle
+                self.firstCheck.isSelected = false
+                self.secondCheck.isSelected = false
+                self.thirdCheck.isSelected = false
+                self.fourthCheck.isSelected = true
+                
             }
         }
         

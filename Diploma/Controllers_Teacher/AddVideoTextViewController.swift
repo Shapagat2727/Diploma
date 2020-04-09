@@ -15,8 +15,8 @@ class AddVideoTextViewController: UIViewController,UIImagePickerControllerDelega
     let imagePicker = UIImagePickerController()
     var videoURL: NSURL?
     var selectedWeek:Week?
-    @IBOutlet weak var textView: UITextView!
     
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var videoTextField: UITextField!
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {

@@ -11,5 +11,6 @@ import RealmSwift
 class Score: Object {
     @objc dynamic var studentId:Int = 0
     @objc dynamic var scoreValue:Int = 0
+    var scoreByQuestion = List<Int>()
     var parentWeek = LinkingObjects(fromType: Week.self, property: "scores")
 }

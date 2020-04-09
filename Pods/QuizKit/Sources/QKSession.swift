@@ -56,8 +56,10 @@ public class QKSession {
             throw QKError.quizNotSetOnSession
         }
         
-        let shuffled = quiz.shuffledQuestions
-        questionChunk = ((limit > 0) && (shuffled.count > limit)) ? Array(shuffled[0..<limit]) : shuffled
+        let ordered = quiz.orderedQuestions
+        questionChunk = ((limit > 0) && (ordered.count > limit)) ? Array(ordered[0..<limit]) : ordered
+//        let shuffled = quiz.shuffledQuestions
+//        questionChunk = ((limit > 0) && (shuffled.count > limit)) ? Array(shuffled[0..<limit]) : shuffled
         responses = [QKQuestion:Bool]()
         
         delegate?.quizDidStart()

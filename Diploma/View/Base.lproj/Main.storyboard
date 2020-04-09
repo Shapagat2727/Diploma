@@ -238,6 +238,8 @@
                     <connections>
                         <outlet property="firstCheck" destination="kBo-AO-aXW" id="2S8-ij-3FU"/>
                         <outlet property="firstOption" destination="wbE-Xe-5Ni" id="geB-O7-5Vu"/>
+                        <outlet property="fourthCheck" destination="gNC-66-U1l" id="uM4-3Y-3Pa"/>
+                        <outlet property="fourthOption" destination="xre-gX-za3" id="Kp0-QZ-Egc"/>
                         <outlet property="progressBar" destination="ecM-Mn-B5y" id="WtK-7p-KIv"/>
                         <outlet property="questionImageView" destination="lni-9N-7mK" id="fJE-Rp-cjm"/>
                         <outlet property="questionLabel" destination="ZAf-fM-92G" id="0Yr-Kh-9KY"/>

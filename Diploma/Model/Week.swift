@@ -18,4 +18,5 @@ class Week:Object{
     var parentCourse = LinkingObjects(fromType: Course.self, property: "weeks")
     let questions = List<Question>()
     let scores = List<Score>()
+    
 }

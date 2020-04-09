@@ -17,6 +17,9 @@ public struct QKQuiz {
     internal var shuffledQuestions: [QKQuestion] {
         return questions.shuffled()
     }
+    internal var orderedQuestions: [QKQuestion] {
+        return questions
+    }
     
     public init?(loadFromJSONFile path: String) {
         guard let jsonString = try? String(contentsOfFile: path) else {

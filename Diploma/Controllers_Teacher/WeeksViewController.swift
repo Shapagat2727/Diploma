@@ -22,7 +22,6 @@ class WeeksViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadWeeks()
         self.title = selectedCourse?.name
         tableView.dataSource = self
         tableView.delegate = self
@@ -31,10 +30,6 @@ class WeeksViewController: UIViewController {
     }
     func loadWeeks(){
         weeks = selectedCourse?.weeks.sorted(byKeyPath: "id")
-//        DispatchQueue.main.async {
-//            self.tableView.reloadData()
-//        }
-        
     }
 }
 //MARK:-Table View Delegate Methods
