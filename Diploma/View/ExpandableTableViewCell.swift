@@ -14,6 +14,10 @@ class ExpandableTableViewCell: UITableViewCell {
     var correctResponseIndex = 0
     let realm = try! Realm()
     var selectedWeek:Week?
+    @IBOutlet weak var checkButtonA: UIButton!
+    @IBOutlet weak var checkButtonB: UIButton!
+    @IBOutlet weak var checkButtonC: UIButton!
+    @IBOutlet weak var checkButtonD: UIButton!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var questionView: UIView!
     @IBOutlet weak var questionTitle: UITextField!
@@ -27,15 +31,16 @@ class ExpandableTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         self.layer.cornerRadius = questionView.frame.size.height / 5
         self.layer.borderColor = FlatGray().cgColor
         self.layer.borderWidth = 3.0
         
     }
     
-  
+    
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-
+        
         questionView.backgroundColor = FlatGreen()
         do{
             try realm.write{
@@ -55,17 +60,18 @@ class ExpandableTableViewCell: UITableViewCell {
         
         
     }
-
+    
     
     @IBAction func checkButtonPressed(_ sender: UIButton) {
-        print(sender.tag)
-        if (sender.tintColor == FlatGreen()){
-            sender.tintColor = FlatGray()
-        }else{
-            sender.tintColor = FlatGreen()
-            self.correctResponseIndex = sender.tag
-            
-        }
+        checkButtonA.tintColor = FlatGray()
+        checkButtonB.tintColor = FlatGray()
+        checkButtonC.tintColor = FlatGray()
+        checkButtonD.tintColor = FlatGray()
+        sender.tintColor = FlatGreen()
+        self.correctResponseIndex = sender.tag
+        
+        
     }
+    
     
 }

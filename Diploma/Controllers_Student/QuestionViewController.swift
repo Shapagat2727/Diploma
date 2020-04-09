@@ -27,8 +27,6 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var thirdCheck: UIButton!
     @IBOutlet weak var fourthCheck: UIButton!
     
-    @IBOutlet weak var questionImageView: UIImageView!
-    
     var selectedWeek:Week?
     var session = QKSession.default
     var question:QKQuestion?
@@ -86,7 +84,7 @@ class QuestionViewController: UIViewController {
             let score = Score()
             score.studentId = id!
             score.scoreValue = 0
-           
+            
             
             do{try realm.write{
                 selectedWeek?.scores.append(score)
@@ -145,79 +143,48 @@ class QuestionViewController: UIViewController {
     }
     func updateUI(){
         DispatchQueue.main.async {
-            self.firstCheck.isSelected = false
-            self.secondCheck.isSelected = false
-            self.thirdCheck.isSelected = false
-            self.fourthCheck.isSelected = false
+            self.deselectButtons()
         }
         if let nextQuestion = session.nextQuestion(after: question){
             question = nextQuestion
             response = ""
             questionLabel.text = question?.question
             progressBar.progress = session.progress(for:question!)
-            if(question?.type == QuizKit.QKQuestionType.imageChoice){
-                let image1 = UIImage(named: (question?.responses[0])!) as UIImage?
-                let image2 = UIImage(named: (question?.responses[1])!) as UIImage?
-                let image3 = UIImage(named: (question?.responses[2])!) as UIImage?
-                let image4 = UIImage(named: (question?.responses[3])!) as UIImage?
-                
-                firstOption.setImage(image1, for: .normal)
-                secondOption.setImage(image2, for: .normal)
-                thirdOption.setImage(image3, for: .normal)
-                fourthOption.setImage(image4, for: .normal)
-                
-                firstOption.setTitle("", for: .normal)
-                secondOption.setTitle("", for: .normal)
-                thirdOption.setTitle("", for: .normal)
-                fourthOption.setTitle("", for: .normal)
-            }
-            else if (question?.type == QuizKit.QKQuestionType.multipleChoice){
-                firstOption.setImage(nil, for: .normal)
-                secondOption.setImage(nil, for: .normal)
-                thirdOption.setImage(nil, for: .normal)
-                fourthOption.setImage(nil, for: .normal)
-                
-                firstOption.setTitle(question!.responses[0], for: .normal)
-                secondOption.setTitle(question!.responses[1], for: .normal)
-                thirdOption.setTitle(question!.responses[2], for: .normal)
-                fourthOption.setTitle(question!.responses[3], for: .normal)
-            }
+            
+            firstOption.setTitle(question!.responses[0], for: .normal)
+            secondOption.setTitle(question!.responses[1], for: .normal)
+            thirdOption.setTitle(question!.responses[2], for: .normal)
+            fourthOption.setTitle(question!.responses[3], for: .normal)
+            
         }
     }
     
     func updatePress(with sender: UIButton){
         DispatchQueue.main.async {
-            if (sender == self.firstCheck || sender == self.firstOption){
+            self.deselectButtons()
+            switch sender.tag{
+            case 0:
                 self.response = self.firstOption.currentTitle
                 self.firstCheck.isSelected = true
-                self.secondCheck.isSelected = false
-                self.thirdCheck.isSelected = false
-                self.fourthCheck.isSelected = false
-                
-            }else if(sender == self.secondCheck || sender == self.secondOption){
+            case 1:
                 self.response = self.secondOption.currentTitle
-                self.firstCheck.isSelected = false
                 self.secondCheck.isSelected = true
-                self.thirdCheck.isSelected = false
-                self.fourthCheck.isSelected = false
-                
-            }else if(sender == self.thirdCheck || sender == self.thirdOption){
+            case 2:
                 self.response = self.thirdOption.currentTitle
-                self.firstCheck.isSelected = false
-                self.secondCheck.isSelected = false
                 self.thirdCheck.isSelected = true
-                self.fourthCheck.isSelected = false
-            }else{
+            case 3:
                 self.response = self.fourthOption.currentTitle
-                self.firstCheck.isSelected = false
-                self.secondCheck.isSelected = false
-                self.thirdCheck.isSelected = false
                 self.fourthCheck.isSelected = true
-                
+            default:
+                break
             }
         }
-        
-        
+    }
+    func deselectButtons(){
+        self.firstCheck.isSelected = false
+        self.secondCheck.isSelected = false
+        self.thirdCheck.isSelected = false
+        self.fourthCheck.isSelected = false
     }
 }
 

@@ -12,12 +12,15 @@
 		8A08FF292402C1AA002C8B4D /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08FF282402C1AA002C8B4D /* StatisticsViewController.swift */; };
 		8A08FF2B2404C547002C8B4D /* AddVideoTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08FF2A2404C547002C8B4D /* AddVideoTextViewController.swift */; };
 		8A14679F240E67E8006193F3 /* StudentCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A14679E240E67E8006193F3 /* StudentCoursesViewController.swift */; };
+		8A189970243F1C3B006AB818 /* StatisticsByStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A18996F243F1C3B006AB818 /* StatisticsByStudentsViewController.swift */; };
+		8A189972243F1F74006AB818 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A189971243F1F74006AB818 /* CollectionViewController.swift */; };
+		8A189974243F2028006AB818 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A189973243F2028006AB818 /* CollectionViewCell.swift */; };
+		8A189976243F5303006AB818 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A189975243F5303006AB818 /* TableViewCell.swift */; };
 		8A38256924349A0600EB642E /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A38256824349A0600EB642E /* Student.swift */; };
 		8A52551F2408B5BC004EB8E5 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A52551E2408B5BC004EB8E5 /* TestViewController.swift */; };
 		8A5255212408DE14004EB8E5 /* ItemAnalysisTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5255202408DE14004EB8E5 /* ItemAnalysisTestViewController.swift */; };
 		8A5255242408DE75004EB8E5 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5255222408DE75004EB8E5 /* ItemTableViewCell.swift */; };
 		8A5255252408DE75004EB8E5 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5255232408DE75004EB8E5 /* ItemTableViewCell.xib */; };
-		8A525527240A19D7004EB8E5 /* TeacherStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A525526240A19D7004EB8E5 /* TeacherStatisticsViewController.swift */; };
 		8A525529240A2DE6004EB8E5 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A525528240A2DE6004EB8E5 /* Course.swift */; };
 		8A52552B240A35B7004EB8E5 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A52552A240A35B7004EB8E5 /* Week.swift */; };
 		8A67E3E32438937F009C405E /* Instructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67E3E22438937F009C405E /* Instructor.swift */; };
@@ -56,12 +59,15 @@
 		8A08FF282402C1AA002C8B4D /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		8A08FF2A2404C547002C8B4D /* AddVideoTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVideoTextViewController.swift; sourceTree = "<group>"; };
 		8A14679E240E67E8006193F3 /* StudentCoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCoursesViewController.swift; sourceTree = "<group>"; };
+		8A18996F243F1C3B006AB818 /* StatisticsByStudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsByStudentsViewController.swift; sourceTree = "<group>"; };
+		8A189971243F1F74006AB818 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		8A189973243F2028006AB818 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		8A189975243F5303006AB818 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8A38256824349A0600EB642E /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		8A52551E2408B5BC004EB8E5 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		8A5255202408DE14004EB8E5 /* ItemAnalysisTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAnalysisTestViewController.swift; sourceTree = "<group>"; };
 		8A5255222408DE75004EB8E5 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		8A5255232408DE75004EB8E5 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
-		8A525526240A19D7004EB8E5 /* TeacherStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherStatisticsViewController.swift; sourceTree = "<group>"; };
 		8A525528240A2DE6004EB8E5 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		8A52552A240A35B7004EB8E5 /* Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
 		8A67E3E22438937F009C405E /* Instructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructor.swift; sourceTree = "<group>"; };
@@ -197,15 +203,18 @@
 		8AB4D55123FD730100A9FAC4 /* Controllers_Teacher */ = {
 			isa = PBXGroup;
 			children = (
+				8A189973243F2028006AB818 /* CollectionViewCell.swift */,
+				8A189971243F1F74006AB818 /* CollectionViewController.swift */,
 				8AB4D55223FD733400A9FAC4 /* AddCourseViewController.swift */,
 				8AB4D55423FD804C00A9FAC4 /* WeeksViewController.swift */,
 				8A08FF2A2404C547002C8B4D /* AddVideoTextViewController.swift */,
 				8ADFFB9B23FE312300ADA7CF /* AddContentViewController.swift */,
-				8A525526240A19D7004EB8E5 /* TeacherStatisticsViewController.swift */,
 				8A52551E2408B5BC004EB8E5 /* TestViewController.swift */,
 				8A08FF282402C1AA002C8B4D /* StatisticsViewController.swift */,
 				8A5255202408DE14004EB8E5 /* ItemAnalysisTestViewController.swift */,
 				8AFC2C3D243D954600D1808B /* ThreeOptionsViewController.swift */,
+				8A18996F243F1C3B006AB818 /* StatisticsByStudentsViewController.swift */,
+				8A189975243F5303006AB818 /* TableViewCell.swift */,
 			);
 			path = Controllers_Teacher;
 			sourceTree = "<group>";
@@ -379,10 +388,11 @@
 			files = (
 				8A713FA523F4421A00F95710 /* Constants.swift in Sources */,
 				8AB4D55323FD733400A9FAC4 /* AddCourseViewController.swift in Sources */,
+				8A189974243F2028006AB818 /* CollectionViewCell.swift in Sources */,
+				8A189970243F1C3B006AB818 /* StatisticsByStudentsViewController.swift in Sources */,
 				8A52552B240A35B7004EB8E5 /* Week.swift in Sources */,
 				8A713FBC23F5A5A000F95710 /* QuestionViewController.swift in Sources */,
 				8A08FF292402C1AA002C8B4D /* StatisticsViewController.swift in Sources */,
-				8A525527240A19D7004EB8E5 /* TeacherStatisticsViewController.swift in Sources */,
 				8A713FBA23F59AAF00F95710 /* CatalogViewController.swift in Sources */,
 				8A713F8F23F440B400F95710 /* HomeViewController.swift in Sources */,
 				8A798F7C242F613C0057BE07 /* StartingViewController.swift in Sources */,
@@ -397,6 +407,7 @@
 				8A08FF2B2404C547002C8B4D /* AddVideoTextViewController.swift in Sources */,
 				8A525529240A2DE6004EB8E5 /* Course.swift in Sources */,
 				8A713FA723F44F8700F95710 /* TopicViewController.swift in Sources */,
+				8A189972243F1F74006AB818 /* CollectionViewController.swift in Sources */,
 				8AFC2C3E243D954600D1808B /* ThreeOptionsViewController.swift in Sources */,
 				8A5255242408DE75004EB8E5 /* ItemTableViewCell.swift in Sources */,
 				8ADFFB9923FE2ABD00ADA7CF /* ExpandableTableViewCell.swift in Sources */,
@@ -406,6 +417,7 @@
 				8A063FE6243C30AE009E245A /* RegistrationViewController.swift in Sources */,
 				8A713F8D23F440B400F95710 /* SceneDelegate.swift in Sources */,
 				8A14679F240E67E8006193F3 /* StudentCoursesViewController.swift in Sources */,
+				8A189976243F5303006AB818 /* TableViewCell.swift in Sources */,
 				8A52551F2408B5BC004EB8E5 /* TestViewController.swift in Sources */,
 				8AB7A4F82438423300C462C9 /* Extensions.swift in Sources */,
 			);

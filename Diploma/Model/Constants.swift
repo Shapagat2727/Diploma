@@ -10,6 +10,7 @@ struct K{
     static let topicCell = "topicCell"
     static let topicSegue = "goToTopic"
     static let topicNibName = "TopicCell"
+    static let cellNibName = "CollectionViewCell"
     static let itemNibName = "ItemTableViewCell"
     static let itemAnalysisCell = "ItemCell"
     static let newQuestionCell = "newQuestionCell"
@@ -31,6 +32,7 @@ struct K{
     static let mediumCell:CGFloat = 120
     static let loginStudentSegue = "studentSegue"
     static let loginTeacherSegue = "teacherSegue"
+    static let studentListSegue = "statisticsStudent"
     
 
 }

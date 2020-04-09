@@ -14,13 +14,40 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
- var navigationBarAppearance = UINavigationBar.appearance()
-    var tabBarAppearance = UITabBar.appearance()
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+       if #available(iOS 13.0, *) {
+           let appearance = UINavigationBarAppearance()
         
+           appearance.backgroundColor = UIColor(hexString: "#2C4F6C")
+           appearance.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white
+           ]
+
+           let buttonAppearance = UIBarButtonItemAppearance()
+           buttonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.white]
+           appearance.buttonAppearance = buttonAppearance
+
+           UINavigationBar.appearance().standardAppearance = appearance
+           UINavigationBar.appearance().scrollEdgeAppearance = appearance
+           UINavigationBar.appearance().compactAppearance = appearance
+
+           UIBarButtonItem.appearance().tintColor = UIColor.white
+       } else {
+           UINavigationBar.appearance().barTintColor = UIColor.black
+           UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white
+           ]
+           UINavigationBar.appearance().tintColor = UIColor.white
+
+           UIBarButtonItem.appearance().tintColor = UIColor.white
+       }
+
+
+        
+        let tabBarAppearance = UITabBar.appearance()
         FirebaseApp.configure()
-        navigationBarAppearance.tintColor = UIColor.white
+        
+        
         tabBarAppearance.tintColor = UIColor.white
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
