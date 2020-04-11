@@ -15,7 +15,7 @@ class TeacherHomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var courses:List<Course>?
     let currentUser = Auth.auth().currentUser!
-    var currentInstrucor:Results<Instructor>?
+    var currentInstrucor:Results<User>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +52,8 @@ class TeacherHomeViewController: UIViewController {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
+            UserDefaults.standard.set(false, forKey: "isLoggedIn")
+          
             dismiss(animated: true, completion: nil)
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
@@ -83,7 +85,7 @@ class TeacherHomeViewController: UIViewController {
     func loadCourses(){
         if let range = currentUser.email?.range(of: "@") {
             let beginString = currentUser.email?[..<range.lowerBound]
-            currentInstrucor = realm.objects(Instructor.self).filter("id == %@", String(beginString!))
+            currentInstrucor = realm.objects(User.self).filter("id == %@", String(beginString!))
             
             courses = currentInstrucor![0].courses
             self.tableView.reloadData()

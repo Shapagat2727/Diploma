@@ -37,18 +37,20 @@ class SignupViewController: UIViewController {
                         let beginString = self.email.text![..<range.lowerBound]
                         let endString = self.email.text![range.upperBound...]
                         if (endString == "stu.sdu.edu.kz"){
-                            let id = Int(beginString)
-                            let newStudent = Student()
+                            let id = beginString
+                            let newStudent = User()
                             newStudent.firstName = self.firstName.text!
                             newStudent.lastName = self.lastName.text!
-                            newStudent.id = id!
+                            newStudent.id = String(id)
+                            newStudent.status = "student"
                             self.saveStudent(student: newStudent)
                         }
                         else if (endString == "sdu.edu.kz"){
-                            let newInstructor = Instructor()
+                            let newInstructor = User()
                             newInstructor.firstName = self.firstName.text!
                             newInstructor.lastName = self.lastName.text!
                             newInstructor.id = String(beginString)
+                            newInstructor.status = "teacher"
                             self.saveInstructor(instructor: newInstructor)
                         }
                         else{
@@ -62,7 +64,7 @@ class SignupViewController: UIViewController {
             
         }
     }
-    func saveStudent(student: Student){
+    func saveStudent(student: User){
         do{try realm.write{
             realm.add(student)
             }
@@ -73,7 +75,7 @@ class SignupViewController: UIViewController {
         showError(with: "Successfully added a new student")
         
     }
-    func saveInstructor(instructor: Instructor){
+    func saveInstructor(instructor: User){
         do{try realm.write{
             realm.add(instructor)
             }

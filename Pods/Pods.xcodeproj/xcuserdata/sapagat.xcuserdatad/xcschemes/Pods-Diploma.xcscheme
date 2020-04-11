@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1130"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BA8B0354DD0F978BE82BA0C1DB5FC00E"
+               BlueprintIdentifier = "61854163C6EB1748A4BAE5E226C01652"
                BuildableName = "Pods_Diploma.framework"
                BlueprintName = "Pods-Diploma"
                ReferencedContainer = "container:Pods.xcodeproj">

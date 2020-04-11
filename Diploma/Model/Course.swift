@@ -14,7 +14,7 @@ class Course:Object {
     @objc dynamic var id:Int = 0
     @objc dynamic var colorCode:String = ""
     let weeks = List<Week>()
-    var parentStudent = LinkingObjects(fromType: Student.self, property: "courses")
+    var parentStudent = LinkingObjects(fromType: User.self, property: "courses")
 }
 
 

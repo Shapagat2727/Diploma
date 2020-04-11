@@ -16,11 +16,11 @@ class StudentCatalogViewController: UIViewController {
     let realm = try! Realm()
     var courses:Results<Course>?
     let currentUser = Auth.auth().currentUser!
-    var currentStudent:Results<Student>?
+    var currentStudent:Results<User>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentStudent = realm.objects(Student.self).filter("id == %@", Int(String((currentUser.email?.prefix(9))!))!)
+        currentStudent = realm.objects(User.self).filter("id == %@", (currentUser.email?.prefix(9))!)
         loadCourses()
         tableView.delegate = self
         tableView.dataSource = self

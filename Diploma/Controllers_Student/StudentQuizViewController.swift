@@ -80,9 +80,9 @@ class StudentQuizViewController: UIViewController {
     func saveInitialScore(){
         if let range = currentUser.email?.range(of: "@") {
             let beginString = currentUser.email?[..<range.lowerBound]
-            let id = Int(String(beginString!))
+            let id = String(beginString!)
             let score = Score()
-            score.studentId = id!
+            score.studentId = id
             score.scoreValue = 0
             
             
@@ -101,14 +101,14 @@ class StudentQuizViewController: UIViewController {
     func changeScore(with isCorrect: Bool, and variant: Int, at ques: Question){
         if let range = currentUser.email?.range(of: "@") {
             let beginString = currentUser.email?[..<range.lowerBound]
-            if let id = Int(String(beginString!)){
+            let id = String(beginString!)
                 do{try realm.write{
                     if(isCorrect){
                         
-                        selectedWeek?.scores.filter("studentId == \(id)")[0].scoreValue += 1
-                        selectedWeek?.scores.filter("studentId == \(id)")[0].scoreByQuestion.append(1)
+                        selectedWeek?.scores.filter("studentId == '\(id)'")[0].scoreValue += 1
+                        selectedWeek?.scores.filter("studentId == '\(id)'")[0].scoreByQuestion.append(1)
                     }else{
-                        selectedWeek?.scores.filter("studentId == \(id)")[0].scoreByQuestion.append(0)
+                        selectedWeek?.scores.filter("studentId == '\(id)'")[0].scoreByQuestion.append(0)
                     }
                     ques.scoreByAnswer[variant] += 1
                     
@@ -117,7 +117,7 @@ class StudentQuizViewController: UIViewController {
                 }catch{
                     print("Error saving course, \(error)")
                 }
-            }
+            
             
             
         }

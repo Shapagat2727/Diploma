@@ -747,7 +747,7 @@
         <!--Login View Controller-->
         <scene sceneID="V2k-b8-R6o">
             <objects>
-                <viewController id="qGA-8C-vVS" customClass="LoginViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginvc" id="qGA-8C-vVS" customClass="LoginViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FK4-r1-FoC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -797,7 +797,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geU-ca-GBJ">
-                                <rect key="frame" x="33" y="540" width="348" height="67"/>
+                                <rect key="frame" x="33" y="580" width="348" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.17254901960784313" green="0.30980392156862746" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
@@ -809,7 +809,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QE-Xm-XZr">
-                                <rect key="frame" x="33" y="615" width="348" height="67"/>
+                                <rect key="frame" x="33" y="655" width="348" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
                                 <state key="normal" title="Sign up">
@@ -819,15 +819,23 @@
                                     <segue destination="0fy-4b-ofX" kind="presentation" id="RGz-De-L0O"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8W-PV-oLf">
+                                <rect key="frame" x="33" y="511" width="348" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.87795823809999995" green="0.47054213290000002" blue="0.4862591624" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="D4Z-oW-1Ql"/>
                     </view>
                     <connections>
                         <outlet property="emailTextfield" destination="T90-PO-8tX" id="z6M-A2-LHU"/>
+                        <outlet property="errorLabel" destination="A8W-PV-oLf" id="zJk-uq-kXl"/>
                         <outlet property="passwordTextfield" destination="agl-Xr-1Tn" id="0Sm-5N-nbV"/>
                         <segue destination="yED-Cb-2kk" kind="presentation" identifier="studentSegue" modalPresentationStyle="fullScreen" id="RMh-J9-uxI"/>
-                        <segue destination="HEN-c6-o0J" kind="presentation" identifier="teacherSegue" modalPresentationStyle="currentContext" id="XjZ-Ay-UoT"/>
+                        <segue destination="HEN-c6-o0J" kind="presentation" identifier="teacherSegue" modalPresentationStyle="fullScreen" id="XjZ-Ay-UoT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOn-w3-CV2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -979,6 +987,7 @@
         <!--My Courses-->
         <scene sceneID="iph-fZ-gA0">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dp7-c8-OuI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bWh-f1-ur5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Courses" image="person.fill" catalog="system" id="Yfm-jO-boi"/>
                     <toolbarItems/>
@@ -997,7 +1006,6 @@
                         <segue destination="IbN-Wm-rEY" kind="relationship" relationship="rootViewController" id="rgF-cZ-qgw"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dp7-c8-OuI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="813" y="-1595"/>
         </scene>
@@ -1148,6 +1156,7 @@
         <!--Catalog-->
         <scene sceneID="gVz-Dv-YfX">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FCB-dn-5Oh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jzt-EQ-Fg3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Catalog" image="house.fill" catalog="system" id="deb-H1-kGs"/>
                     <toolbarItems/>
@@ -1165,7 +1174,6 @@
                         <segue destination="nl0-nF-DYB" kind="relationship" relationship="rootViewController" id="ZDS-wo-KoY"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FCB-dn-5Oh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1721.7391304347827" y="-838.39285714285711"/>
         </scene>

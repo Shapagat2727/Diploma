@@ -9,74 +9,69 @@
 import UIKit
 import Firebase
 import RealmSwift
-class LoginViewController: UIViewController {
+import SwiftyUserDefaults
+class LoginViewController: UIViewController, UITextFieldDelegate {
     let realm = try! Realm()
-    var students:Results<Student>?
-    var instructors:Results<Instructor>?
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
-    var found:Bool = false
+    @IBOutlet weak var errorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadUsers()
-        self.hideKeyboardWhenTappedAround() 
+        
+        setUpElements()
+        self.hideKeyboardWhenTappedAround()
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        let UD = UserDefaults.standard
+
+            if (UD.bool(forKey: "isLoggedIn")){
+
+                if (UD.string(forKey: "status")=="student"){
+                    self.performSegue(withIdentifier: K.loginStudentSegue, sender: self)
+                }
+                if (UD.string(forKey: "status")=="teacher"){
+                    self.performSegue(withIdentifier: K.loginTeacherSegue, sender: self)
+                }
+            }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        found = false
+
         emailTextfield.text = ""
         passwordTextfield.text = ""
-    }
-    func loadUsers(){
-        students = realm.objects(Student.self)
-        instructors = realm.objects(Instructor.self)
-    }
-    func saveStudent(student: Student){
-        do{try realm.write{
-            realm.add(student)
-            }
-            
-        }catch{
-            print("Error saving course, \(error)")
-        }
-        
-    }
-    func saveInstructor(instructor: Instructor){
-        do{try realm.write{
-            realm.add(instructor)
-            }
-            
-        }catch{
-            print("Error saving course, \(error)")
-        }
-        
+        emailTextfield.delegate = self
+        passwordTextfield.delegate = self
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {
+        
         if let email = emailTextfield.text, let password = passwordTextfield.text{
+            
             Auth.auth().signIn(withEmail: email, password: password) {authResult, error in
+                
                 if let e = error{
-                    let alert = UIAlertController(title: "Error", message: e.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                }else{
+                    self.showError(with: e.localizedDescription)
                     
+                }else{
+                   
                     if let range = email.range(of: "@") {
-                        let endString = email[range.upperBound...]
-                        let beginString = email[..<range.lowerBound]
-                        let id = Int(beginString)
+                        let beginString = email[ ..<range.lowerBound]
+                        let user = self.realm.objects(User.self).filter("id == '\(beginString)'")[0]
                         
                         //                   let user = Auth.auth().currentUser
                         //                        user!.reload{(error) in
                         //                            if user!.isEmailVerified{
-                        if (endString == "stu.sdu.edu.kz"){
-                            self.checkStudent(with: id!)
+                        if (user.status == "student"){
+                            self.addUserDefaults(with: user)
+           
                             self.performSegue(withIdentifier: K.loginStudentSegue, sender: self)
                             
-                            
-                        }else if (endString == "sdu.edu.kz"){
-                            self.checkInstructor(with: String(beginString))
+                        }else if (user.status == "teacher"){
+                            self.addUserDefaults(with: user)
+                          
                             self.performSegue(withIdentifier: K.loginTeacherSegue, sender: self)
+                            
                         }else{
                             print("Undefined user")
                         }
@@ -95,36 +90,27 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    func checkStudent(with id : Int){
-        for student in self.students!{
-            if(student.id==id){
-                self.found = true
-            }
-        }
-        if(!self.found){
-            let newStudent = Student()
-            newStudent.firstName = "NAME"
-            newStudent.lastName = "SURNAME"
-            newStudent.id = id
-            self.saveStudent(student: newStudent)
-        }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        errorLabel.alpha = 0
     }
-    func checkInstructor(with id : String){
-        for instructor in self.instructors!{
-            if(instructor.id==id){
-                self.found = true
-            }
-        }
-        if(!self.found){
-            let newInstructor = Instructor()
-            newInstructor.firstName = "NAME"
-            newInstructor.lastName = "SURNAME"
-            newInstructor.id = id
-            self.saveInstructor(instructor: newInstructor)
-        }
+    func setUpElements(){
+        errorLabel.alpha = 0
     }
-    
+    func showError(with message: String){
+        errorLabel.text = message
+        errorLabel.alpha = 1
+    }
+    func addUserDefaults(with user: User){
+        UserDefaults.standard.set(true, forKey: "isLoggedIn") //Bool
+        UserDefaults.standard.set(user.firstName, forKey: "firstName")  //Integer
+        UserDefaults.standard.set(user.lastName, forKey: "lastName")
+        UserDefaults.standard.set(user.id, forKey: "id")
+        UserDefaults.standard.set(user.status, forKey: "status")
+        UserDefaults.standard.synchronize()
+    }
     
     
     
 }
+
+

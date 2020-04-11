@@ -34,7 +34,7 @@ class StudentsListViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentScore", for: indexPath) as! TableViewCell
         if let score = selectedWeek?.scores[indexPath.row]{
-            let student = realm.objects(Student.self).sorted(byKeyPath: "id", ascending: true).filter("id == \(score.studentId)")[0]
+            let student = realm.objects(User.self).sorted(byKeyPath: "id", ascending: true).filter("id == '\(score.studentId)'")[0]
             cell.idLabel.text = "\(score.studentId)"
             cell.nameLabel.text = student.firstName
             cell.surnameLabel.text = student.lastName

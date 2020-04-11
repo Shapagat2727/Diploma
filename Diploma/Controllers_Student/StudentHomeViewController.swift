@@ -16,7 +16,7 @@ class StudentHomeViewController: UIViewController {
     var courses:List<Course>?
     @IBOutlet weak var tableView: UITableView!
     let currentUser = Auth.auth().currentUser!
-    var currentStudent:Results<Student>?
+    var currentStudent:Results<User>?
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCourses()
@@ -25,7 +25,7 @@ class StudentHomeViewController: UIViewController {
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
     }
     func loadCourses(){
-        currentStudent = realm.objects(Student.self).filter("id == %@", Int(String((currentUser.email?.prefix(9))!))!)
+        currentStudent = realm.objects(User.self).filter("id == %@", (currentUser.email?.prefix(9))!)
         courses = currentStudent![0].courses
         self.tableView.reloadData()
     }
@@ -35,6 +35,8 @@ class StudentHomeViewController: UIViewController {
           let firebaseAuth = Auth.auth()
         do {
           try firebaseAuth.signOut()
+            UserDefaults.standard.set(false, forKey: "isLoggedIn")
+       
             dismiss(animated: true, completion: nil)
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
