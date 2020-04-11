@@ -1,5 +1,5 @@
 //
-//  ItemAnalysisTestViewController.swift
+//  ItemAnalysisViewController.swift
 //  Diploma
 //
 //  Created by Шапагат on 2/28/20.
@@ -9,7 +9,7 @@
 import UIKit
 import Charts
 import ChameleonFramework
-class ItemAnalysisTestViewController: UIViewController {
+class ItemAnalysisViewController: UIViewController {
     var variants = ["A", "B", "C", "D"]
     @IBOutlet weak var tableView: UITableView!
     var selectedWeek:Week?
@@ -25,14 +25,14 @@ class ItemAnalysisTestViewController: UIViewController {
 }
 
 //MARK:-TableView Delegate Methods
-extension ItemAnalysisTestViewController:UITableViewDelegate{
+extension ItemAnalysisViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300;
     }
 }
 
 //MARK:-TableView DataSource Methods
-extension ItemAnalysisTestViewController:UITableViewDataSource{
+extension ItemAnalysisViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (selectedWeek?.questions.count)!
     }
@@ -47,11 +47,14 @@ extension ItemAnalysisTestViewController:UITableViewDataSource{
             
             dataEntries.append(dataEntry)
         }
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Question #\(indexPath.row + 1)")
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Number of students by answers - Question #\(indexPath.row + 1)")
        
         chartDataSet.colors = [FlatWatermelon(), FlatWatermelon(),FlatWatermelon(), FlatWatermelon()]
         chartDataSet.colors[(selectedWeek?.questions[indexPath.row].correct_response)!] = FlatGreen()
         let chartData = BarChartData(dataSet: chartDataSet)
+        let pFormatter = NumberFormatter()
+        pFormatter.numberStyle = .decimal
+        chartData.setValueFormatter(DefaultValueFormatter(formatter: pFormatter))
         cell.itemBubble.xAxis.valueFormatter = IndexAxisValueFormatter(values: variants)
         cell.itemBubble.xAxis.granularityEnabled = true
         cell.itemBubble.xAxis.labelPosition = .bottom

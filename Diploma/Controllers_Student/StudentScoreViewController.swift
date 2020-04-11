@@ -1,5 +1,5 @@
 //
-//  ScoreViewController.swift
+//  StudentScoreViewController.swift
 //  Diploma
 //
 //  Created by Шапагат on 2/17/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScoreViewController: UIViewController {
+class StudentScoreViewController: UIViewController {
 
     @IBOutlet weak var scoreLabel: UILabel!
     var totalScore:Int = 0

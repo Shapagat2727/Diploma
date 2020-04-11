@@ -15,7 +15,7 @@ import RealmSwift
 import WebKit
 import SwiftyJSON
 
-class TopicViewController: UIViewController {
+class StudentTopicViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var testButton: UIButton!
@@ -47,7 +47,7 @@ class TopicViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier==K.weekQuesionSegue{
-            let destination = segue.destination as! QuestionViewController
+            let destination = segue.destination as! StudentQuizViewController
             destination.selectedWeek = selectedWeek
             
         }

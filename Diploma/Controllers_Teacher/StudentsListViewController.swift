@@ -1,5 +1,5 @@
 //
-//  StatisticsByStudentsViewController.swift
+//  StudentsListViewController.swift
 //  Diploma
 //
 //  Created by Шапагат on 4/9/20.
@@ -7,9 +7,9 @@
 //
 
 import UIKit
-
-class StatisticsByStudentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+import RealmSwift
+class StudentsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    let realm = try! Realm()
     @IBOutlet weak var tableView: UITableView!
     var selectedWeek:Week?
     
@@ -24,7 +24,7 @@ class StatisticsByStudentsViewController: UIViewController, UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 240
+        return 164
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,7 +34,10 @@ class StatisticsByStudentsViewController: UIViewController, UITableViewDelegate,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentScore", for: indexPath) as! TableViewCell
         if let score = selectedWeek?.scores[indexPath.row]{
-            cell.nameLabel.text = "\(score.studentId)"
+            let student = realm.objects(Student.self).sorted(byKeyPath: "id", ascending: true).filter("id == \(score.studentId)")[0]
+            cell.idLabel.text = "\(score.studentId)"
+            cell.nameLabel.text = student.firstName
+            cell.surnameLabel.text = student.lastName
             cell.scoreLabel.text = "\(score.scoreValue)"
         }
         return cell

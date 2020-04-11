@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import RealmSwift
-class StartingViewController: UIViewController {
+class LoginViewController: UIViewController {
     let realm = try! Realm()
     var students:Results<Student>?
     var instructors:Results<Instructor>?
@@ -66,17 +66,30 @@ class StartingViewController: UIViewController {
                         let beginString = email[..<range.lowerBound]
                         let id = Int(beginString)
                         
+                        //                   let user = Auth.auth().currentUser
+                        //                        user!.reload{(error) in
+                        //                            if user!.isEmailVerified{
                         if (endString == "stu.sdu.edu.kz"){
                             self.checkStudent(with: id!)
                             self.performSegue(withIdentifier: K.loginStudentSegue, sender: self)
                             
-    
+                            
                         }else if (endString == "sdu.edu.kz"){
                             self.checkInstructor(with: String(beginString))
                             self.performSegue(withIdentifier: K.loginTeacherSegue, sender: self)
                         }else{
                             print("Undefined user")
                         }
+                        
+                        //                            }else{
+                        //                                user?.sendEmailVerification{(error) in
+                        //                                    print("\(String(describing: error)) !!!!!!!!!")
+                        //                                }
+                        //                                print("Verify it now")
+                        //                            }
+                        //                        }
+                        
+                        
                     }
                 }
             }

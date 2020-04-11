@@ -10,7 +10,7 @@ import UIKit
 import ChameleonFramework
 import RealmSwift
 import Firebase
-class StudentCoursesViewController: UIViewController {
+class StudentHomeViewController: UIViewController {
     
     let realm = try! Realm()
     var courses:List<Course>?
@@ -51,7 +51,7 @@ class StudentCoursesViewController: UIViewController {
 }
 //MARK:-Table View Delegate Methods
 
-extension StudentCoursesViewController: UITableViewDelegate{
+extension StudentHomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return K.largeCell;
     }
@@ -60,7 +60,7 @@ extension StudentCoursesViewController: UITableViewDelegate{
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier==K.studentWeeks{
-            let destination = segue.destination as! HomeViewController
+            let destination = segue.destination as! StudentWeeksViewController
             if let indexPath = tableView.indexPathForSelectedRow{
                 destination.selectedCourse = courses?[indexPath.row]
             }
@@ -70,7 +70,7 @@ extension StudentCoursesViewController: UITableViewDelegate{
 }
 
 //MARK:-Table View Data Source Mathods
-extension StudentCoursesViewController: UITableViewDataSource{
+extension StudentHomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return courses?.count ?? 1
     }

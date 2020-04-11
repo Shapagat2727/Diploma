@@ -1,5 +1,5 @@
 //
-//  AddCourseViewController.swift
+//  TeacherHomeViewController.swift
 //  Diploma
 //
 //  Created by Шапагат on 2/19/20.
@@ -10,7 +10,7 @@ import UIKit
 import ChameleonFramework
 import RealmSwift
 import Firebase
-class AddCourseViewController: UIViewController {
+class TeacherHomeViewController: UIViewController {
     let realm = try! Realm()
     @IBOutlet weak var tableView: UITableView!
     var courses:List<Course>?
@@ -96,7 +96,7 @@ class AddCourseViewController: UIViewController {
 
 //MARK:-Table View Delegate Methods
 
-extension AddCourseViewController: UITableViewDelegate{
+extension TeacherHomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return K.largeCell;
     }
@@ -105,7 +105,7 @@ extension AddCourseViewController: UITableViewDelegate{
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier==K.weeksSegue{
-            let destination = segue.destination as! WeeksViewController
+            let destination = segue.destination as! TeacherWeeksViewController
             if let indexPath = tableView.indexPathForSelectedRow{
                 destination.selectedCourse = courses?[indexPath.row]
             }
@@ -115,7 +115,7 @@ extension AddCourseViewController: UITableViewDelegate{
 }
 
 //MARK:-Table View Data Source Mathods
-extension AddCourseViewController: UITableViewDataSource{
+extension TeacherHomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return courses?.count ?? 1
     }

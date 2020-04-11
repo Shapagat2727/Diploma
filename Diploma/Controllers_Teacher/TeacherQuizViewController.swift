@@ -1,5 +1,5 @@
 //
-//  AddContentViewController.swift
+//  TeacherQuizViewController.swift
 //  Diploma
 //
 //  Created by Шапагат on 2/20/20.
@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import SwiftyJSON
 
-class AddContentViewController: UIViewController {
+class TeacherQuizViewController: UIViewController {
     let realm = try! Realm()
     var selectedWeek:Week?
     @IBOutlet weak var tableView: UITableView!
@@ -93,7 +93,7 @@ class AddContentViewController: UIViewController {
 
 
 //MARK:-Table View Data Source Methods
-extension AddContentViewController: UITableViewDataSource{
+extension TeacherQuizViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count
     }

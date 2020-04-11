@@ -1,5 +1,5 @@
 //
-//  StatisticsViewController.swift
+//  BarChartViewController.swift
 //  Diploma
 //
 //  Created by Шапагат on 2/23/20.
@@ -9,7 +9,7 @@
 import UIKit
 import Charts
 import ChameleonFramework
-class StatisticsViewController: UIViewController {
+class BarChartViewController: UIViewController {
     
     var selectedWeek:Week?
     var questionNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
@@ -23,7 +23,11 @@ class StatisticsViewController: UIViewController {
         calculatePositiveNegative()
         let unitsPositive = calculatePercentage(with: positiveCounter, value: true)
         let unitsNegative = calculatePercentage(with: negativeCounter, value: false)
+        //barChartView.maxVisibleCount = 10
+       
+        
         setChart(dataPoints: questionNumbers, positive: unitsPositive, negative: unitsNegative)
+        
     }
     
     func calculatePositiveNegative(){
@@ -62,21 +66,28 @@ class StatisticsViewController: UIViewController {
         
         for i in 0..<dataPoints.count {
             if( positive.count != 0 && negative.count != 0){
+               
                 let dataEntry = BarChartDataEntry(x: Double(i), yValues: [positive[i], negative[i]])
                 dataEntries.append(dataEntry)
             }
             
         }
         
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Units Sold")
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Bar Chart by questions in percents - Week #\(selectedWeek!.id + 1)")
         chartDataSet.colors =  [FlatGreen(), FlatPink()]
         let chartData = BarChartData(dataSet: chartDataSet)
+        
         barChartView.data = chartData
         barChartView.xAxis.drawGridLinesEnabled = false
         barChartView.leftAxis.enabled = false
         barChartView.rightAxis.enabled = false
         barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: questionNumbers)
-        barChartView.xAxis.granularityEnabled = true
+        
+        barChartView.xAxis.granularityEnabled = false
+        
+        barChartView.xAxis.labelFont = .systemFont(ofSize: 12)
+        barChartView.xAxis.labelCount = 10
+        
         
     }
   

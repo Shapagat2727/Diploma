@@ -1,57 +1,35 @@
 //
-//  WeeksViewController.swift
+//  ViewController.swift
 //  Diploma
 //
-//  Created by Шапагат on 2/19/20.
+//  Created by Шапагат on 2/12/20.
 //  Copyright © 2020 Shapagat Bolat. All rights reserved.
 //
 
 import UIKit
-import ChameleonFramework
 import RealmSwift
+import ChameleonFramework
 
-class WeeksViewController: UIViewController {
-    let realm = try! Realm()
+class StudentWeeksViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
+    var selectedCourse:Course?
     var weeks:Results<Week>?
-    var selectedCourse:Course?{
-        didSet{
-            
-            loadWeeks()
-        }
-    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = selectedCourse?.name
+        weeks = selectedCourse?.weeks.sorted(byKeyPath: "id")
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = .none
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
         
     }
-    func loadWeeks(){
-        weeks = selectedCourse?.weeks.sorted(byKeyPath: "id")
-    }
 }
-//MARK:-Table View Delegate Methods
-extension WeeksViewController: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return K.mediumCell;
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: K.optionsSegue, sender: self)
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier==K.optionsSegue{
-            let destination = segue.destination as! ThreeOptionsViewController
-            if let indexPath = tableView.indexPathForSelectedRow{
-                destination.selectedWeek = weeks?[indexPath.row]
-            }
-        }
-    }
-    
-}
-//MARK:-Table View Data Source Methods
-extension WeeksViewController: UITableViewDataSource{
+//MARK:-TableView DataSource Methods
+extension StudentWeeksViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weeks?.count ?? 1
     }
@@ -72,8 +50,32 @@ extension WeeksViewController: UITableViewDataSource{
         
         
         return cell
+        
     }
     
     
 }
+//MARK:-TableView Delegate Methods
+extension StudentWeeksViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: K.topicSegue, sender: self)
+        
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return K.mediumCell;
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier==K.topicSegue{
+            let destination = segue.destination as! StudentTopicViewController
+            if let indexPath = tableView.indexPathForSelectedRow{
+                destination.selectedWeek = weeks?[indexPath.row]
+                
+            }
+            
+        }
+        
+    }
+}
+
 

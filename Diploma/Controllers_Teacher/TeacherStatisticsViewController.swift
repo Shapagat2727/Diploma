@@ -1,5 +1,5 @@
 //
-//  CollectionViewController.swift
+//  TeacherStatisticsViewController.swift
 //  Diploma
 //
 //  Created by Шапагат on 4/9/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 import ChameleonFramework
-class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+class TeacherStatisticsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     var selectedWeek:Week?
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -41,25 +41,25 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier==K.pieSegue{
-            let destination = segue.destination as! TestViewController
+            let destination = segue.destination as! PieChartViewController
             
             destination.selectedWeek = selectedWeek
             
         }
         if segue.identifier==K.analysisSegue{
-            let destination = segue.destination as! ItemAnalysisTestViewController
+            let destination = segue.destination as! ItemAnalysisViewController
             
             destination.selectedWeek = selectedWeek
             
         }
         if segue.identifier==K.barSegue{
-            let destination = segue.destination as! StatisticsViewController
+            let destination = segue.destination as! BarChartViewController
             
             destination.selectedWeek = selectedWeek
             
         }
         if segue.identifier==K.studentListSegue{
-            let destination = segue.destination as! StatisticsByStudentsViewController
+            let destination = segue.destination as! StudentsListViewController
             
             destination.selectedWeek = selectedWeek
             

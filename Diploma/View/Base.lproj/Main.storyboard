@@ -19,7 +19,7 @@
         <!--Preparation-->
         <scene sceneID="obQ-Wv-oaG">
             <objects>
-                <viewController id="nl0-nF-DYB" customClass="CatalogViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nl0-nF-DYB" customClass="StudentCatalogViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gt4-Ra-MZs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="2613.04347826087" y="-838.39285714285711"/>
         </scene>
-        <!--Question View Controller-->
+        <!--Student Quiz View Controller-->
         <scene sceneID="qtH-eE-DAS">
             <objects>
-                <viewController id="WO0-X5-GU0" customClass="QuestionViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WO0-X5-GU0" customClass="StudentQuizViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8kz-S9-s0E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,10 +251,10 @@
             </objects>
             <point key="canvasLocation" x="4442" y="-1595"/>
         </scene>
-        <!--Score View Controller-->
+        <!--Student Score View Controller-->
         <scene sceneID="NN4-hW-25d">
             <objects>
-                <viewController id="Sye-fL-gUl" customClass="ScoreViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Sye-fL-gUl" customClass="StudentScoreViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fXb-Qk-s33">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -307,7 +307,7 @@
         <!--Item Summary-->
         <scene sceneID="UTX-qx-cjO">
             <objects>
-                <viewController id="dNh-QP-Hlc" customClass="StatisticsViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dNh-QP-Hlc" customClass="BarChartViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YPL-Re-gXF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -330,16 +330,16 @@
             </objects>
             <point key="canvasLocation" x="2126" y="2085"/>
         </scene>
-        <!--Statistics By Students View Controller-->
+        <!--Students List View Controller-->
         <scene sceneID="dqH-g0-LCo">
             <objects>
-                <viewController id="YZZ-Yt-RMI" customClass="StatisticsByStudentsViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YZZ-Yt-RMI" customClass="StudentsListViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aun-3w-7QV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qpE-Kj-W6v">
-                                <rect key="frame" x="20" y="20" width="374" height="788"/>
+                                <rect key="frame" x="20" y="68" width="374" height="740"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -350,29 +350,60 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="164"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hou-go-YHa">
-                                                    <rect key="frame" x="20" y="72" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ID Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hou-go-YHa">
+                                                    <rect key="frame" x="20" y="31" width="334" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8q-7K-chQ">
+                                                    <rect key="frame" x="20" y="82" width="230" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbz-VK-5S8">
-                                                    <rect key="frame" x="312" y="72" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkA-1p-aSU">
+                                                    <rect key="frame" x="20" y="111" width="230" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbz-VK-5S8">
+                                                    <rect key="frame" x="258" y="71" width="96" height="42"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.3620352745" green="0.71860885620000003" blue="0.4313248992" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="nameLabel" destination="hou-go-YHa" id="RXl-Cu-pd0"/>
+                                            <outlet property="idLabel" destination="hou-go-YHa" id="5bB-Gn-ktG"/>
+                                            <outlet property="nameLabel" destination="I8q-7K-chQ" id="4eW-My-whQ"/>
                                             <outlet property="scoreLabel" destination="Qbz-VK-5S8" id="qev-ng-mvW"/>
+                                            <outlet property="surnameLabel" destination="NkA-1p-aSU" id="bWj-yP-7as"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwO-Ny-9le">
+                                <rect key="frame" x="20" y="20" width="234" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9y-l0-fDA">
+                                <rect key="frame" x="262" y="20" width="132" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ifu-P7-7Yd"/>
@@ -386,10 +417,10 @@
             </objects>
             <point key="canvasLocation" x="3005.7971014492755" y="2083.9285714285716"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Teacher Statistics View Controller-->
         <scene sceneID="iJL-Rx-HVA">
             <objects>
-                <viewController id="sxL-u0-f9F" customClass="CollectionViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sxL-u0-f9F" customClass="TeacherStatisticsViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YAh-qd-ggw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -413,10 +444,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ox9-ez-PYX">
-                                                    <rect key="frame" x="8" y="8" width="168" height="272.33333333333331"/>
+                                                    <rect key="frame" x="8" y="8" width="168" height="272.66666666666669"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cq7-cf-pUh">
-                                                    <rect key="frame" x="8" y="288.33333333333331" width="168" height="23.666666666666686"/>
+                                                    <rect key="frame" x="8" y="288.66666666666669" width="168" height="23.333333333333314"/>
                                                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -467,7 +498,7 @@
         <!--Courses-->
         <scene sceneID="TZO-4g-k6k">
             <objects>
-                <viewController id="IBQ-5P-XZB" customClass="AddCourseViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IBQ-5P-XZB" customClass="TeacherHomeViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0xY-3H-E05">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -512,7 +543,7 @@
         <!--SelectedCourseName-->
         <scene sceneID="MkC-Ha-hI8">
             <objects>
-                <viewController id="FuN-NY-ySU" customClass="WeeksViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FuN-NY-ySU" customClass="TeacherWeeksViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hqX-Ro-QeB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -541,10 +572,10 @@
             </objects>
             <point key="canvasLocation" x="1722" y="113"/>
         </scene>
-        <!--Three Options View Controller-->
+        <!--Teacher Content Options View Controller-->
         <scene sceneID="wm7-AR-Gl4">
             <objects>
-                <viewController id="LvI-zI-JgH" customClass="ThreeOptionsViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LvI-zI-JgH" customClass="TeacherContentOptionsViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PD6-Z4-R0e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -573,7 +604,7 @@
         <!--selectedWeek-->
         <scene sceneID="Upg-KF-QUo">
             <objects>
-                <viewController id="uzG-nI-bYG" customClass="AddVideoTextViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uzG-nI-bYG" customClass="TeacherVideoTextViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ed0-dx-oav">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -649,10 +680,10 @@
             </objects>
             <point key="canvasLocation" x="3535" y="113"/>
         </scene>
-        <!--Add Content View Controller-->
+        <!--Teacher Quiz View Controller-->
         <scene sceneID="Ky9-gC-SmY">
             <objects>
-                <viewController id="0oK-UO-pMw" customClass="AddContentViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0oK-UO-pMw" customClass="TeacherQuizViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LHR-HJ-5Ag">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -689,7 +720,7 @@
         <!--SelectedCourseName-->
         <scene sceneID="5bq-5v-35T">
             <objects>
-                <viewController id="g21-WS-FAq" customClass="HomeViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="g21-WS-FAq" customClass="StudentWeeksViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sro-Kt-Wkm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -713,10 +744,10 @@
             </objects>
             <point key="canvasLocation" x="2613" y="-1595"/>
         </scene>
-        <!--Starting View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="V2k-b8-R6o">
             <objects>
-                <viewController id="qGA-8C-vVS" customClass="StartingViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qGA-8C-vVS" customClass="LoginViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FK4-r1-FoC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -803,10 +834,10 @@
             </objects>
             <point key="canvasLocation" x="-3265.217391304348" y="-242.41071428571428"/>
         </scene>
-        <!--Registration View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="Vie-qR-Lxj">
             <objects>
-                <viewController id="0fy-4b-ofX" customClass="RegistrationViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0fy-4b-ofX" customClass="SignupViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1dJ-j2-Jgx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -970,10 +1001,10 @@
             </objects>
             <point key="canvasLocation" x="813" y="-1595"/>
         </scene>
-        <!--Topic View Controller-->
+        <!--Student Topic View Controller-->
         <scene sceneID="JDk-ks-IDD">
             <objects>
-                <viewController id="QDz-zk-mFz" customClass="TopicViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QDz-zk-mFz" customClass="StudentTopicViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e6X-VX-yg2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1078,7 +1109,7 @@
         <!--Courses-->
         <scene sceneID="yBM-YJ-QdU">
             <objects>
-                <viewController id="IbN-Wm-rEY" customClass="StudentCoursesViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IbN-Wm-rEY" customClass="StudentHomeViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Emu-U0-WUL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1169,7 +1200,7 @@
         <!--Score Graph-->
         <scene sceneID="gdj-OI-mRD">
             <objects>
-                <viewController id="Ezw-9Z-9GU" customClass="TestViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ezw-9Z-9GU" customClass="PieChartViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tF4-XP-pH0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1211,7 +1242,7 @@
         <!--Item Analysis-->
         <scene sceneID="5ra-I8-oT9">
             <objects>
-                <viewController id="Frm-Az-ufB" customClass="ItemAnalysisTestViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Frm-Az-ufB" customClass="ItemAnalysisViewController" customModule="Diploma" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zig-rW-fXN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

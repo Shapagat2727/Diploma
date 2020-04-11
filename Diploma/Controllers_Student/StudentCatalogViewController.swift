@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import ChameleonFramework
 import Firebase
-class CatalogViewController: UIViewController {
+class StudentCatalogViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let realm = try! Realm()
@@ -37,7 +37,7 @@ class CatalogViewController: UIViewController {
     
 }
 //MARK:-TableView DataSource Methods
-extension CatalogViewController: UITableViewDataSource{
+extension StudentCatalogViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return courses?.count ?? 1
     }
@@ -57,7 +57,7 @@ extension CatalogViewController: UITableViewDataSource{
     
 }
 //MARK:-TableView Delegate Methods
-extension CatalogViewController: UITableViewDelegate{
+extension StudentCatalogViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return K.largeCell;

@@ -1,5 +1,5 @@
 //
-//  AddVideoTextViewController.swift
+//  TeacherVideoTextViewController.swift
 //  Diploma
 //
 //  Created by Шапагат on 2/25/20.
@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import ChameleonFramework
 import RealmSwift
-class AddVideoTextViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class TeacherVideoTextViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     let realm = try! Realm()
     let imagePicker = UIImagePickerController()
     var videoURL: NSURL?

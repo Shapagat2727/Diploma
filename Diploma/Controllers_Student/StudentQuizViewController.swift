@@ -10,7 +10,7 @@ import UIKit
 import QuizKit
 import RealmSwift
 import Firebase
-class QuestionViewController: UIViewController {
+class StudentQuizViewController: UIViewController {
     let realm = try! Realm()
     let currentUser = Auth.auth().currentUser!
     @IBOutlet weak var questionLabel: UILabel!
@@ -56,7 +56,7 @@ class QuestionViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.scoreSegue{
-            let destination = segue.destination as! ScoreViewController
+            let destination = segue.destination as! StudentScoreViewController
             destination.totalScore = self.session.score
         }
     }

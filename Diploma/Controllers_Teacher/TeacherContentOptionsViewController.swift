@@ -1,5 +1,5 @@
 //
-//  ThreeOptionsViewController.swift
+//  TeacherContentOptionsViewController.swift
 //  Diploma
 //
 //  Created by Шапагат on 4/8/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 import ChameleonFramework
-class ThreeOptionsViewController: UIViewController {
+class TeacherContentOptionsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var selectedWeek:Week?
     var options = ["Weekly content", "Weekly quiz", "Weekly statistics"]
@@ -25,7 +25,7 @@ class ThreeOptionsViewController: UIViewController {
 
 
 //MARK:-Table View Delegate Methods
-extension ThreeOptionsViewController: UITableViewDelegate{
+extension TeacherContentOptionsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 240;
     }
@@ -44,24 +44,24 @@ extension ThreeOptionsViewController: UITableViewDelegate{
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier==K.newVideoTextSegue{
-            let destination = segue.destination as! AddVideoTextViewController
+            let destination = segue.destination as! TeacherVideoTextViewController
             destination.selectedWeek = selectedWeek
             
         }
         if segue.identifier==K.newContentSegue{
-            let destination = segue.destination as! AddContentViewController
+            let destination = segue.destination as! TeacherQuizViewController
             destination.selectedWeek = self.selectedWeek
         }
         
         if segue.identifier==K.statisticsSegue{
-            let destination = segue.destination as! CollectionViewController
+            let destination = segue.destination as! TeacherStatisticsViewController
             destination.selectedWeek = self.selectedWeek
         }
 
     }
     
 }
-extension ThreeOptionsViewController: UITableViewDataSource{
+extension TeacherContentOptionsViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return options.count
     }

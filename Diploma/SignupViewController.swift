@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import RealmSwift
-class RegistrationViewController: UIViewController {
+class SignupViewController: UIViewController {
     let realm = try! Realm()
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -59,6 +59,7 @@ class RegistrationViewController: UIViewController {
                     
                 }
             }
+            
         }
     }
     func saveStudent(student: Student){
