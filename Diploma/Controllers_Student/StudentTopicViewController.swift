@@ -14,34 +14,58 @@ import QuizKit
 import RealmSwift
 import WebKit
 import SwiftyJSON
-
+import Firebase
 class StudentTopicViewController: UIViewController {
-    
+    let realm = try! Realm()
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var testButton: UIButton!
     @IBOutlet weak var topicScreenshot: UIImageView!
     @IBOutlet weak var topicContent: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
-    
+    let currentUser = Auth.auth().currentUser!
+    var passedAlready:Bool = false
     var selectedWeek:Week?
+    var score:Int = 0
     var player = AVPlayer()
     var playerViewController = AVPlayerViewController()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loadQuiz()
         loadVideo()
         loadUI()
         
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        if let range = currentUser.email?.range(of: "@") {
+            let beginString = currentUser.email?[..<range.lowerBound]
+            for i in 0..<realm.objects(Score.self).count{
+                if(realm.objects(Score.self)[i].studentId == String(beginString!)){
+                    passedAlready = true
+                    score = realm.objects(Score.self)[i].scoreValue
+                }
+            }
+            
+        }
+    }
     @IBAction func testButtonPressed(_ sender: UIButton) {
         if selectedWeek!.isReady{
-            if selectedWeek?.questions.count == 10{
-                performSegue(withIdentifier: K.weekQuesionSegue, sender: self)
+            if passedAlready{
+                let alert = UIAlertController(title: "You've already passed this test", message: "Your score is \(score) points out of 10", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
             }else{
-                print("Not enough questions")
+                if selectedWeek?.questions.count == 10{
+                    performSegue(withIdentifier: K.weekQuesionSegue, sender: self)
+                    
+                    
+                }else{
+                    print("Not enough questions")
+                }
             }
         }else{
             let alert = UIAlertController(title: "Quiz isn't set yet", message: "Wait till instructor, adds a quiz", preferredStyle: .alert)
