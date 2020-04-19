@@ -102,6 +102,10 @@ class TeacherStatisticsViewController: UIViewController, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collection", for: indexPath) as! CollectionViewCell
         cell.cellImageView.image = UIImage(named: chartImages[indexPath.row])
         cell.cellLabel.text = charts[indexPath.row]
+        cell.layer.borderColor = FlatBlueDark().cgColor
+        cell.layer.borderWidth = 3.0
+        cell.layer.cornerRadius = cell.frame.size.height/15
+        cell.backgroundColor = FlatWhite()
         return cell
     }
     

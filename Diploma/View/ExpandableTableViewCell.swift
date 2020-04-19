@@ -27,35 +27,61 @@ class ExpandableTableViewCell: UITableViewCell {
     @IBOutlet weak var variantD: UITextField!
     var index: Int?
     
+    @IBOutlet weak var saveButton: UIButton!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         self.layer.cornerRadius = questionView.frame.size.height / 5
-        self.layer.borderColor = FlatGray().cgColor
         self.layer.borderWidth = 3.0
+        
         
     }
     
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         
-        questionView.backgroundColor = FlatGreen()
-        do{
-            try realm.write{
-                selectedWeek?.questions[index!].category = "Category_Name"
-                selectedWeek?.questions[index!].question = questionTitle.text!
-                selectedWeek?.questions[index!].responses[0] = variantA.text!
-                selectedWeek?.questions[index!].responses[1] = variantB.text!
-                selectedWeek?.questions[index!].responses[2] = variantC.text!
-                selectedWeek?.questions[index!].responses[3] = variantD.text!
-                selectedWeek?.questions[index!].correct_response = correctResponseIndex
-                selectedWeek?.questions[index!].type = "multiple_choice"
-                
+        if(isQuestionValid()){
+            
+            var ready = true
+            
+            do{
+                try realm.write{
+                    selectedWeek?.isReady = ready
+                    selectedWeek?.questions[index!].category = "Category_Name"
+                    selectedWeek?.questions[index!].question = questionTitle.text!
+                    selectedWeek?.questions[index!].responses[0] = variantA.text!
+                    selectedWeek?.questions[index!].responses[1] = variantB.text!
+                    selectedWeek?.questions[index!].responses[2] = variantC.text!
+                    selectedWeek?.questions[index!].responses[3] = variantD.text!
+                    selectedWeek?.questions[index!].correct_response = correctResponseIndex
+                    selectedWeek?.questions[index!].type = "multiple_choice"
+                    selectedWeek?.questions[index!].isValid = true
+                    
+                }
+            }catch{
+                print("error  saving question \(error)")
             }
-        }catch{
-            print("error  saving question \(error)")
+            for n in 0...9{
+                if((selectedWeek?.questions[n].isValid) == false){
+                    ready = false
+                }
+            }
+            do{
+                try realm.write{
+                    selectedWeek?.isReady = ready
+                }
+            }catch{
+                print("error  saving question \(error)")
+            }
+        }else{
+            print("Plese fill in all the fields")
+        }
+        
+        DispatchQueue.main.async {
+            let tb:UITableView = self.superview as! UITableView
+            tb.reloadData()
         }
         
         
@@ -67,10 +93,15 @@ class ExpandableTableViewCell: UITableViewCell {
         checkButtonB.tintColor = FlatGray()
         checkButtonC.tintColor = FlatGray()
         checkButtonD.tintColor = FlatGray()
-        sender.tintColor = FlatGreen()
+        sender.tintColor = UIColor(hexString: "#214F6F")
         self.correctResponseIndex = sender.tag
         
         
+    }
+    func isQuestionValid()->Bool{
+        
+        
+        return (questionTitle.text!.trimmingCharacters(in: .whitespacesAndNewlines) != "" && variantA.text!.trimmingCharacters(in: .whitespacesAndNewlines) != "" && variantB.text!.trimmingCharacters(in: .whitespacesAndNewlines) != "" && variantC.text!.trimmingCharacters(in: .whitespacesAndNewlines) != "" && variantD.text!.trimmingCharacters(in: .whitespacesAndNewlines) != "")
     }
     
     

@@ -45,24 +45,24 @@ class TeacherQuizViewController: UIViewController {
             tableView.scrollIndicatorInsets = insets
         }
     }
-    @IBAction func addQuestionPressed(_ sender: UIBarButtonItem) {
-        let newQuestion = Question()
-        newQuestion.category = "Category_Name"
-        newQuestion.question = ""
-        newQuestion.responses.append(objectsIn: ["","","",""])
-        newQuestion.correct_response = 0
-        newQuestion.type = "multiple_choice"
-        newQuestion.scoreByAnswer.append(objectsIn: [0,0,0,0])
-        do{
-            try realm.write{
-                selectedWeek?.questions.append(newQuestion)
-            }
-        }catch{
-            print("error  saving question \(error)")
-        }
-        questions = loadQuiz()
-        self.tableView.reloadData()
-    }
+//    @IBAction func addQuestionPressed(_ sender: UIBarButtonItem) {
+//        let newQuestion = Question()
+//        newQuestion.category = "Category_Name"
+//        newQuestion.question = ""
+//        newQuestion.responses.append(objectsIn: ["","","",""])
+//        newQuestion.correct_response = 0
+//        newQuestion.type = "multiple_choice"
+//        newQuestion.scoreByAnswer.append(objectsIn: [0,0,0,0])
+//        do{
+//            try realm.write{
+//                selectedWeek?.questions.append(newQuestion)
+//            }
+//        }catch{
+//            print("error  saving question \(error)")
+//        }
+//        questions = loadQuiz()
+//        self.tableView.reloadData()
+//    }
     func loadQuiz()->[Dictionary<String, Any>] {
         
         var jsonArray:[Dictionary<String, Any>] = []
@@ -98,16 +98,33 @@ extension TeacherQuizViewController: UITableViewDataSource{
         return questions.count
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.newQuestionCell, for: indexPath) as! ExpandableTableViewCell
         cell.questionLabel.text = "Question \(indexPath.row + 1)"
-        cell.questionTitle.text = questions[indexPath.row]["question"] as? String
-        if let array = questions[indexPath.row]["responses"] as? [String]{
-            cell.variantA.text = array[0]
-            cell.variantB.text = array[1]
-            cell.variantC.text = array[2]
-            cell.variantD.text = array[3]
-        }
+        
+        
+            cell.questionTitle.text = self.selectedWeek?.questions[indexPath.row].question
+            cell.variantA.text = self.selectedWeek?.questions[indexPath.row].responses[0]
+            cell.variantB.text = self.selectedWeek?.questions[indexPath.row].responses[1]
+            cell.variantC.text = self.selectedWeek?.questions[indexPath.row].responses[2]
+            cell.variantD.text = self.selectedWeek?.questions[indexPath.row].responses[3]
+            if((self.selectedWeek?.questions[indexPath.row].isValid)!){
+               
+                    cell.questionLabel.textColor = UIColor(hexString: "#214F6F")
+                    cell.layer.borderColor = UIColor(hexString: "#214F6F").cgColor
+                    cell.saveButton.backgroundColor = UIColor.white
+                    cell.saveButton.setTitleColor(UIColor(hexString: "#214F6F"), for: .normal)
+                    
+            }else{
+                    cell.questionLabel.textColor = UIColor.gray
+                    cell.layer.borderColor = UIColor.gray.cgColor
+                    cell.saveButton.backgroundColor = UIColor.gray
+                    cell.saveButton.setTitleColor(UIColor.white, for: .normal)
+                
+            }
+        
         
         cell.index = indexPath.row
         cell.selectedWeek = self.selectedWeek

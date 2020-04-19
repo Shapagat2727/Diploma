@@ -35,6 +35,7 @@ class TeacherHomeViewController: UIViewController {
             if let text = textField?.text{
                 if !text.isEmpty{
                     let newCourse = Course()
+                   
                     newCourse.name = text
                     newCourse.colorCode = RandomFlatColor().hexValue()
                     self.save(course: newCourse)
@@ -66,6 +67,16 @@ class TeacherHomeViewController: UIViewController {
                     for n in 0...14{
                         let week = Week()
                         week.id = n
+                        for _ in 0...9{
+                            let newQuestion = Question()
+                            newQuestion.category = "Category_Name"
+                            newQuestion.question = ""
+                            newQuestion.responses.append(objectsIn: ["","","",""])
+                            newQuestion.correct_response = 0
+                            newQuestion.type = "multiple_choice"
+                            newQuestion.scoreByAnswer.append(objectsIn: [0,0,0,0])
+                            week.questions.append(newQuestion)
+                        }
                         course.weeks.append(week)
                     }
                     currentInstrucor![0].courses.append(course)

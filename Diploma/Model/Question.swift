@@ -17,5 +17,6 @@ class Question: Object {
     var scoreByAnswer = List<Int>()
     let responses = List<String>()
     var parentWeek = LinkingObjects(fromType: Week.self, property: "questions")
+    @objc dynamic var isValid:Bool = false
 }
 

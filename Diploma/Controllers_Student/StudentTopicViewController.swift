@@ -37,12 +37,19 @@ class StudentTopicViewController: UIViewController {
         
     }
     @IBAction func testButtonPressed(_ sender: UIButton) {
-        
-        if selectedWeek?.questions.count == 10{
-            performSegue(withIdentifier: K.weekQuesionSegue, sender: self)
+        if selectedWeek!.isReady{
+            if selectedWeek?.questions.count == 10{
+                performSegue(withIdentifier: K.weekQuesionSegue, sender: self)
+            }else{
+                print("Not enough questions")
+            }
         }else{
-            print("Not enough questions")
+            let alert = UIAlertController(title: "Quiz isn't set yet", message: "Wait till instructor, adds a quiz", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+            
         }
+        
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -73,7 +73,7 @@ class SignupViewController: UIViewController {
             showError(with: "Error saving student data")
         }
         showError(with: "Successfully added a new student")
-        
+        errorLabel.textColor = UIColor.green
     }
     func saveInstructor(instructor: User){
         do{try realm.write{

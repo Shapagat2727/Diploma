@@ -11,6 +11,10 @@ import ChameleonFramework
 class TeacherContentOptionsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var selectedWeek:Week?
+    
+    //    itemConteiner.layer.borderColor = FlatGray().cgColor
+    //    itemConteiner.layer.borderWidth = 3.0
+    //    itemConteiner.layer.cornerRadius = itemConteiner.frame.size.height / 5
     var options = ["Weekly content", "Weekly quiz", "Weekly statistics"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +31,10 @@ class TeacherContentOptionsViewController: UIViewController {
 //MARK:-Table View Delegate Methods
 extension TeacherContentOptionsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 240;
+        let guide = view.safeAreaLayoutGuide
+        let height = guide.layoutFrame.size.height
+        
+        return height/CGFloat(options.count);
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
@@ -57,7 +64,7 @@ extension TeacherContentOptionsViewController: UITableViewDelegate{
             let destination = segue.destination as! TeacherStatisticsViewController
             destination.selectedWeek = self.selectedWeek
         }
-
+        
     }
     
 }
@@ -69,12 +76,13 @@ extension TeacherContentOptionsViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.topicCell, for: indexPath) as! TopicCell
         cell.topicLabel?.text = options[indexPath.row]
-        if let color = FlatYellow().darken(byPercentage: CGFloat(indexPath.row)/CGFloat(options.count)){
-            cell.topicBubble?.backgroundColor = color
-            cell.topicLabel?.textColor = ContrastColorOf(backgroundColor: color, returnFlat: true)
-        }
+        cell.topicBubble!.layer.borderColor = FlatBlueDark().cgColor
+        cell.topicBubble!.layer.borderWidth = 3.0
+       
+        cell.topicBubble!.backgroundColor = FlatWhite()
         return cell
     }
     
     
 }
+
