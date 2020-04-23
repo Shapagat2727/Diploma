@@ -49,17 +49,6 @@ class TeacherHomeViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true)
     }
-    @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            UserDefaults.standard.set(false, forKey: "isLoggedIn")
-          
-            dismiss(animated: true, completion: nil)
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-    }
     func save(course: Course){
         if(realm.objects(Course.self).filter("name == '\(course.name)'").count==0){
             do{

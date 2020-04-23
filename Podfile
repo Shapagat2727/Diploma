@@ -11,8 +11,6 @@ target 'Diploma' do
     pod 'Charts'
     pod 'RealmSwift'
     pod 'Firebase/Auth'
-    pod 'Firebase/Core'
-    pod 'Firebase/Firestore'
     pod 'SwiftyUserDefaults', '~> 5.0'
 
 end
