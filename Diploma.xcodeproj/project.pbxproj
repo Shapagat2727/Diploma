@@ -39,7 +39,8 @@
 		8A798F7C242F613C0057BE07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A798F7B242F613C0057BE07 /* LoginViewController.swift */; };
 		8A7C8A3C243370DC00C276C8 /* Pods_Diploma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EB6A78A30984E62CE03012 /* Pods_Diploma.framework */; };
 		8A7C8A6B243375EC00C276C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AB9DC0524331C5400A4A54A /* GoogleService-Info.plist */; };
-		8AA90ACC2451427B00F6279E /* TeacherAccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA90ACB2451427B00F6279E /* TeacherAccountSettingsViewController.swift */; };
+		8AA90ACC2451427B00F6279E /* UserAccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA90ACB2451427B00F6279E /* UserAccountSettingsViewController.swift */; };
+		8AA90ACE245150F100F6279E /* TeacherCourseSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA90ACD245150F100F6279E /* TeacherCourseSettingsViewController.swift */; };
 		8AB4D55323FD733400A9FAC4 /* TeacherHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB4D55223FD733400A9FAC4 /* TeacherHomeViewController.swift */; };
 		8AB4D55523FD804C00A9FAC4 /* TeacherWeeksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB4D55423FD804C00A9FAC4 /* TeacherWeeksViewController.swift */; };
 		8AB7A4F82438423300C462C9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB7A4F72438423300C462C9 /* Extensions.swift */; };
@@ -94,7 +95,8 @@
 		8A7C8A472433715800C276C8 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7C8A4A2433715F00C276C8 /* ChameleonFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ChameleonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7C8A4D2433716300C276C8 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8AA90ACB2451427B00F6279E /* TeacherAccountSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAccountSettingsViewController.swift; sourceTree = "<group>"; };
+		8AA90ACB2451427B00F6279E /* UserAccountSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountSettingsViewController.swift; sourceTree = "<group>"; };
+		8AA90ACD245150F100F6279E /* TeacherCourseSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseSettingsViewController.swift; sourceTree = "<group>"; };
 		8AB4D55223FD733400A9FAC4 /* TeacherHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherHomeViewController.swift; sourceTree = "<group>"; };
 		8AB4D55423FD804C00A9FAC4 /* TeacherWeeksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherWeeksViewController.swift; sourceTree = "<group>"; };
 		8AB7A4F72438423300C462C9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				8A713F8C23F440B400F95710 /* SceneDelegate.swift */,
 				8A798F7B242F613C0057BE07 /* LoginViewController.swift */,
 				8A063FE5243C30AE009E245A /* SignupViewController.swift */,
+				8AA90ACB2451427B00F6279E /* UserAccountSettingsViewController.swift */,
 				8AB4D55123FD730100A9FAC4 /* Controllers_Teacher */,
 				8A713FA323F441FF00F95710 /* Model */,
 				8A713FA223F441EE00F95710 /* Controllers_Student */,
@@ -214,7 +217,7 @@
 				8A5255202408DE14004EB8E5 /* ItemAnalysisViewController.swift */,
 				8A18996F243F1C3B006AB818 /* StudentsListViewController.swift */,
 				8A189975243F5303006AB818 /* TableViewCell.swift */,
-				8AA90ACB2451427B00F6279E /* TeacherAccountSettingsViewController.swift */,
+				8AA90ACD245150F100F6279E /* TeacherCourseSettingsViewController.swift */,
 			);
 			path = Controllers_Teacher;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				8A08FF292402C1AA002C8B4D /* BarChartViewController.swift in Sources */,
 				8A713FBA23F59AAF00F95710 /* StudentCatalogViewController.swift in Sources */,
 				8A713F8F23F440B400F95710 /* StudentWeeksViewController.swift in Sources */,
+				8AA90ACE245150F100F6279E /* TeacherCourseSettingsViewController.swift in Sources */,
 				8A798F7C242F613C0057BE07 /* LoginViewController.swift in Sources */,
 				8A063FE8243CCDD4009E245A /* Score.swift in Sources */,
 				8A713FB723F587AF00F95710 /* TopicCell.swift in Sources */,
@@ -402,7 +406,7 @@
 				8A08FF2B2404C547002C8B4D /* TeacherVideoTextViewController.swift in Sources */,
 				8A525529240A2DE6004EB8E5 /* Course.swift in Sources */,
 				8A713FA723F44F8700F95710 /* StudentTopicViewController.swift in Sources */,
-				8AA90ACC2451427B00F6279E /* TeacherAccountSettingsViewController.swift in Sources */,
+				8AA90ACC2451427B00F6279E /* UserAccountSettingsViewController.swift in Sources */,
 				8A189972243F1F74006AB818 /* TeacherStatisticsViewController.swift in Sources */,
 				8AFC2C3E243D954600D1808B /* TeacherContentOptionsViewController.swift in Sources */,
 				8A5255242408DE75004EB8E5 /* ItemTableViewCell.swift in Sources */,

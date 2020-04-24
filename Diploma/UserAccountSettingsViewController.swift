@@ -18,7 +18,9 @@ class UserAccountSettingsViewController: UIViewController {
     var currentUser: Results<User>?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         errorLabel.alpha = 0
         if let range = currentFirebaseUser.email?.range(of: "@") {
             let beginString = currentFirebaseUser.email?[..<range.lowerBound]

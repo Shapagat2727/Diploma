@@ -11,7 +11,7 @@ import ChameleonFramework
 import RealmSwift
 import Firebase
 class StudentHomeViewController: UIViewController {
-    
+    private let refreshControl = UIRefreshControl()
     let realm = try! Realm()
     var courses:List<Course>?
     @IBOutlet weak var tableView: UITableView!
@@ -23,13 +23,24 @@ class StudentHomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        refreshControl.tintColor = UIColor(hexString: "#214F6F")
     }
     func loadCourses(){
         currentStudent = realm.objects(User.self).filter("id == %@", (currentUser.email?.prefix(9))!)
         courses = currentStudent![0].courses
         self.tableView.reloadData()
     }
-    
+    @objc private func refreshTable() {
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

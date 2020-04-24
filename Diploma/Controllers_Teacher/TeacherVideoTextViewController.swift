@@ -10,9 +10,9 @@ import UIKit
 import AVFoundation
 import ChameleonFramework
 import RealmSwift
-class TeacherVideoTextViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class TeacherVideoTextViewController: UIViewController{
     let realm = try! Realm()
-    let imagePicker = UIImagePickerController()
+    
     var videoURL: NSURL?
     var selectedWeek:Week?
  
@@ -36,10 +36,10 @@ class TeacherVideoTextViewController: UIViewController,UIImagePickerControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround()
         errorLabel.alpha = 0
         self.title = "Week \(selectedWeek!.id+1)"
-        imagePicker.delegate = self
+        
         videoTextField.addTarget(self, action: #selector(TeacherVideoTextViewController.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         videoTextField.text = selectedWeek?.video
         textView.text = selectedWeek?.textContent
@@ -63,30 +63,7 @@ class TeacherVideoTextViewController: UIViewController,UIImagePickerControllerDe
         }
         return false
     }
-    
-    
-    @IBAction func selectVideoPressed(_ sender: UIButton) {
-        imagePicker.mediaTypes = ["public.movie"]
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        
-        if let videoURL = info[UIImagePickerController.InfoKey.referenceURL] as? NSURL{
-            videoTextField.text = "\(videoURL)"
-            
-        }
-        dismiss(animated: true, completion: nil)
-    }
 
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    
 
     func showError(with message: String){
         errorLabel.text = message

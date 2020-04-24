@@ -12,7 +12,7 @@ import ChameleonFramework
 import Firebase
 class StudentCatalogViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
+    private let refreshControl = UIRefreshControl()
     let realm = try! Realm()
     var courses:Results<Course>?
     let currentUser = Auth.auth().currentUser!
@@ -26,7 +26,18 @@ class StudentCatalogViewController: UIViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
         
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        refreshControl.tintColor = UIColor(hexString: "#214F6F")
+    }
+    @objc private func refreshTable() {
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
     func loadCourses(){
         courses = realm.objects(Course.self)

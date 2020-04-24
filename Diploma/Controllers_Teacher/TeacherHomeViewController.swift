@@ -11,6 +11,7 @@ import ChameleonFramework
 import RealmSwift
 import Firebase
 class TeacherHomeViewController: UIViewController {
+    private let refreshControl = UIRefreshControl()
     let realm = try! Realm()
     @IBOutlet weak var tableView: UITableView!
     var courses:List<Course>?
@@ -24,9 +25,22 @@ class TeacherHomeViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
         
+        
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        refreshControl.tintColor = UIColor(hexString: "#214F6F")
+        
     }
     
-    
+    @objc private func refreshTable() {
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
+    }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField:UITextField?
@@ -118,6 +132,8 @@ extension TeacherHomeViewController: UITableViewDelegate{
 
 //MARK:-Table View Data Source Mathods
 extension TeacherHomeViewController: UITableViewDataSource{
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return courses?.count ?? 1
     }

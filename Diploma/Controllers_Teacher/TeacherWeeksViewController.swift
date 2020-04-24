@@ -11,6 +11,7 @@ import ChameleonFramework
 import RealmSwift
 
 class TeacherWeeksViewController: UIViewController {
+    private let refreshControl = UIRefreshControl()
     let realm = try! Realm()
     @IBOutlet weak var tableView: UITableView!
     var weeks:Results<Week>?
@@ -27,7 +28,27 @@ class TeacherWeeksViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
         
+        let newButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItem.Style.plain, target: self, action: #selector(settingPressed))
+        self.navigationItem.rightBarButtonItem = newButton
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        refreshControl.tintColor = UIColor(hexString: "#214F6F")
+        
     }
+    @objc private func refreshTable() {
+           self.tableView.reloadData()
+           self.refreshControl.endRefreshing()
+    }
+    @objc func settingPressed(){
+        performSegue(withIdentifier: "settingsSegue", sender: self)
+        
+    }
+    
     func loadWeeks(){
         weeks = selectedCourse?.weeks.sorted(byKeyPath: "id")
     }
@@ -47,6 +68,13 @@ extension TeacherWeeksViewController: UITableViewDelegate{
                 destination.selectedWeek = weeks?[indexPath.row]
             }
         }
+        if segue.identifier=="settingsSegue"{
+            let nav = segue.destination as! UINavigationController
+            let svc = nav.topViewController as! TeacherCourseSettingsViewController
+            svc.selectedCourse = self.selectedCourse
+        }
+        
+        
     }
     
 }

@@ -11,10 +11,6 @@ import ChameleonFramework
 class TeacherContentOptionsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var selectedWeek:Week?
-    
-    //    itemConteiner.layer.borderColor = FlatGray().cgColor
-    //    itemConteiner.layer.borderWidth = 3.0
-    //    itemConteiner.layer.cornerRadius = itemConteiner.frame.size.height / 5
     var options = ["Weekly content", "Weekly quiz", "Weekly statistics"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +33,7 @@ extension TeacherContentOptionsViewController: UITableViewDelegate{
         return height/CGFloat(options.count);
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+     
         switch indexPath.row {
         case 0:
             performSegue(withIdentifier: K.newVideoTextSegue, sender: self)

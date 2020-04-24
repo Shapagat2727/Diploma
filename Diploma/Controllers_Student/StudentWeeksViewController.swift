@@ -12,7 +12,7 @@ import ChameleonFramework
 
 class StudentWeeksViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
+    private let refreshControl = UIRefreshControl()
     var selectedCourse:Course?
     var weeks:Results<Week>?
     
@@ -25,7 +25,18 @@ class StudentWeeksViewController: UIViewController {
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: K.topicNibName, bundle: nil), forCellReuseIdentifier: K.topicCell)
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
         
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        refreshControl.tintColor = UIColor(hexString: "#214F6F")
+    }
+    @objc private func refreshTable() {
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
 }
 //MARK:-TableView DataSource Methods
