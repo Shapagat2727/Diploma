@@ -15,13 +15,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpElements()
         self.hideKeyboardWhenTappedAround()
         
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         let UD = UserDefaults.standard
 
@@ -37,7 +38,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         emailTextfield.text = ""
         passwordTextfield.text = ""
         emailTextfield.delegate = self
@@ -59,9 +59,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         let beginString = email[ ..<range.lowerBound]
                         let user = self.realm.objects(User.self).filter("id == '\(beginString)'")[0]
                         
-                        //                   let user = Auth.auth().currentUser
-                        //                        user!.reload{(error) in
-                        //                            if user!.isEmailVerified{
+//                        let userFirebase = Auth.auth().currentUser
+//                        userFirebase!.reload{(error) in
+//                            if userFirebase!.isEmailVerified{
                         if (user.status == "student"){
                             self.addUserDefaults(with: user)
            
@@ -75,14 +75,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         }else{
                             print("Undefined user")
                         }
-                        
-                        //                            }else{
-                        //                                user?.sendEmailVerification{(error) in
-                        //                                    print("\(String(describing: error)) !!!!!!!!!")
-                        //                                }
-                        //                                print("Verify it now")
-                        //                            }
-                        //                        }
+                                
+//                            }else{
+//                                userFirebase?.sendEmailVerification{(error) in
+//                                    self.showError(with: error.debugDescription)
+//                                }
+//                                self.showError(with: "Verify your email address")
+//                            }
+//                        }
                         
                         
                     }

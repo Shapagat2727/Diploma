@@ -72,11 +72,9 @@ class TeacherHomeViewController: UIViewController {
                         week.id = n
                         for _ in 0...9{
                             let newQuestion = Question()
-                            newQuestion.category = "Category_Name"
                             newQuestion.question = ""
                             newQuestion.responses.append(objectsIn: ["","","",""])
                             newQuestion.correct_response = 0
-                            newQuestion.type = "multiple_choice"
                             newQuestion.scoreByAnswer.append(objectsIn: [0,0,0,0])
                             week.questions.append(newQuestion)
                         }

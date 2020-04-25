@@ -121,18 +121,16 @@ class StudentTopicViewController: UIViewController {
     //MARK:- Quiz Functions
     func loadQuiz() {
         
-        QKSession.default.limit = 10  //change to 15
+        QKSession.default.limit = 10
         var jsonArray:[Dictionary<String, Any>] = []
-        //need to fix if questions are empty
+     
         
         if (selectedWeek?.questions.count == 10){
-            for n in 0...9{ //change to 14
+            for n in 0...9{ 
                 let question = selectedWeek?.questions[n].toDictionary()
                 let array = Array(selectedWeek?.questions[n].toDictionary()["responses"] as! List<String>)
                 var jsonObject: [String: Any] = [:]
                 jsonObject["question"] = "\(question!["question"]!)"
-                jsonObject["category"] =  "\(question!["category"]!)"
-                jsonObject["type"] =  "\(question!["type"]!)"
                 jsonObject["correct_response"] = question!["correct_response"]!
                 jsonObject["responses"] = array
                 jsonArray.append(jsonObject)

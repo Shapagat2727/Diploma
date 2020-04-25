@@ -50,9 +50,7 @@ public extension UIViewController {
     }
 }
 
-enum UserCase{
-    case teacher, student
-}
+
 
 
 

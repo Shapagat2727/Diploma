@@ -74,7 +74,7 @@ public struct QKQuestion: Hashable {
     
     // MARK: - Hashable
     
-    public var hashValue: Int {
+    public func hash(into hasher: inout Hasher) -> Int{
         return question.hashValue
     }
     

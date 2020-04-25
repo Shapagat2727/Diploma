@@ -45,24 +45,6 @@ class TeacherQuizViewController: UIViewController {
             tableView.scrollIndicatorInsets = insets
         }
     }
-//    @IBAction func addQuestionPressed(_ sender: UIBarButtonItem) {
-//        let newQuestion = Question()
-//        newQuestion.category = "Category_Name"
-//        newQuestion.question = ""
-//        newQuestion.responses.append(objectsIn: ["","","",""])
-//        newQuestion.correct_response = 0
-//        newQuestion.type = "multiple_choice"
-//        newQuestion.scoreByAnswer.append(objectsIn: [0,0,0,0])
-//        do{
-//            try realm.write{
-//                selectedWeek?.questions.append(newQuestion)
-//            }
-//        }catch{
-//            print("error  saving question \(error)")
-//        }
-//        questions = loadQuiz()
-//        self.tableView.reloadData()
-//    }
     func loadQuiz()->[Dictionary<String, Any>] {
         
         var jsonArray:[Dictionary<String, Any>] = []
@@ -73,8 +55,6 @@ class TeacherQuizViewController: UIViewController {
                 let array = Array(selectedWeek?.questions[n].toDictionary()["responses"] as! List<String>)
                 var jsonObject: [String: Any] = [:]
                 jsonObject["question"] = "\(question!["question"]!)"
-                jsonObject["category"] =  "\(question!["category"]!)"
-                jsonObject["type"] =  "\(question!["type"]!)"
                 jsonObject["correct_response"] = question!["correct_response"]!
                 jsonObject["responses"] = array
                 jsonArray.append(jsonObject)

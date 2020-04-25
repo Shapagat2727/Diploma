@@ -49,14 +49,12 @@ class ExpandableTableViewCell: UITableViewCell {
             do{
                 try realm.write{
                     selectedWeek?.isReady = ready
-                    selectedWeek?.questions[index!].category = "Category_Name"
                     selectedWeek?.questions[index!].question = questionTitle.text!
                     selectedWeek?.questions[index!].responses[0] = variantA.text!
                     selectedWeek?.questions[index!].responses[1] = variantB.text!
                     selectedWeek?.questions[index!].responses[2] = variantC.text!
                     selectedWeek?.questions[index!].responses[3] = variantD.text!
                     selectedWeek?.questions[index!].correct_response = correctResponseIndex
-                    selectedWeek?.questions[index!].type = "multiple_choice"
                     selectedWeek?.questions[index!].isValid = true
                     
                 }

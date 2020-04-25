@@ -43,7 +43,7 @@ class SignupViewController: UIViewController {
                             newStudent.lastName = self.lastName.text!
                             newStudent.id = String(id)
                             newStudent.status = "student"
-                            self.saveStudent(student: newStudent)
+                            self.saveUser(user: newStudent)
                         }
                         else if (endString == "sdu.edu.kz"){
                             let newInstructor = User()
@@ -51,7 +51,7 @@ class SignupViewController: UIViewController {
                             newInstructor.lastName = self.lastName.text!
                             newInstructor.id = String(beginString)
                             newInstructor.status = "teacher"
-                            self.saveInstructor(instructor: newInstructor)
+                            self.saveUser(user: newInstructor)
                         }
                         else{
                             self.showError(with: "Please enter university email")
@@ -64,27 +64,19 @@ class SignupViewController: UIViewController {
             
         }
     }
-    func saveStudent(student: User){
+    func saveUser(user: User){
         do{try realm.write{
-            realm.add(student)
+            realm.add(user)
             }
+             showError(with: "Successfully added a new user")
+             errorLabel.textColor = UIColor.green
             
         }catch{
-            showError(with: "Error saving student data")
+            showError(with: "Error saving user data")
         }
-        showError(with: "Successfully added a new student")
-        errorLabel.textColor = UIColor.green
+        
     }
-    func saveInstructor(instructor: User){
-        do{try realm.write{
-            realm.add(instructor)
-            }
-            
-        }catch{
-            showError(with: "Error saving instructor data")
-        }
-        showError(with: "Successfully added a new instructor")
-    }
+    
     
     func isPasswordValid(_ password : String) -> Bool{
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
